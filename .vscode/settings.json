@@ -1,0 +1,10 @@
+{
+	"liveSassCompile.settings.formats": [
+    {
+        "format": "expanded", // 読みやすい形式で出力（圧縮したいなら "compressed"）
+        "extensionName": ".css",
+        "savePath": "~/../css" // Sassフォルダと同階層にある「css」フォルダに出力
+    }
+    ],
+    "liveSassCompile.settings.generateMap": false // 不要な「.map」ファイルの生成を止める設定
+}
