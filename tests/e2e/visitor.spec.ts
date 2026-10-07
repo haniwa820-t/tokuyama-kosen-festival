@@ -90,7 +90,9 @@ test('JavaScriptなしでも階層とPDFリンクを使える', async ({
   const context = await browser.newContext({ javaScriptEnabled: false })
   const page = await context.newPage()
   await page.goto(baseURL! + 'guide/')
-  await page.getByRole('link', { name: /PAMPHLET パンフレット/ }).click()
+  await page
+    .getByRole('link', { name: /パンフレット.*現在の準備版PDF/ })
+    .click()
   await expect(
     page.getByRole('link', { name: /準備版PDFをダウンロード/ }),
   ).toBeVisible()
@@ -126,4 +128,36 @@ test('旧ページ内リンクから新しい階層に移動できる', async ({
   await page.goto('./#booths')
   await expect(page).toHaveURL(/\/events\/booths\/#booths$/)
   await expect(page.getByRole('searchbox')).toBeVisible()
+})
+
+test('メインロゴが表示され、各画面のメニューからホームに戻れる', async ({
+  page,
+}) => {
+  await page.goto('./events/booths/')
+  await expect(
+    page
+      .getByRole('link', { name: '徳山高専 高専祭 ホームへ戻る' })
+      .getByRole('img'),
+  ).toBeVisible()
+  const toggle = page.getByRole('button', { name: 'メニューを開く' })
+  if (await toggle.isVisible()) await toggle.click()
+  const home = page
+    .getByRole('navigation', { name: 'メインメニュー' })
+    .getByRole('link', { name: 'ホーム', exact: true })
+  await expect(home).toBeVisible()
+  expect((await home.boundingBox())!.height).toBeGreaterThanOrEqual(44)
+  await home.click()
+  await expect(page).toHaveURL(/\/tokuyama-kosen-festival\/$/)
+  await expect(page.locator('.hero-art img')).toBeVisible()
+  for (const width of [320, 768, 1024, 1440]) {
+    await page.setViewportSize({ width, height: 900 })
+    expect(
+      await page.evaluate(
+        () => document.documentElement.scrollWidth <= window.innerWidth,
+      ),
+    ).toBe(true)
+    await expect(
+      page.getByRole('link', { name: '徳山高専 高専祭 ホームへ戻る' }),
+    ).toBeVisible()
+  }
 })

@@ -13,7 +13,7 @@ export default function Schedule() {
             aria-pressed={day === index}
             onClick={() => setDay(index)}
           >
-            <span>DAY 0{index + 1}</span>
+            <span>{index + 1}日目</span>
             {date}
           </button>
         ))}

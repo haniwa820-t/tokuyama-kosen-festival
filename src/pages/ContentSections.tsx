@@ -5,20 +5,10 @@ import { assetUrl } from '../lib/catalog'
 import { sectionUrl } from '../lib/pages'
 import BoothCatalog from '../components/BoothCatalog'
 import Schedule from '../components/Schedule'
-function SectionTitle({
-  number,
-  en,
-  children,
-}: {
-  number: string
-  en: string
-  children: React.ReactNode
-}) {
+import Logo from '../components/Logo'
+function SectionTitle({ children }: { children: React.ReactNode }) {
   return (
     <div className="section-title">
-      <p className="eyebrow">
-        <span>{number}</span> {en}
-      </p>
       <h2>{children}</h2>
     </div>
   )
@@ -27,59 +17,59 @@ function SectionTitle({
 export function TopSection() {
   return (
     <section id="top" className="hero">
-      <div className="hero-rings" aria-hidden="true" />
       <div className="hero-inner">
+        <figure className="hero-art">
+          <Logo
+            className="hero-main-logo"
+            alt="メインロゴ Echo あの感動をもう一度"
+          />
+        </figure>
         <div className="hero-copy">
-          <p className="eyebrow">TOKUYAMA KOSEN FESTIVAL 2026</p>
+          <p className="hero-year">2026</p>
           <h1>
             第52回 <span>徳山高専 高専祭</span>
           </h1>
-          <p className="echo-word" aria-hidden="true">
-            Echo<span>.</span>
-          </p>
           <p className="hero-tagline">あの感動をもう一度</p>
           <div className="hero-dates">
-            {festival.days.map((d, index) => (
+            {festival.days.map((d) => (
               <div className="hero-date" key={d.day}>
-                <span className="day-label">DAY 0{index + 1}</span>
                 <strong>
                   {d.month}
                   <span>/</span>
                   {String(d.day).padStart(2, '0')}
                 </strong>
                 <div>
-                  <b>
-                    {d.weekday === '土' ? 'SAT' : 'SUN'}
-                    <span>（{d.weekday}）</span>
-                  </b>
+                  <b>（{d.weekday}）</b>
                   <time>
-                    {d.opensAt} — {d.closesAt}
+                    {d.opensAt}〜{d.closesAt}
                   </time>
                 </div>
               </div>
             ))}
           </div>
           <p className="hero-venue">
-            徳山工業高等専門学校 <span>山口県周南市学園台</span>
+            徳山工業高等専門学校<span>山口県周南市学園台</span>
           </p>
           <a className="button" href={sectionUrl('schedule')}>
-            2日間の予定を見る <span>↓</span>
+            2日間の予定を見る <span>→</span>
           </a>
         </div>
-        <figure className="hero-poster">
+      </div>
+      <div className="hero-poster-note container">
+        <a
+          href={assetUrl('images/main-poster.webp')}
+          target="_blank"
+          rel="noreferrer"
+        >
           <img
             src={assetUrl('images/main-poster.webp')}
             alt="第52回徳山高専高専祭のメインポスター。青とピンクのEchoの図案。"
             width="1168"
             height="1568"
-            fetchPriority="high"
           />
-          <figcaption>第52回高専祭 メインビジュアル</figcaption>
-        </figure>
-      </div>
-      <div className="hero-bottom">
-        <span>10.31 — 11.01 / 2026</span>
-        <a href={sectionUrl('theme')}>SCROLL TO EXPLORE ↓</a>
+          <span>開催案内ポスターを見る ↗</span>
+        </a>
+        <a href={sectionUrl('theme')}>今年のテーマについて ↓</a>
       </div>
     </section>
   )
@@ -88,9 +78,7 @@ export function TopSection() {
 export function ThemeSection() {
   return (
     <section id="theme" className="container theme section">
-      <SectionTitle number="01" en="THEME">
-        今年のテーマ
-      </SectionTitle>
+      <SectionTitle>今年のテーマ</SectionTitle>
       <div className="theme-layout">
         <figure>
           <img
@@ -122,9 +110,7 @@ export function ScheduleSection() {
   return (
     <section id="schedule" className="schedule section">
       <div className="container">
-        <SectionTitle number="02" en="TWO DAYS">
-          ステージと開催企画
-        </SectionTitle>
+        <SectionTitle>ステージと開催企画</SectionTitle>
         <Schedule />
       </div>
     </section>
@@ -134,9 +120,7 @@ export function ScheduleSection() {
 export function MainEventsSection() {
   return (
     <section id="main-events" className="container section">
-      <SectionTitle number="03" en="MAIN EVENT">
-        メイン企画
-      </SectionTitle>
+      <SectionTitle>メイン企画</SectionTitle>
       <div className="feature">
         <figure>
           <img
@@ -148,7 +132,7 @@ export function MainEventsSection() {
           />
         </figure>
         <div>
-          <p className="eyebrow">MAIN EVENT / 柔道場</p>
+          <p className="eyebrow">会場：柔道場</p>
           <h3>コーンホール</h3>
           <p>
             袋を投げて、ボードの穴をねらう。初めてでも楽しめるコーンホールが、今年のメイン企画です。
@@ -171,7 +155,7 @@ export function MainEventsSection() {
       <aside id="stamp-rally" className="rally">
         <span aria-hidden="true">↺</span>
         <div>
-          <p className="eyebrow">STAMP RALLY</p>
+          <p className="eyebrow">スタンプラリー</p>
           <h3>会場をめぐる、スタンプラリー。</h3>
           <p>
             景品をご用意しています（先着順）。受付や参加方法の詳細は準備中です。
@@ -186,9 +170,7 @@ export function DepartmentsSection() {
   return (
     <section id="departments" className="departments section">
       <div className="container">
-        <SectionTitle number="04" en="ME / IE / CA">
-          高専ならではの学科企画
-        </SectionTitle>
+        <SectionTitle>高専ならではの学科企画</SectionTitle>
         <div className="department-list">
           {departments.map((d) => (
             <article className="department" key={d.id}>
@@ -229,9 +211,7 @@ export function DepartmentsSection() {
 export function BoothsSection() {
   return (
     <section id="booths" className="container section">
-      <SectionTitle number="05" en="EAT / PLAY / DISCOVER">
-        気になる企画を探そう
-      </SectionTitle>
+      <SectionTitle>気になる企画を探そう</SectionTitle>
       <p className="section-lead">
         クラス、部活、研究室。それぞれの企画を、ポスターから探してみてください。
       </p>
@@ -247,9 +227,7 @@ export function RelatedEventsSection() {
   return (
     <section id="related-events" className="related section">
       <div className="container">
-        <SectionTitle number="06" en="SPECIAL PROGRAMS">
-          併催企画
-        </SectionTitle>
+        <SectionTitle>併催企画</SectionTitle>
         <div className="related-grid">
           <article>
             <img
@@ -302,9 +280,7 @@ export function RelatedEventsSection() {
 export function CampusMapSection() {
   return (
     <section id="campus-map" className="container section">
-      <SectionTitle number="07" en="CAMPUS MAP">
-        会場を歩こう
-      </SectionTitle>
+      <SectionTitle>会場を歩こう</SectionTitle>
       <p className="section-lead">
         模擬店、体育館、実習工場。行きたい場所を見つけてから出発。
       </p>
@@ -369,9 +345,7 @@ export function AccessSection() {
   return (
     <section id="access" className="access section">
       <div className="container">
-        <SectionTitle number="08" en="VISITOR GUIDE">
-          来場案内
-        </SectionTitle>
+        <SectionTitle>来場案内</SectionTitle>
         <div className="access-layout">
           <div>
             <h3>徳山工業高等専門学校</h3>
@@ -407,7 +381,7 @@ export function AccessSection() {
             </p>
           </div>
           <aside id="parking">
-            <p className="eyebrow">PARKING</p>
+            <p className="eyebrow">駐車場</p>
             <h3>臨時駐車場</h3>
             <p>
               準備版の会場図では、陸上競技場を臨時駐車場として案内しています。
@@ -436,9 +410,7 @@ export function PamphletSection() {
         />
       </div>
       <div>
-        <SectionTitle number="09" en="PAMPHLET">
-          準備版PDF
-        </SectionTitle>
+        <SectionTitle>準備版PDF</SectionTitle>
         <span className="badge">準備版</span>
         <p>
           日程、会場図、企画のポスターをまとめた冊子です。空欄や調整中のページを含む、現在の準備版を配布しています。
@@ -467,9 +439,7 @@ export function PamphletSection() {
 export function NewsSection() {
   return (
     <section id="news" className="container section news">
-      <SectionTitle number="10" en="INFORMATION">
-        お知らせ
-      </SectionTitle>
+      <SectionTitle>お知らせ</SectionTitle>
       <div className="news-row">
         <time dateTime="2026-10-08">2026.10.08</time>
         <p>パンフレットの準備版と、現在の開催案内を掲載しました。</p>

@@ -13,7 +13,7 @@ export default function Countdown() {
     <div className="countdown">
       <div className="container countdown-inner">
         <div>
-          <p className="eyebrow">SEE YOU AT ECHO</p>
+          <p className="eyebrow">第52回 高専祭</p>
           <p className="countdown-label">{countdown?.label ?? '開幕まで'}</p>
         </div>
         {countdown?.status === 'countdown' ? (

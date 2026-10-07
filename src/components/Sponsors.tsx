@@ -5,7 +5,6 @@ export default function Sponsors({ compact = false }: { compact?: boolean }) {
   return (
     <section id="sponsors" className="container section sponsor-section">
       <div className="section-title">
-        <p className="eyebrow">WITH OUR COMMUNITY</p>
         <h2>{compact ? 'スポンサー' : 'スポンサー掲載サンプル'}</h2>
       </div>
       <p className="section-lead">

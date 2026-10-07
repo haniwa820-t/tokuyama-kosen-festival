@@ -22,7 +22,7 @@ describe('高専祭の案内', () => {
       screen
         .getByRole('navigation', { name: 'メインメニュー' })
         .querySelector('a'),
-    ).toHaveAttribute('href', '/tokuyama-kosen-festival/schedule/')
+    ).toHaveAttribute('href', '/tokuyama-kosen-festival/')
     expect(
       screen.getByRole('link', { name: /準備版PDFをダウンロード/ }),
     ).toHaveAttribute(
@@ -183,5 +183,41 @@ describe('ページの階層', () => {
     expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent(
       'ページが見つかりません',
     )
+  })
+})
+
+describe('ホームへの導線とメインロゴ', () => {
+  it('サブページのメニューからホームへ戻れる', () => {
+    render(<App pageId="booths" />)
+    const menu = within(
+      screen.getByRole('navigation', { name: 'メインメニュー' }),
+    )
+    expect(menu.getByRole('link', { name: 'ホーム' })).toHaveAttribute(
+      'href',
+      '/tokuyama-kosen-festival/',
+    )
+    expect(menu.getByRole('link', { name: '模擬店' })).toHaveAttribute(
+      'aria-current',
+      'page',
+    )
+    const brand = screen.getByRole('link', {
+      name: '徳山高専 高専祭 ホームへ戻る',
+    })
+    expect(
+      within(brand).getByRole('img', { name: '徳山高専 高専祭 メインロゴ' }),
+    ).toHaveAttribute('src', '/tokuyama-kosen-festival/images/echo-logo.webp')
+  })
+  it('ホームのメニューに現在地を示し、提供ロゴを冒頭に表示する', () => {
+    render(<App />)
+    expect(
+      within(
+        screen.getByRole('navigation', { name: 'メインメニュー' }),
+      ).getByRole('link', { name: 'ホーム' }),
+    ).toHaveAttribute('aria-current', 'page')
+    expect(
+      within(document.getElementById('top')!).getByRole('img', {
+        name: 'メインロゴ Echo あの感動をもう一度',
+      }),
+    ).toBeVisible()
   })
 })

@@ -41,7 +41,7 @@
 - `src/data/departments.json`：ME・IE・CAの3学科。CAは11月1日のみ。
 - `src/data/schedule.json`：8枠のステージ日程、対象者、出典ページ。
 - `src/data/sponsors.json`：準備版p43〜44の一覧。
-- セクションの説明、通常アクセス、併催案内は`src/App.tsx`と`src/components/Schedule.tsx`。変更時は上の出典と照合する。
+- セクションの説明、通常アクセス、併催案内は`src/pages/ContentSections.tsx`と`src/components/Schedule.tsx`。変更時は上の出典と照合する。
 
 昨年度の11項目（ホーム、テーマ、日程、メイン企画、学科企画、併催企画、模擬店、パンフレット、アクセス、駐車場、お知らせ）を実装した。会場図、スタンプラリー、協賛、SNS、問い合わせも掲載。
 昨年の企画名・価格・交通時刻・駐車ルールを今年の情報として転載していない。

@@ -44,6 +44,10 @@ await sharp(`assets/source/${logo}`)
   .extract({ left: 0, top: 470, width: 1168, height: 626 })
   .webp({ quality: 90 })
   .toFile('public/images/echo-logo.webp')
+await sharp('public/images/echo-logo.webp')
+  .resize(128, 128, { fit: 'contain', background: '#ffffff' })
+  .png()
+  .toFile('public/favicon.png')
 const crops = [
   [4, 'maps/campus', 304, 228, 905, 864],
   [5, 'maps/outdoor', 200, 160, 1000, 1370],

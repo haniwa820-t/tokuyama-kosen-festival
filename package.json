@@ -16,10 +16,11 @@
     "test:coverage": "vitest run --coverage",
     "test:e2e": "playwright test",
     "check:content": "node scripts/check-content.mjs",
-    "check": "npm run typecheck && npm run lint && npm run test:coverage && npm run check:content && npm run build",
+    "check": "npm run typecheck && npm run lint && npm run test:coverage && npm run check:content && npm run check:design && npm run build",
     "assets:sponsors": "node scripts/create-sponsor-samples.mjs",
     "format": "prettier --write src scripts tests vite.config.ts playwright.config.ts eslint.config.js index.html",
-    "format:check": "prettier --check src scripts tests vite.config.ts playwright.config.ts eslint.config.js index.html"
+    "format:check": "prettier --check src scripts tests vite.config.ts playwright.config.ts eslint.config.js index.html",
+    "check:design": "node scripts/check-design.mjs"
   },
   "dependencies": {
     "react": "^19.3.0",

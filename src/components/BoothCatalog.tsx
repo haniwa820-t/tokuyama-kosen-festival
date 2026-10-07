@@ -113,7 +113,7 @@ export default function BoothCatalog() {
     <>
       <div className="discovery-tools">
         <div>
-          <p className="eyebrow">YOUR FESTIVAL PLAN</p>
+          <p className="eyebrow">行きたい企画を保存</p>
           <p>気になる企画は♡で保存。迷ったら、おまかせ。</p>
         </div>
         <div className="discovery-actions">

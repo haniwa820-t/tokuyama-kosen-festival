@@ -47,10 +47,18 @@ const entries = [
   ['カフェレストラン瀬里家', 'https://www.caferestaurantserika.com/'],
 ]
 await mkdir('public/images/sponsors', { recursive: true })
+const tokens = await readFile('src/styles/tokens.css', 'utf8')
+const color = (role) => {
+  const value = tokens.match(
+    new RegExp(`--color-${role}:\\s*(#[0-9a-f]{6});`),
+  )?.[1]
+  if (!value) throw new Error(`Missing color token: ${role}`)
+  return value
+}
 const palette = [
-  ['#e4edf9', '#0b315b'],
-  ['#f4d6e4', '#0b315b'],
-  ['#ece5d8', '#0b315b'],
+  [color('surface-blue'), color('text')],
+  [color('surface-warm'), color('text')],
+  [color('surface-subtle'), color('text')],
 ]
 const escape = (s) =>
   s
@@ -69,7 +77,7 @@ for (const [i, [name, url]] of entries.entries()) {
   const id = `sponsor-${String(i + 1).padStart(2, '0')}`
   const [bg, ink] = palette[i % 3]
   const fontSize = name.length > 20 ? 21 : name.length > 14 ? 25 : 30
-  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="720" height="300" viewBox="0 0 720 300"><rect width="720" height="300" fill="${bg}"/><g fill="none" stroke="${ink}" opacity=".13"><circle cx="640" cy="30" r="90"/><circle cx="640" cy="30" r="145"/><circle cx="640" cy="30" r="200"/></g><text x="35" y="43" fill="${ink}" font-family="Arial,sans-serif" font-size="14" letter-spacing="3">ECHO / SPONSOR ${String(i + 1).padStart(2, '0')}</text><text x="360" y="166" text-anchor="middle" fill="${ink}" font-family="sans-serif" font-size="${fontSize}" font-weight="700">${escape(displayName)}</text><path d="M35 217h650" stroke="${ink}" opacity=".3"/><text x="35" y="267" fill="${ink}" font-family="Arial,sans-serif" font-size="13" letter-spacing="2">SAMPLE BANNER</text><text x="682" y="267" text-anchor="end" fill="${ink}" font-family="sans-serif" font-size="13">画像差し替え用サンプル</text></svg>`
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="720" height="300" viewBox="0 0 720 300"><rect width="720" height="300" fill="${bg}"/><rect x="0" y="0" width="8" height="300" fill="${color('action')}"/><text x="35" y="43" fill="${ink}" font-family="Arial,sans-serif" font-size="14" letter-spacing="3">ECHO / SPONSOR ${String(i + 1).padStart(2, '0')}</text><text x="360" y="166" text-anchor="middle" fill="${ink}" font-family="sans-serif" font-size="${fontSize}" font-weight="700">${escape(displayName)}</text><path d="M35 217h650" stroke="${ink}" opacity=".3"/><text x="35" y="267" fill="${ink}" font-family="Arial,sans-serif" font-size="13" letter-spacing="2">SAMPLE BANNER</text><text x="682" y="267" text-anchor="end" fill="${ink}" font-family="sans-serif" font-size="13">画像差し替え用サンプル</text></svg>`
   await writeFile(`public/images/sponsors/${id}.svg`, svg)
   banners.push({
     id,

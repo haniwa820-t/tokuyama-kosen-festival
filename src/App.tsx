@@ -5,6 +5,7 @@ import { pageById, pageUrl, sectionUrl } from './lib/pages'
 import Countdown from './components/Countdown'
 import Sponsors from './components/Sponsors'
 import Reveal from './components/Reveal'
+import Logo from './components/Logo'
 import {
   TopSection,
   ThemeSection,
@@ -20,6 +21,7 @@ import {
   SponsorNames,
 } from './pages/ContentSections'
 const nav = [
+  ['home', 'ホーム'],
   ['schedule', '日程'],
   ['events', '企画'],
   ['booths', '模擬店'],
@@ -33,7 +35,6 @@ function GuideCards() {
         const p = pageById(id)
         return (
           <a className="guide-card" href={pageUrl(id)} key={id}>
-            <p className="eyebrow">{p.en}</p>
             <h2>
               {p.title} <span>↗</span>
             </h2>
@@ -60,7 +61,6 @@ function PageHeading({ pageId }: { pageId: string }) {
         <span aria-hidden="true">/</span>
         <span aria-current="page">{page.label}</span>
       </nav>
-      <p className="eyebrow">{page.en}</p>
       <h1>{page.title}</h1>
       <p>{page.description}</p>
     </div>
@@ -71,9 +71,7 @@ function Footer() {
     <footer>
       <div className="container footer-inner">
         <div>
-          <p className="footer-echo" aria-hidden="true">
-            Echo.
-          </p>
+          <Logo className="footer-logo" />
           <p>第52回 徳山高専 高専祭</p>
         </div>
         <div>
@@ -123,12 +121,14 @@ export default function App({ pageId = 'home' }: { pageId?: string }) {
         本文へ移動
       </a>
       <header id="page-top" className="header">
-        <a className="brand" href={pageUrl('home')}>
-          <span className="brand-mark" aria-hidden="true">
-            e.
-          </span>
+        <a
+          className="brand"
+          href={pageUrl('home')}
+          aria-label="徳山高専 高専祭 ホームへ戻る"
+        >
+          <Logo className="brand-logo" />
           <span>
-            徳山高専 高専祭<small>52nd · 2026</small>
+            徳山高専 高専祭<small>第52回・2026年</small>
           </span>
         </a>
         <button
@@ -138,7 +138,7 @@ export default function App({ pageId = 'home' }: { pageId?: string }) {
           aria-controls="main-nav"
           onClick={() => setMenu(!menu)}
         >
-          {menu ? 'CLOSE ×' : 'MENU ＋'}
+          {menu ? '閉じる ×' : 'メニュー ＋'}
         </button>
         <nav
           id="main-nav"
@@ -175,34 +175,30 @@ export default function App({ pageId = 'home' }: { pageId?: string }) {
             <Countdown />
             <div className="quick-links container">
               <a href={pageUrl('booths')}>
-                <span>01 / EAT & PLAY</span>模擬店・展示・体験 <b>↗</b>
+                <span>企画を探す</span>模擬店・展示・体験 <b>↗</b>
               </a>
               <a href={pageUrl('map')}>
-                <span>02 / FIND YOUR WAY</span>会場マップ <b>↗</b>
+                <span>会場を確認</span>会場マップ <b>↗</b>
               </a>
               <a href={pageUrl('pamphlet')}>
-                <span>03 / TAKE A LOOK</span>パンフレット <b>↗</b>
+                <span>資料を見る</span>パンフレット <b>↗</b>
               </a>
             </div>
             <ThemeSection />
             <section className="container section home-programs">
               <div className="section-title">
-                <p className="eyebrow">PLAN YOUR TWO DAYS</p>
-                <h2>今年の高専祭を、見つけよう。</h2>
+                <h2>高専祭のご案内</h2>
               </div>
               <div className="guide-grid">
                 <a className="guide-card" href={pageUrl('schedule')}>
-                  <p className="eyebrow">SCHEDULE</p>
                   <h3>2日間の予定 ↗</h3>
                   <p>ステージと、日ごとの開催企画をチェック。</p>
                 </a>
                 <a className="guide-card" href={pageUrl('events')}>
-                  <p className="eyebrow">PROGRAMS</p>
                   <h3>高専祭の企画 ↗</h3>
                   <p>コーンホール、学科企画、周南ロボコン。</p>
                 </a>
                 <a className="guide-card" href={pageUrl('guide')}>
-                  <p className="eyebrow">VISITOR GUIDE</p>
                   <h3>来場ガイド ↗</h3>
                   <p>会場図とアクセスをまとめて確認。</p>
                 </a>
@@ -266,7 +262,7 @@ export default function App({ pageId = 'home' }: { pageId?: string }) {
             className="container sibling-nav"
             aria-label="来場ガイドの関連ページ"
           >
-            <p className="eyebrow">VISITOR GUIDE</p>
+            <p className="eyebrow">来場ガイド</p>
             <GuideCards />
           </aside>
         )}
