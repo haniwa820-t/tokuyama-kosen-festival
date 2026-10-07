@@ -10,10 +10,10 @@
   "theme": {
     "title": "Echo",
     "subtitle": "あの感動をもう一度",
-    "titleSource": "assets/source/メインロゴ.jpg",
+    "titleSource": "assets/source/メインロゴ.jpg",
     "subtitleSources": [
-      "assets/source/メインポスター.jpg",
-      "assets/source/メインロゴ.jpg"
+      "assets/source/メインポスター.jpg",
+      "assets/source/メインロゴ.jpg"
     ],
     "description": "これまでの感動や、人とのつながりから生まれた瞬間が集まり、新しい感動として広がっていく。今年のテーマ「Echo」には、終わった後ももう一度体験したくなる、心に残る2日間にしたいという思いが込められています。",
     "descriptionSource": "https://www.instagram.com/toku_kosensai/p/DdOulQayNk2/"
@@ -25,7 +25,7 @@
       "weekday": "土",
       "opensAt": "09:45",
       "closesAt": "15:30",
-      "source": "assets/source/メインポスター.jpg"
+      "source": "assets/source/メインポスター.jpg"
     },
     {
       "month": 11,
@@ -33,7 +33,7 @@
       "weekday": "日",
       "opensAt": "09:45",
       "closesAt": "15:00",
-      "source": "assets/source/メインポスター.jpg"
+      "source": "assets/source/メインポスター.jpg"
     }
   ],
   "programCategories": [
@@ -41,31 +41,31 @@
     "学科企画",
     "ステージ企画"
   ],
-  "programCategoriesSource": "assets/source/メインポスター.jpg",
+  "programCategoriesSource": "assets/source/メインポスター.jpg",
   "stampRally": {
     "announced": true,
     "hasPrizes": true,
     "firstComeFirstServed": true,
     "detailsStatus": "needs-confirmation",
-    "source": "assets/source/メインポスター.jpg"
+    "source": "assets/source/メインポスター.jpg"
   },
   "contact": {
     "organization": "徳山工業高等専門学校",
     "department": "学生支援係",
     "telephone": "0834-29-6235",
-    "source": "assets/source/メインポスター.jpg"
+    "source": "assets/source/メインポスター.jpg"
   },
   "notice": {
     "text": "日程は変更する場合がございます。",
-    "source": "assets/source/メインポスター.jpg"
+    "source": "assets/source/メインポスター.jpg"
   },
   "sources": {
     "mainPoster": {
-      "path": "assets/source/メインポスター.jpg",
+      "path": "assets/source/メインポスター.jpg",
       "reviewStatus": "visually-reviewed"
     },
     "mainLogo": {
-      "path": "assets/source/メインロゴ.jpg",
+      "path": "assets/source/メインロゴ.jpg",
       "reviewStatus": "visually-reviewed"
     },
     "boothPosters": {

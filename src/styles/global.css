@@ -325,3 +325,5 @@ footer{background:var(--ink);color:var(--paper);padding:60px 0 24px}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}
 *,*:before,*:after{transition:none!important}
 }
+
+.map-legend{display:flex;flex-wrap:wrap;gap:12px 24px;list-style:none;padding:20px 0 0;margin:0;font-size:12px}.map-legend b{background:var(--ink);color:white;display:inline-flex;justify-content:center;align-items:center;width:25px;height:25px;margin-right:5px;border-radius:4px}

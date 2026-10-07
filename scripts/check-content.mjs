@@ -4,6 +4,7 @@ import assert from 'node:assert/strict'
 const json = async p => JSON.parse(await readFile(p,'utf8'))
 const manifest = await json('assets/source/manifest.json')
 for (const file of manifest.files) {
+ assert.equal(file.path, file.path.normalize('NFC'), `Source path must be portable NFC: ${file.path}`)
  const bytes = await readFile(file.path)
  assert.equal(bytes.length,file.bytes,`Original size changed: ${file.path}`)
  assert.equal(createHash('sha256').update(bytes).digest('hex'),file.sha256,`Original changed: ${file.path}`)

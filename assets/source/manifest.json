@@ -3,13 +3,13 @@
   "files": [
     {
       "originalPath": "メインポスター.jpg",
-      "path": "assets/source/メインポスター.jpg",
+      "path": "assets/source/メインポスター.jpg",
       "bytes": 209180,
       "sha256": "6a284b969476bd6706eb9a22117c4c0ee852f8665cd2122949e759d12379ecaf"
     },
     {
       "originalPath": "メインロゴ.jpg",
-      "path": "assets/source/メインロゴ.jpg",
+      "path": "assets/source/メインロゴ.jpg",
       "bytes": 58670,
       "sha256": "14786c420714384d8b4accdf7e2b8174a7625aff83c74a5c12c9e40b9c8cc453"
     },

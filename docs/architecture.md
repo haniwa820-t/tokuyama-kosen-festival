@@ -22,6 +22,7 @@ JavaScriptが無効でも開催日時と主要案内・PDFリンクを読める�
 - `tests/e2e/`：PC・スマートフォンのブラウザー検証。
 
 通常のビルドではPDFの再レンダーは不要。公開用画像をリポジトリで管理する。
+Git上の日本語パスはNFC表記で記録し、MacとLinuxのCIで同じ原素材を参照する。移動前の原名はmanifestのoriginalPathで保持する。
 `tmp/`、`dist/`、`node_modules/`、検証出力はGitへ追加しない。
 
 ## GitHub Pages
