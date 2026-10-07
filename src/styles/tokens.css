@@ -19,6 +19,7 @@
   --color-disabled-text: #526577;
   --color-disabled-bg: #e7edf1;
   --font-body: 'Hiragino Kaku Gothic ProN', 'Yu Gothic', Meiryo, sans-serif;
+  --font-heading: 'Festival Mincho', 'Hiragino Mincho ProN', 'Yu Mincho', serif;
   --font-numerals: Arial, sans-serif;
   --text-sm: 0.875rem;
   --text-body: 1rem;
@@ -43,4 +44,5 @@
   --motion-fast: 160ms;
   --motion-enter: 360ms;
   --shadow-overlay: 0 8px 32px #102d4526;
+  --shadow-print: 8px 12px 0 #19324714;
 }

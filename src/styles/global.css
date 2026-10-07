@@ -1,5 +1,13 @@
 @import './tokens.css';
 
+@font-face {
+  font-family: 'Festival Mincho';
+  src: url('/fonts/festival-mincho-bold.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+
 /* Foundation */
 * {
   box-sizing: border-box;
@@ -82,6 +90,8 @@ section {
   margin-bottom: var(--space-8);
 }
 .section-title h2 {
+  font-family: var(--font-heading);
+  letter-spacing: 0.04em;
   font-size: var(--text-h2);
   padding-left: var(--space-4);
   border-left: 5px solid var(--color-gold);
@@ -225,37 +235,39 @@ section {
 }
 .hero-inner {
   display: grid;
-  grid-template-columns: 1.3fr 1fr;
-  gap: var(--space-12);
-  width: min(1280px, calc(100% - 64px));
+  grid-template-columns: 1.1fr 1fr;
+  gap: var(--space-20);
+  width: min(1160px, calc(100% - 64px));
   margin: auto;
   align-items: center;
-  padding: var(--space-12) 0 var(--space-8);
-}
-.hero-art {
-  overflow: hidden;
-  border-radius: var(--radius-panel);
+  padding: var(--space-12) 0;
 }
 .hero-main-logo {
-  width: 100%;
+  width: min(380px, 100%);
+  margin-block: var(--space-4);
 }
 .hero-copy {
-  padding: 0 var(--space-2);
+  min-width: 0;
 }
 .hero-year {
   color: var(--color-warning-text);
-  font: 700 20px/1.2 var(--font-numerals);
-  margin-bottom: var(--space-3);
+  font: 700 16px/1.2 var(--font-numerals);
+  letter-spacing: 0.12em;
+  margin-bottom: var(--space-2);
 }
 .hero-copy h1 {
-  font-size: var(--text-h1);
+  font-size: 20px;
+  letter-spacing: 0.08em;
 }
 .hero-copy h1 span {
-  display: block;
+  margin-left: var(--space-3);
 }
 .hero-tagline {
-  margin-top: var(--space-2);
-  font-size: var(--text-lg);
+  font-family: var(--font-heading);
+  font-size: clamp(24px, 2.5vw, 32px);
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0.06em;
 }
 .hero-dates {
   margin: var(--space-6) 0;
@@ -282,8 +294,9 @@ section {
 }
 .hero-date > div {
   display: flex;
-  align-items: center;
-  gap: var(--space-3);
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 0;
 }
 .hero-date b {
   font-size: var(--text-body);
@@ -313,15 +326,26 @@ section {
   border-top: 1px solid var(--color-border);
   font-size: var(--text-sm);
 }
-.hero-poster-note > a:first-child {
-  display: flex;
-  gap: var(--space-3);
-  align-items: center;
+.hero-poster {
+  width: min(395px, 90%);
+  justify-self: center;
+  padding: 10px;
+  background: var(--color-surface);
+  box-shadow: var(--shadow-print);
+  transform: rotate(3deg);
 }
-.hero-poster-note img {
-  width: 36px;
-  height: 48px;
-  object-fit: contain;
+.hero-poster a {
+  display: block;
+  text-decoration: none;
+}
+.hero-poster figcaption {
+  font-size: var(--text-sm);
+  text-align: center;
+  padding-top: var(--space-2);
+}
+.hero-poster-note > span {
+  font-family: var(--font-numerals);
+  letter-spacing: 0.06em;
 }
 .countdown {
   padding: var(--space-6) 0;
@@ -411,6 +435,8 @@ section {
   overflow: hidden;
 }
 .theme-layout h3 {
+  font-family: var(--font-heading);
+  letter-spacing: 0.04em;
   font-size: var(--text-h3);
   margin-bottom: var(--space-4);
 }
@@ -431,6 +457,8 @@ section {
   margin-bottom: var(--space-6);
 }
 .page-heading h1 {
+  font-family: var(--font-heading);
+  letter-spacing: 0.04em;
   font-size: var(--text-h1);
   margin-bottom: var(--space-3);
 }
@@ -597,6 +625,8 @@ section {
   justify-self: center;
 }
 .feature h3 {
+  font-family: var(--font-heading);
+  letter-spacing: 0.04em;
   font-size: var(--text-h1);
   margin: var(--space-3) 0 var(--space-6);
 }
@@ -1086,7 +1116,7 @@ details[open] summary span {
   gap: var(--space-12);
 }
 .pamphlet-art {
-  background: var(--color-surface-subtle);
+  background: var(--color-surface-warm);
   border-radius: var(--radius-panel);
   padding: var(--space-8) var(--space-12);
 }
@@ -1094,6 +1124,8 @@ details[open] summary span {
   max-height: 440px;
   width: auto;
   margin: auto;
+  transform: rotate(-3deg);
+  box-shadow: var(--shadow-print);
 }
 .pamphlet .section-title {
   margin-bottom: var(--space-4);
@@ -1374,29 +1406,31 @@ footer {
     padding: var(--space-4) 20px;
   }
   .hero-inner {
-    width: 100%;
+    width: calc(100% - 40px);
     grid-template-columns: 1fr;
-    gap: var(--space-6);
-    padding: 0 0 var(--space-6);
-  }
-  .hero-art {
-    border-radius: 0;
+    gap: var(--space-10);
+    padding: var(--space-8) 0 var(--space-10);
   }
   .hero-copy {
-    padding-inline: 20px;
+    padding: 0;
   }
   .hero-year {
     font-size: 18px;
     margin-bottom: 8px;
   }
   .hero-copy h1 {
-    font-size: 28px;
+    font-size: 18px;
   }
   .hero-copy h1 span {
-    display: inline;
+    margin-left: var(--space-2);
   }
   .hero-tagline {
-    font-size: 16px;
+    font-size: clamp(23px, 6.2vw, 28px);
+    letter-spacing: 0.04em;
+  }
+  .hero-poster {
+    width: min(300px, 82%);
+    padding: 8px;
   }
   .hero-date {
     gap: 8px;
@@ -1406,9 +1440,7 @@ footer {
     min-width: 122px;
   }
   .hero-date > div {
-    flex-direction: row;
-    gap: 8px;
-    align-items: center;
+    gap: 0;
   }
   .hero-date time {
     font-size: 16px;

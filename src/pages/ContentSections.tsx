@@ -18,17 +18,15 @@ export function TopSection() {
   return (
     <section id="top" className="hero">
       <div className="hero-inner">
-        <figure className="hero-art">
-          <Logo
-            className="hero-main-logo"
-            alt="メインロゴ Echo あの感動をもう一度"
-          />
-        </figure>
         <div className="hero-copy">
           <p className="hero-year">2026</p>
           <h1>
             第52回 <span>徳山高専 高専祭</span>
           </h1>
+          <Logo
+            className="hero-main-logo"
+            alt="メインロゴ Echo あの感動をもう一度"
+          />
           <p className="hero-tagline">あの感動をもう一度</p>
           <div className="hero-dates">
             {festival.days.map((d) => (
@@ -54,21 +52,25 @@ export function TopSection() {
             2日間の予定を見る <span>→</span>
           </a>
         </div>
+        <figure className="hero-poster">
+          <a
+            href={assetUrl('images/main-poster.webp')}
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img
+              src={assetUrl('images/main-poster.webp')}
+              alt="第52回徳山高専高専祭のメインポスター。青とピンクのEchoの図案。"
+              width="1168"
+              height="1568"
+              fetchPriority="high"
+            />
+          </a>
+          <figcaption>第52回高専祭 メインビジュアル</figcaption>
+        </figure>
       </div>
       <div className="hero-poster-note container">
-        <a
-          href={assetUrl('images/main-poster.webp')}
-          target="_blank"
-          rel="noreferrer"
-        >
-          <img
-            src={assetUrl('images/main-poster.webp')}
-            alt="第52回徳山高専高専祭のメインポスター。青とピンクのEchoの図案。"
-            width="1168"
-            height="1568"
-          />
-          <span>開催案内ポスターを見る ↗</span>
-        </a>
+        <span>10.31 — 11.01 / 2026</span>
         <a href={sectionUrl('theme')}>今年のテーマについて ↓</a>
       </div>
     </section>

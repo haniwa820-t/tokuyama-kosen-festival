@@ -31,7 +31,7 @@ SSRの時計は固定の開催日表示にし、ブラウザーで現在時刻�
 - `src/data/`：出典を含む開催情報。
 - `src/App.tsx` / `src/lib/pages.ts`：ページ構成・階層。`src/pages/ContentSections.tsx`：掲載本文。
 - `src/components/`：日程と企画検索、キーボード操作可能な詳細画面。
-- `src/styles/tokens.css`：役割別の色・書体・余白・状態。`src/styles/global.css`：部品の適用とモバイル対応。外部Webフォントなし。要件は`docs/design-system.md`。
+- `src/styles/tokens.css`：役割別の色・書体・余白・状態。`src/styles/global.css`：部品の適用とモバイル対応。見出し用フォントは`public/fonts/`から自前配信し、通常ビルドで外部取得しない。要件は`docs/design-system.md`。
 - `assets/source/`：提供原素材とチェックサム。
 - `public/`：WebPに最適化した画像、会場図、変更していない準備版PDF。
 - `scripts/prepare-assets.mjs`：加工済み画像の再生成（元PDFのローカルレンダーが必要）。
