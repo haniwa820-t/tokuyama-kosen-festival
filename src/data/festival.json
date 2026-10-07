@@ -1,0 +1,102 @@
+{
+  "recordedOn": "2026-10-08",
+  "timezone": "Asia/Tokyo",
+  "contentStatus": "publication-preparation",
+  "edition": 52,
+  "name": "徳山高専 高専祭",
+  "schoolName": "徳山工業高等専門学校",
+  "year": 2026,
+  "yearStatus": "confirmed",
+  "theme": {
+    "title": "Echo",
+    "subtitle": "あの感動をもう一度",
+    "titleSource": "assets/source/メインロゴ.jpg",
+    "subtitleSources": [
+      "assets/source/メインポスター.jpg",
+      "assets/source/メインロゴ.jpg"
+    ],
+    "description": "これまでの感動や、人とのつながりから生まれた瞬間が集まり、新しい感動として広がっていく。今年のテーマ「Echo」には、終わった後ももう一度体験したくなる、心に残る2日間にしたいという思いが込められています。",
+    "descriptionSource": "https://www.instagram.com/toku_kosensai/p/DdOulQayNk2/"
+  },
+  "days": [
+    {
+      "month": 10,
+      "day": 31,
+      "weekday": "土",
+      "opensAt": "09:45",
+      "closesAt": "15:30",
+      "source": "assets/source/メインポスター.jpg"
+    },
+    {
+      "month": 11,
+      "day": 1,
+      "weekday": "日",
+      "opensAt": "09:45",
+      "closesAt": "15:00",
+      "source": "assets/source/メインポスター.jpg"
+    }
+  ],
+  "programCategories": [
+    "クラス・部活ごとの模擬店",
+    "学科企画",
+    "ステージ企画"
+  ],
+  "programCategoriesSource": "assets/source/メインポスター.jpg",
+  "stampRally": {
+    "announced": true,
+    "hasPrizes": true,
+    "firstComeFirstServed": true,
+    "detailsStatus": "needs-confirmation",
+    "source": "assets/source/メインポスター.jpg"
+  },
+  "contact": {
+    "organization": "徳山工業高等専門学校",
+    "department": "学生支援係",
+    "telephone": "0834-29-6235",
+    "source": "assets/source/メインポスター.jpg"
+  },
+  "notice": {
+    "text": "日程は変更する場合がございます。",
+    "source": "assets/source/メインポスター.jpg"
+  },
+  "sources": {
+    "mainPoster": {
+      "path": "assets/source/メインポスター.jpg",
+      "reviewStatus": "visually-reviewed"
+    },
+    "mainLogo": {
+      "path": "assets/source/メインロゴ.jpg",
+      "reviewStatus": "visually-reviewed"
+    },
+    "boothPosters": {
+      "path": "assets/source/模擬店ポスター",
+      "reviewStatus": "visually-reviewed"
+    },
+    "previousSite": {
+      "url": "https://nittcfes.wixsite.com/2025",
+      "purpose": "掲載項目の参考。今回の開催情報の出典ではない。"
+    },
+    "pamphlet": {
+      "path": "assets/source/pamphlet/テンプレート(182 x 257 mm).pdf",
+      "reviewStatus": "all-page-overview-and-relevant-pages-visually-reviewed",
+      "status": "preparation"
+    }
+  },
+  "yearSource": "https://www.tokuyama.ac.jp/school/images/2026gyouziyoteihyou.pdf",
+  "yearSourcePage": 2,
+  "social": {
+    "instagram": "https://www.instagram.com/toku_kosensai/",
+    "x": "https://x.com/toku_kosensai"
+  },
+  "address": "〒745-8585 山口県周南市学園台",
+  "addressSource": "https://www.tokuyama.ac.jp/campus/areamap.html",
+  "accessSource": "https://www.tokuyama.ac.jp/campus/areamap.html",
+  "pamphlet": {
+    "path": "documents/pamphlet-preparation.pdf",
+    "status": "preparation",
+    "pages": 57,
+    "bytes": 8286954,
+    "source": "assets/source/pamphlet/テンプレート(182 x 257 mm).pdf",
+    "distributionAuthorized": "user:2026-10-08"
+  }
+}

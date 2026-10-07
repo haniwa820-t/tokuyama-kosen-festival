@@ -1,0 +1,98 @@
+import { fireEvent, render, screen, within } from '@testing-library/react'
+import userEvent from '@testing-library/user-event'
+import { describe, expect, it } from 'vitest'
+import App from './App'
+
+describe('高専祭の案内', () => {
+  it('開催日時・最低限の掲載項目・準備版資料を確認できる', () => {
+    render(<App />)
+    expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent('徳山高専')
+    for (const id of ['theme','schedule','main-events','departments','related-events','booths','pamphlet','access','parking','news']) {
+      expect(document.getElementById(id)).toBeInTheDocument()
+    }
+    expect(screen.getByRole('link', { name: /準備版PDFをダウンロード/ })).toHaveAttribute('href', '/tokuyama-kosen-festival/documents/pamphlet-preparation.pdf')
+    expect(screen.getByText(/在校生のみ/)).toBeInTheDocument()
+  })
+
+  it('2日目のステージ日程へ切り替えられる', async () => {
+    const user = userEvent.setup()
+    render(<App />)
+    const schedule = within(document.getElementById('schedule')!)
+    expect(schedule.getByText('カラオケ')).toBeVisible()
+    await user.click(schedule.getByRole('button', { name: '11月1日（日）' }))
+    expect(schedule.getByText('イントロクイズ')).toBeVisible()
+    expect(schedule.queryByText('カラオケ')).not.toBeInTheDocument()
+    await user.click(schedule.getByRole('button', { name: '10月31日（土）' }))
+    expect(schedule.getByText('カラオケ')).toBeVisible()
+  })
+
+  it('模擬店の分類・検索・リセットが連動する', async () => {
+    const user = userEvent.setup()
+    render(<App />)
+    const catalog = within(document.getElementById('booths')!)
+    await user.click(catalog.getByRole('button', { name: '飲食' }))
+    await user.type(catalog.getByRole('searchbox'), 'ワッフル')
+    expect(catalog.getByRole('button', { name: /ワッフル.*詳細を見る/ })).toBeVisible()
+    await user.clear(catalog.getByRole('searchbox'))
+    await user.type(catalog.getByRole('searchbox'), '存在しないお店')
+    expect(catalog.getByText('該当する企画が見つかりませんでした。')).toBeVisible()
+    await user.click(catalog.getByRole('button', { name: '検索条件をリセット' }))
+    expect(catalog.getByRole('button', { name: 'すべて' })).toHaveAttribute('aria-pressed', 'true')
+    await user.click(catalog.getByRole('button', { name: /残り.*見る/ }))
+    expect(catalog.getAllByRole('button', { name: /詳細を見る/ })).toHaveLength(32)
+  })
+
+  it('ポスター詳細を閉じられ、フォーカスが元の企画に戻る', async () => {
+    const user = userEvent.setup()
+    render(<App />)
+    const catalog = within(document.getElementById('booths')!)
+    const opener = catalog.getAllByRole('button', { name: /詳細を見る/ })[0]
+    await user.click(opener)
+    expect(screen.getByRole('dialog')).toBeVisible()
+    await user.keyboard('{Escape}')
+    expect(screen.queryByRole('dialog')).not.toBeInTheDocument()
+    expect(opener).toHaveFocus()
+    await user.click(opener)
+    await user.click(screen.getByRole('button', { name: '詳細を閉じる' }))
+    expect(screen.queryByRole('dialog')).not.toBeInTheDocument()
+  })
+
+  it('詳細の中だけでTabキー移動できる', async () => {
+    const user = userEvent.setup()
+    render(<App />)
+    await user.click(within(document.getElementById('booths')!).getAllByRole('button', { name: /詳細を見る/ })[0])
+    const close = screen.getByRole('button', { name: '詳細を閉じる' })
+    const link = within(screen.getByRole('dialog')).getByRole('link')
+    expect(close).toHaveFocus()
+    await user.keyboard('{Shift>}{Tab}{/Shift}')
+    expect(link).toHaveFocus()
+    await user.keyboard('{Tab}')
+    expect(close).toHaveFocus()
+    await user.keyboard('{Tab}')
+    expect(link).toHaveFocus()
+    await user.keyboard('{Shift>}{Tab}{/Shift}')
+    expect(close).toHaveFocus()
+  })
+
+  it('背景クリックで詳細を閉じ、詳細内の操作では閉じない', async () => {
+    const user = userEvent.setup()
+    render(<App />)
+    await user.click(within(document.getElementById('booths')!).getAllByRole('button', { name: /詳細を見る/ })[0])
+    await user.click(screen.getByRole('dialog'))
+    expect(screen.getByRole('dialog')).toBeVisible()
+    fireEvent.click(screen.getByTestId('dialog-backdrop'))
+    expect(screen.queryByRole('dialog')).not.toBeInTheDocument()
+  })
+
+  it('モバイルのメニューを開閉し、リンク選択で閉じる', async () => {
+    const user = userEvent.setup()
+    render(<App />)
+    await user.click(screen.getByRole('button', { name: 'メニューを開く' }))
+    expect(screen.getByRole('button', { name: 'メニューを閉じる' })).toHaveAttribute('aria-expanded', 'true')
+    await user.click(within(screen.getByRole('navigation', { name: 'メインメニュー' })).getByRole('link', { name: '日程' }))
+    expect(screen.getByRole('button', { name: 'メニューを開く' })).toHaveAttribute('aria-expanded', 'false')
+    await user.click(screen.getByRole('button', { name: 'メニューを開く' }))
+    await user.click(screen.getByRole('button', { name: 'メニューを閉じる' }))
+    expect(screen.getByRole('button', { name: 'メニューを開く' })).toHaveAttribute('aria-expanded', 'false')
+  })
+})

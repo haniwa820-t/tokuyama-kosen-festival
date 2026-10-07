@@ -1,0 +1,234 @@
+{
+  "recordedOn": "2026-10-07",
+  "files": [
+    {
+      "originalPath": "メインポスター.jpg",
+      "path": "assets/source/メインポスター.jpg",
+      "bytes": 209180,
+      "sha256": "6a284b969476bd6706eb9a22117c4c0ee852f8665cd2122949e759d12379ecaf"
+    },
+    {
+      "originalPath": "メインロゴ.jpg",
+      "path": "assets/source/メインロゴ.jpg",
+      "bytes": 58670,
+      "sha256": "14786c420714384d8b4accdf7e2b8174a7625aff83c74a5c12c9e40b9c8cc453"
+    },
+    {
+      "originalPath": "模擬店ポスター/1年.jpeg",
+      "path": "assets/source/模擬店ポスター/1年.jpeg",
+      "bytes": 701280,
+      "sha256": "5fb91a6e1f7cb0ad7ca527012d137c2494614531e8270f25feb6b6a2893e56bd"
+    },
+    {
+      "originalPath": "模擬店ポスター/CA2.png",
+      "path": "assets/source/模擬店ポスター/CA2.png",
+      "bytes": 1891560,
+      "sha256": "61bd602f0f6c927d3a7bd75bc443e7c489ed81ef8077ee0bf0072a0011a44f3e"
+    },
+    {
+      "originalPath": "模擬店ポスター/CA3.jpeg",
+      "path": "assets/source/模擬店ポスター/CA3.jpeg",
+      "bytes": 706948,
+      "sha256": "1316fafa8b2000b45896c8047a7435948792f9dea33b74c19f8d578f4e1644a4"
+    },
+    {
+      "originalPath": "模擬店ポスター/CA4.pdf",
+      "path": "assets/source/模擬店ポスター/CA4.pdf",
+      "bytes": 224693,
+      "sha256": "ca2db559b4c363e448145c92a71737a437abf2c88b8de06412ac15508b842018"
+    },
+    {
+      "originalPath": "模擬店ポスター/CA学科企画.pdf",
+      "path": "assets/source/模擬店ポスター/CA学科企画.pdf",
+      "bytes": 127729,
+      "sha256": "6f069784f8148bb21b1292776742b70dc0eedc3572b59e9d39e95b4f961b02fc"
+    },
+    {
+      "originalPath": "模擬店ポスター/IE2.pdf",
+      "path": "assets/source/模擬店ポスター/IE2.pdf",
+      "bytes": 1245093,
+      "sha256": "fc68257ce899fe3795f848dd00b2748c1f8b1b74f42d7d978c2a9d8352184bb2"
+    },
+    {
+      "originalPath": "模擬店ポスター/IE3.png",
+      "path": "assets/source/模擬店ポスター/IE3.png",
+      "bytes": 2286374,
+      "sha256": "d46337532bc8c87541f56d973365b689e8fce7c9cb688e6c991484ee417cc232"
+    },
+    {
+      "originalPath": "模擬店ポスター/IE4.jpg",
+      "path": "assets/source/模擬店ポスター/IE4.jpg",
+      "bytes": 592695,
+      "sha256": "5a0a39a744505da777aa3d19c2643d9aab8e2b6507818bc9085daf421fe3c709"
+    },
+    {
+      "originalPath": "模擬店ポスター/IE学科企画.pdf",
+      "path": "assets/source/模擬店ポスター/IE学科企画.pdf",
+      "bytes": 422480,
+      "sha256": "394e03c84b72dfd29421629d0103a251e37d14fa91f4474bb8f60b98b821fc29"
+    },
+    {
+      "originalPath": "模擬店ポスター/ME2.pdf",
+      "path": "assets/source/模擬店ポスター/ME2.pdf",
+      "bytes": 1184823,
+      "sha256": "bb2a22949dcd7059b728bfb743044a409f4cd6c53904c84d9412f906221d2424"
+    },
+    {
+      "originalPath": "模擬店ポスター/ME3.jpg",
+      "path": "assets/source/模擬店ポスター/ME3.jpg",
+      "bytes": 848741,
+      "sha256": "ae3d3fa53244a5a6fea90735c1bcbab09b7125dc61f3b8b6fa2ea39228ad9353"
+    },
+    {
+      "originalPath": "模擬店ポスター/ME4.pdf",
+      "path": "assets/source/模擬店ポスター/ME4.pdf",
+      "bytes": 203131,
+      "sha256": "ac78eccc3061016faa7e102acc6da0c05c3a3cfaf5bd73ee56b2836679a72414"
+    },
+    {
+      "originalPath": "模擬店ポスター/ME学科企画.pdf",
+      "path": "assets/source/模擬店ポスター/ME学科企画.pdf",
+      "bytes": 1237243,
+      "sha256": "a90c2f3d2fcb15809505183eb0d844490e5e5018d9d7e77f7be062f8bae3d3dd"
+    },
+    {
+      "originalPath": "模擬店ポスター/アーチェリー部.jpeg",
+      "path": "assets/source/模擬店ポスター/アーチェリー部.jpeg",
+      "bytes": 214792,
+      "sha256": "5e934116a9b23de5ecabdebce37e4fc120037f2b2d8ef04d89b73c9a66438feb"
+    },
+    {
+      "originalPath": "模擬店ポスター/サッカー部.pdf",
+      "path": "assets/source/模擬店ポスター/サッカー部.pdf",
+      "bytes": 721020,
+      "sha256": "886cb3067048045108911980c753036741e0ca3757cdf2198462ce3fa4a4e83b"
+    },
+    {
+      "originalPath": "模擬店ポスター/デザイン研究部_フルーツポンチ.png",
+      "path": "assets/source/模擬店ポスター/デザイン研究部_フルーツポンチ.png",
+      "bytes": 1043059,
+      "sha256": "ef7a70ecfe5a546a0246c0c6bb80686c35622ac9c11f438d90799bd3d8147b1f"
+    },
+    {
+      "originalPath": "模擬店ポスター/デザイン研究部_ランプ展示.png",
+      "path": "assets/source/模擬店ポスター/デザイン研究部_ランプ展示.png",
+      "bytes": 314526,
+      "sha256": "ba720dc68f113de90827b73599fdcc24aaf80a331303d8059414c7e903a32fd9"
+    },
+    {
+      "originalPath": "模擬店ポスター/ニューメディア部.jpg",
+      "path": "assets/source/模擬店ポスター/ニューメディア部.jpg",
+      "bytes": 369216,
+      "sha256": "7b9c37847978d507d57ceb286531fd3c950b40a9c7a852d305b26501b6e4b17e"
+    },
+    {
+      "originalPath": "模擬店ポスター/ハンドボール部.png",
+      "path": "assets/source/模擬店ポスター/ハンドボール部.png",
+      "bytes": 237969,
+      "sha256": "11b16ffb04361e67c32abf6341167ba0130a09db5472814aa7c61ee11ad6fe96"
+    },
+    {
+      "originalPath": "模擬店ポスター/バドミントン部.pdf",
+      "path": "assets/source/模擬店ポスター/バドミントン部.pdf",
+      "bytes": 395852,
+      "sha256": "54286e58bba3050688bcfb814748614962a68377517dc9616de05b24d851d569"
+    },
+    {
+      "originalPath": "模擬店ポスター/バレー部_ストラックアウト.png",
+      "path": "assets/source/模擬店ポスター/バレー部_ストラックアウト.png",
+      "bytes": 2242997,
+      "sha256": "5d83b85b2a63b5f4932df93df069c898d8f1c77b7666232ff8ee068837f6fae3"
+    },
+    {
+      "originalPath": "模擬店ポスター/バレー部_焼きそば.png",
+      "path": "assets/source/模擬店ポスター/バレー部_焼きそば.png",
+      "bytes": 299480,
+      "sha256": "3e3811b679c9c6f5731150b2636757dd1e1fd1c039bdd0142a4f78ab883b943e"
+    },
+    {
+      "originalPath": "模擬店ポスター/メカトロシステム部.png",
+      "path": "assets/source/模擬店ポスター/メカトロシステム部.png",
+      "bytes": 1509622,
+      "sha256": "f8dc5d047460fd7bc4a4bad423aaf1cb9c9bdd32e692e78bd0a064ccf386fd99"
+    },
+    {
+      "originalPath": "模擬店ポスター/卓球部.jpeg",
+      "path": "assets/source/模擬店ポスター/卓球部.jpeg",
+      "bytes": 697726,
+      "sha256": "286f6d75d6b4853c599373b5b851f94c1b0a9940685a9d0d027740217a431032"
+    },
+    {
+      "originalPath": "模擬店ポスター/吹奏楽部.jpg",
+      "path": "assets/source/模擬店ポスター/吹奏楽部.jpg",
+      "bytes": 596417,
+      "sha256": "1a6fda224d64916a0502d1631ab1a39f5c3a0513427ace0bf630822e0b89af1c"
+    },
+    {
+      "originalPath": "模擬店ポスター/奥藤研究室.png",
+      "path": "assets/source/模擬店ポスター/奥藤研究室.png",
+      "bytes": 1769350,
+      "sha256": "eb9435996d4c1f37eebad2b1e6071286420feaf28c4167918407942745be7296"
+    },
+    {
+      "originalPath": "模擬店ポスター/女子バスケットボール部.png",
+      "path": "assets/source/模擬店ポスター/女子バスケットボール部.png",
+      "bytes": 3562757,
+      "sha256": "b6bd779f7de933eae46658d3a9cda4bf81a44878a529470c02c50f8ac0e1f712"
+    },
+    {
+      "originalPath": "模擬店ポスター/硬式野球部.pdf",
+      "path": "assets/source/模擬店ポスター/硬式野球部.pdf",
+      "bytes": 192782,
+      "sha256": "e6678176b3f8132f3576b5cf7da47f17d9f3f517998b97c74df23598619f4027"
+    },
+    {
+      "originalPath": "模擬店ポスター/総合文化部（写真）_ポップコーン.png",
+      "path": "assets/source/模擬店ポスター/総合文化部（写真）_ポップコーン.png",
+      "bytes": 598046,
+      "sha256": "96e916c4b9c69e60c5f8909ed43982f7f4a33f954d08c372a3be994be8823032"
+    },
+    {
+      "originalPath": "模擬店ポスター/総合文化部（写真）_作品展示.jpeg",
+      "path": "assets/source/模擬店ポスター/総合文化部（写真）_作品展示.jpeg",
+      "bytes": 348882,
+      "sha256": "dc6514ae1c0cc2c9ea0247096f34b4180de6048c2084541b7cf351f7919aba10"
+    },
+    {
+      "originalPath": "模擬店ポスター/総合文化部（文芸）.pdf",
+      "path": "assets/source/模擬店ポスター/総合文化部（文芸）.pdf",
+      "bytes": 839434,
+      "sha256": "eb615e0d5501584c8e0f6cdb92af56d11c7f9491e3f060d86d90624eb87f0c21"
+    },
+    {
+      "originalPath": "模擬店ポスター/総合文化部（映像）.png",
+      "path": "assets/source/模擬店ポスター/総合文化部（映像）.png",
+      "bytes": 1833918,
+      "sha256": "e46e72c8550bbc6233cdb9952908040af2265c29f80a7bfd4cddd41a3e1de90f"
+    },
+    {
+      "originalPath": "模擬店ポスター/総合文化部（美術）.png",
+      "path": "assets/source/模擬店ポスター/総合文化部（美術）.png",
+      "bytes": 1572236,
+      "sha256": "7c41b4f8e2e831de0cdb3dbac6f455f6a31947515ddd6607dd0d0c69cd781c84"
+    },
+    {
+      "originalPath": "模擬店ポスター/茶道部.pdf",
+      "path": "assets/source/模擬店ポスター/茶道部.pdf",
+      "bytes": 574606,
+      "sha256": "f737068df29aa1e8775b56f4c3a2ddc4f2bda3a8dbdea7297c5ccbde71a05a27"
+    },
+    {
+      "originalPath": "模擬店ポスター/陸上競技部.png",
+      "path": "assets/source/模擬店ポスター/陸上競技部.png",
+      "bytes": 41911,
+      "sha256": "d2b948ff3d4886e04350aec59b26a5abed9397b403b237078edbc13049748609"
+    },
+    {
+      "originalPath": "/Users/yamanetakeru/Downloads/テンプレート(182 x 257 mm).pdf",
+      "path": "assets/source/pamphlet/テンプレート(182 x 257 mm).pdf",
+      "bytes": 8286954,
+      "sha256": "e1245a256cd6932d563f2f72f1c7f90dd034fa2ccaa8067902bcb69af0c80675",
+      "importedOn": "2026-10-08"
+    }
+  ]
+}

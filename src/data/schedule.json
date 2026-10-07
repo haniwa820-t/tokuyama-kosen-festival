@@ -1,0 +1,84 @@
+[
+  {
+    "day": 0,
+    "title": "カラオケ",
+    "start": "10:00",
+    "end": "11:00",
+    "id": "stage-1",
+    "venue": "第一体育館",
+    "source": "pamphlet:p10",
+    "status": "planned"
+  },
+  {
+    "day": 0,
+    "title": "吹奏楽部",
+    "start": "11:15",
+    "end": "12:15",
+    "id": "stage-2",
+    "venue": "第一体育館",
+    "source": "pamphlet:p10",
+    "status": "planned"
+  },
+  {
+    "day": 0,
+    "title": "高専の顔 インタビュー",
+    "start": "13:00",
+    "end": "13:45",
+    "id": "stage-3",
+    "venue": "第一体育館",
+    "source": "pamphlet:p10",
+    "status": "planned"
+  },
+  {
+    "day": 0,
+    "title": "マッスルグランプリ",
+    "start": "14:00",
+    "end": "15:30",
+    "id": "stage-4",
+    "venue": "第一体育館",
+    "source": "pamphlet:p10",
+    "status": "planned"
+  },
+  {
+    "day": 1,
+    "title": "イントロクイズ",
+    "start": "10:00",
+    "end": "10:45",
+    "id": "stage-5",
+    "venue": "第一体育館",
+    "source": "pamphlet:p12",
+    "status": "planned"
+  },
+  {
+    "day": 1,
+    "title": "ライブ",
+    "start": "11:00",
+    "end": "12:00",
+    "id": "stage-6",
+    "venue": "第一体育館",
+    "source": "pamphlet:p12",
+    "status": "planned"
+  },
+  {
+    "day": 1,
+    "title": "ライブ",
+    "start": "13:00",
+    "end": "15:00",
+    "id": "stage-7",
+    "venue": "第一体育館",
+    "source": "pamphlet:p12",
+    "status": "planned"
+  },
+  {
+    "day": 1,
+    "title": "後夜祭",
+    "start": "16:30",
+    "end": "18:30",
+    "note": "在校生のみ参加可能",
+    "id": "stage-8",
+    "venue": "会場は当日の在校生向け案内をご確認ください",
+    "source": "pamphlet:p12",
+    "status": "planned",
+    "audienceSource": "user:2026-10-08"
+  }
+]

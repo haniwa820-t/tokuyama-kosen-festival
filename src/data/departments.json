@@ -1,0 +1,35 @@
+[
+  {
+    "id": "me",
+    "code": "ME",
+    "organization": "機械電気工学科",
+    "title": "からくり展示",
+    "description": "スライダクラン機構、テオヤンセン、ホーキンスリンク機構などを展示します。",
+    "venue": "実習工場エリア",
+    "days": "10月31日（土）・11月1日（日）",
+    "sourceNumber": 13,
+    "source": "assets/source/模擬店ポスター/ME学科企画.pdf"
+  },
+  {
+    "id": "ie",
+    "code": "IE",
+    "organization": "情報電子工学科",
+    "title": "謎解キAI 暴走事件",
+    "description": "ICT教室から始まる、周遊型の謎解き企画です。",
+    "venue": "教室・管理棟1階 ICT教室",
+    "days": "10月31日（土）9:45〜15:30／11月1日（日）9:45〜15:00",
+    "sourceNumber": 9,
+    "source": "assets/source/模擬店ポスター/IE学科企画.pdf"
+  },
+  {
+    "id": "ca",
+    "code": "CA",
+    "organization": "土木建築工学科",
+    "title": "CAすぎるよ展 ＆ CA作品展",
+    "description": "CAの視点を集めた展示と作品展。鉄筋の結束・加工体験、イライラ棒なども予定しています。",
+    "venue": "専門棟2階 共同研究室",
+    "days": "11月1日（日）限定開催",
+    "sourceNumber": 5,
+    "source": "assets/source/模擬店ポスター/CA学科企画.pdf"
+  }
+]

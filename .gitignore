@@ -1,0 +1,30 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Node / build / verification
+node_modules/
+dist/
+coverage/
+.vite/
+*.tsbuildinfo
+playwright-report/
+test-results/
+
+# Local secrets and configuration
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
+npm-debug.log*
+
+# Temporary files
+*.tmp
+*.swp
+
+# Local document renders and inspection output
+tmp/
+.cache/
+AGENTS.md
