@@ -207,7 +207,7 @@ describe('ホームへの導線とメインロゴ', () => {
       within(brand).getByRole('img', { name: '徳山高専 高専祭 メインロゴ' }),
     ).toHaveAttribute('src', '/tokuyama-kosen-festival/images/echo-logo.webp')
   })
-  it('ホームのメニューに現在地を示し、提供ロゴを冒頭に表示する', () => {
+  it('ホームの現在地とEchoのタイトル、ヘッダーの提供ロゴを表示する', () => {
     render(<App />)
     expect(
       within(
@@ -215,9 +215,12 @@ describe('ホームへの導線とメインロゴ', () => {
       ).getByRole('link', { name: 'ホーム' }),
     ).toHaveAttribute('aria-current', 'page')
     expect(
-      within(document.getElementById('top')!).getByRole('img', {
-        name: 'メインロゴ Echo あの感動をもう一度',
-      }),
-    ).toBeVisible()
+      within(document.getElementById('top')!).getByText('Echo'),
+    ).toHaveTextContent('Echo.')
+    expect(
+      within(
+        screen.getByRole('link', { name: '徳山高専 高専祭 ホームへ戻る' }),
+      ).getByRole('img'),
+    ).toHaveAttribute('src', '/tokuyama-kosen-festival/images/echo-logo.webp')
   })
 })

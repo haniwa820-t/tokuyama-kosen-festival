@@ -66,7 +66,7 @@ for (const b of banners) {
   assert.equal(new URL(b.url).protocol, 'https:')
   assert.equal(b.imageStatus, 'sample')
   const image = await readFile(`public/${b.image}`, 'utf8')
-  assert(image.includes('SAMPLE BANNER'))
+  assert(image.includes('画像差し替え用サンプル'))
   assert(!image.includes('<script') && !image.includes('href='))
 }
 console.log(

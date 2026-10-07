@@ -5,7 +5,6 @@ import { assetUrl } from '../lib/catalog'
 import { sectionUrl } from '../lib/pages'
 import BoothCatalog from '../components/BoothCatalog'
 import Schedule from '../components/Schedule'
-import Logo from '../components/Logo'
 function SectionTitle({ children }: { children: React.ReactNode }) {
   return (
     <div className="section-title">
@@ -17,29 +16,33 @@ function SectionTitle({ children }: { children: React.ReactNode }) {
 export function TopSection() {
   return (
     <section id="top" className="hero">
+      <div className="hero-rings" aria-hidden="true" />
       <div className="hero-inner">
         <div className="hero-copy">
-          <p className="hero-year">2026</p>
+          <p className="hero-year">TOKUYAMA KOSEN FESTIVAL 2026</p>
           <h1>
             第52回 <span>徳山高専 高専祭</span>
           </h1>
-          <Logo
-            className="hero-main-logo"
-            alt="メインロゴ Echo あの感動をもう一度"
-          />
+          <p className="echo-word" aria-hidden="true">
+            Echo<span>.</span>
+          </p>
           <p className="hero-tagline">あの感動をもう一度</p>
           <div className="hero-dates">
-            {festival.days.map((d) => (
+            {festival.days.map((d, index) => (
               <div className="hero-date" key={d.day}>
+                <span className="day-label">DAY 0{index + 1}</span>
                 <strong>
                   {d.month}
                   <span>/</span>
                   {String(d.day).padStart(2, '0')}
                 </strong>
                 <div>
-                  <b>（{d.weekday}）</b>
+                  <b>
+                    {d.weekday === '土' ? 'SAT' : 'SUN'}
+                    <span>（{d.weekday}）</span>
+                  </b>
                   <time>
-                    {d.opensAt}〜{d.closesAt}
+                    {d.opensAt} — {d.closesAt}
                   </time>
                 </div>
               </div>
@@ -49,7 +52,7 @@ export function TopSection() {
             徳山工業高等専門学校<span>山口県周南市学園台</span>
           </p>
           <a className="button" href={sectionUrl('schedule')}>
-            2日間の予定を見る <span>→</span>
+            2日間の予定を見る <span>↓</span>
           </a>
         </div>
         <figure className="hero-poster">

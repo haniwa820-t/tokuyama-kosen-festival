@@ -148,21 +148,7 @@ test('メインロゴが表示され、各画面のメニューからホーム�
   expect((await home.boundingBox())!.height).toBeGreaterThanOrEqual(44)
   await home.click()
   await expect(page).toHaveURL(/\/tokuyama-kosen-festival\/$/)
-  await expect(
-    page.getByRole('img', {
-      name: 'メインロゴ Echo あの感動をもう一度',
-      exact: true,
-    }),
-  ).toBeVisible()
-  expect(
-    await page.evaluate(async () => {
-      await document.fonts.ready
-      return [...document.fonts].some(
-        (font) =>
-          font.family.includes('Festival Mincho') && font.status === 'loaded',
-      )
-    }),
-  ).toBe(true)
+  await expect(page.getByText('Echo.', { exact: true })).toBeVisible()
   for (const width of [320, 768, 1024, 1440]) {
     await page.setViewportSize({ width, height: 900 })
     expect(

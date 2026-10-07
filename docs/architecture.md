@@ -31,7 +31,7 @@ SSRの時計は固定の開催日表示にし、ブラウザーで現在時刻�
 - `src/data/`：出典を含む開催情報。
 - `src/App.tsx` / `src/lib/pages.ts`：ページ構成・階層。`src/pages/ContentSections.tsx`：掲載本文。
 - `src/components/`：日程と企画検索、キーボード操作可能な詳細画面。
-- `src/styles/tokens.css`：役割別の色・書体・余白・状態。`src/styles/global.css`：部品の適用とモバイル対応。見出し用フォントは`public/fonts/`から自前配信し、通常ビルドで外部取得しない。要件は`docs/design-system.md`。
+- `src/styles/tokens.css`：役割別の色・書体・余白・状態。`src/styles/global.css`：部品の適用とモバイル対応。日本語は端末標準ゴシック、追加Webフォントなし。要件は`docs/design-system.md`。
 - `assets/source/`：提供原素材とチェックサム。
 - `public/`：WebPに最適化した画像、会場図、変更していない準備版PDF。
 - `scripts/prepare-assets.mjs`：加工済み画像の再生成（元PDFのローカルレンダーが必要）。
@@ -54,7 +54,7 @@ PagesのSourceはGitHub Actionsを使用する。公開状況はREADMEを参照�
 
 ## 検証
 
-`npm run check`：型、lint、39件の単体・画面操作テスト、カバレッジ80%以上、素材・出典確認、12組の配色コントラスト、ビルド、10件のHTML（9ページ＋404）の内部リンク・画像・配布資料・metadata検証。
+`npm run check`：型、lint、41件の単体・画面操作テスト、カバレッジ80%以上、素材・出典確認、13組の配色コントラスト、ビルド、10件のHTML（9ページ＋404）の内部リンク・画像・配布資料・metadata検証。
 `npm run test:e2e`：2画面サイズで計16件。日程、検索、保存の再読込、おまかせ、詳細、30スポンサー、PDF、地図、全階層の直接URL・再読込、旧URL、JavaScript無効、動きを減らす設定、ホームへのメニュー・メインロゴ、320〜1440pxの横はみ出し、画像とブラウザーエラーを確認する。
 
 参考公式資料：[Viteの静的公開](https://vite.dev/guide/static-deploy.html#github-pages)、[GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages)、[React hydrateRoot](https://react.dev/reference/react-dom/client/hydrateRoot)。

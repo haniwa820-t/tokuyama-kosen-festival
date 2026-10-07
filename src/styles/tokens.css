@@ -1,25 +1,28 @@
-/* Echo: colors take their roles from the supplied main logo. */
+/* Echo: navy type, a pale blue hero and paper surfaces from the approved home. */
 :root {
-  --color-text: #193247;
+  --color-text: #0b315b;
   --color-text-muted: #526577;
-  --color-surface: #ffffff;
-  --color-surface-subtle: #f4f7f9;
-  --color-surface-blue: #e8f3f8;
-  --color-surface-warm: #fff3d4;
-  --color-action: #005d85;
-  --color-action-hover: #004461;
+  --color-surface: #f7f3ec;
+  --color-paper: #ffffff;
+  --color-surface-subtle: #ede9e2;
+  --color-surface-blue: #e5ebf5;
+  --color-surface-warm: #f4e8d2;
+  --color-hero: #ececf3;
+  --color-ring: #b2c1e2;
+  --color-action: #173456;
+  --color-action-hover: #0b2543;
   --color-on-action: #ffffff;
-  --color-accent: #ef9a35;
-  --color-gold: #f6cc60;
+  --color-accent: #b64c79;
+  --color-highlight: #f2b6cf;
+  --color-echo-dot: #5387d9;
   --color-warning-text: #843d16;
   --color-focus: #b04718;
-  --color-border: #cad4dc;
+  --color-border: #b8c0c9;
   --color-control-border: #718393;
   --color-backdrop: #102d45cc;
   --color-disabled-text: #526577;
   --color-disabled-bg: #e7edf1;
   --font-body: 'Hiragino Kaku Gothic ProN', 'Yu Gothic', Meiryo, sans-serif;
-  --font-heading: 'Festival Mincho', 'Hiragino Mincho ProN', 'Yu Mincho', serif;
   --font-numerals: Arial, sans-serif;
   --text-sm: 0.875rem;
   --text-body: 1rem;
@@ -37,12 +40,13 @@
   --space-12: 48px;
   --space-16: 64px;
   --space-20: 80px;
-  --radius-control: 6px;
-  --radius-panel: 12px;
+  --radius-control: 0;
+  --radius-panel: 0;
   --control-height: 48px;
   --content-width: 1200px;
   --motion-fast: 160ms;
-  --motion-enter: 360ms;
+  --motion-enter: 640ms;
+  --motion-ease: cubic-bezier(0.22, 1, 0.36, 1);
   --shadow-overlay: 0 8px 32px #102d4526;
   --shadow-print: 8px 12px 0 #19324714;
 }
