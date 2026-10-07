@@ -1,3 +1,6 @@
 import { renderToString } from 'react-dom/server'
 import App from './App'
-export function render() { return renderToString(<App />) }
+export { pages } from './lib/pages'
+export function render(pageId: string) {
+  return renderToString(<App pageId={pageId} />)
+}

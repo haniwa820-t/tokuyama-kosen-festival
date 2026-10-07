@@ -6,13 +6,30 @@ CIはNode.js 24 LTS（`.nvmrc`）。依存関係は`package-lock.json`で固定�
 
 ## 表示と静的生成
 
-ページ内アンカーで各案内に移動する1ページ構成。GitHub Pagesの直接アクセス・再読込で404になるSPAルーティングを避ける。
-`src/entry-server.tsx`でReactをHTML化し、`scripts/prerender.mjs`がビルド済みHTMLへ埋め込む。
-JavaScriptが無効でも開催日時と主要案内・PDFリンクを読める。日程の切り替え、全企画の展開、検索、ポスター詳細はReactで操作する。
+9ページの階層を持つ静的サイト。通常のリンクで移動し、各ディレクトリへindex.htmlを生成するため、GitHub Pagesの直接アクセス・再読込に対応する。
+
+| URL（リポジトリのbaseに続く部分） | 内容 |
+| --- | --- |
+| `/` | 開催概要、カウントダウン、テーマ、お知らせ、スポンサー6枠 |
+| `/schedule/` | 2日間の予定 |
+| `/events/` | メイン企画、学科企画、併催企画 |
+| `/events/booths/` | 32企画の検索、保存、おまかせ、ポスター詳細 |
+| `/guide/` | 来場ガイド入口 |
+| `/guide/map/` | 会場・屋内外の地図 |
+| `/guide/access/` | 交通・駐車場 |
+| `/guide/pamphlet/` | 準備版PDF |
+| `/sponsors/` | サンプル画像30枠と準備版の協賛一覧 |
+
+共通メニュー、パンくず、親・関連ページへのリンク、ページ固有のtitle・description・canonical・OG URL、404.htmlとsitemap.xmlを生成する。
+旧URLの`#booths`等は対応する階層へ移動する。
+`src/entry-server.tsx`でReactをHTML化し、`scripts/prerender.mjs`が各ページのHTMLへ埋め込む。
+JavaScriptが無効でも開催日時と主要案内・PDFリンクを読める。日程の切り替え、全企画の展開、検索、保存・おまかせ、ポスター詳細はReactで操作する。
+保存はlocalStorage内の企画IDだけで、別タブとの同期と保存拒否・壊れたデータに対応する。カウントダウンは開催情報から日本時間で算出し、1日目終了後は2日目の開始を表示、一般公開終了後は終了表示に切り替える。
+SSRの時計は固定の開催日表示にし、ブラウザーで現在時刻へ更新してhydrationの不一致を防ぐ。フェードインは画面外の要素だけに適用し、JavaScript無効・動きを減らす設定でも本文を隠さない。
 検索語はNFKC正規化して文字列として照合し、サーバーへ送信・保存しない。外部スクリプトやSNSの自動埋め込みは使用しない。
 
 - `src/data/`：出典を含む開催情報。
-- `src/App.tsx`：ページ構成、来場案内。
+- `src/App.tsx` / `src/lib/pages.ts`：ページ構成・階層。`src/pages/ContentSections.tsx`：掲載本文。
 - `src/components/`：日程と企画検索、キーボード操作可能な詳細画面。
 - `src/styles/global.css`：独自デザインとモバイル対応。外部Webフォントなし。
 - `assets/source/`：提供原素材とチェックサム。
@@ -37,7 +54,7 @@ PagesのSourceはGitHub Actionsを使用する。公開状況はREADMEを参照�
 
 ## 検証
 
-`npm run check`：型、lint、13件の単体・画面操作テスト、カバレッジ80%以上、素材・出典確認、ビルド。
-`npm run test:e2e`：2画面サイズで日程、検索、詳細、PDF、地図、直接URL、JavaScript無効、横はみ出し、画像とブラウザーエラーを確認する。
+`npm run check`：型、lint、37件の単体・画面操作テスト、カバレッジ80%以上、素材・出典確認、ビルド、10件のHTML（9ページ＋404）の内部リンク・画像・配布資料・metadata検証。
+`npm run test:e2e`：2画面サイズで計14件。日程、検索、保存の再読込、おまかせ、詳細、30スポンサー、PDF、地図、全階層の直接URL・再読込、旧URL、JavaScript無効、動きを減らす設定、横はみ出し、画像とブラウザーエラーを確認する。
 
 参考公式資料：[Viteの静的公開](https://vite.dev/guide/static-deploy.html#github-pages)、[GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages)、[React hydrateRoot](https://react.dev/reference/react-dom/client/hydrateRoot)。

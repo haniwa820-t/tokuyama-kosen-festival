@@ -36,11 +36,7 @@
       "source": "assets/source/メインポスター.jpg"
     }
   ],
-  "programCategories": [
-    "クラス・部活ごとの模擬店",
-    "学科企画",
-    "ステージ企画"
-  ],
+  "programCategories": ["クラス・部活ごとの模擬店", "学科企画", "ステージ企画"],
   "programCategoriesSource": "assets/source/メインポスター.jpg",
   "stampRally": {
     "announced": true,

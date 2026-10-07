@@ -1,50 +1,129 @@
 import { expect, test } from '@playwright/test'
-
-test('開催情報が読み込め、日程を切り替えられる', async ({ page }) => {
+const routes = [
+  '',
+  'schedule/',
+  'events/',
+  'events/booths/',
+  'guide/',
+  'guide/map/',
+  'guide/access/',
+  'guide/pamphlet/',
+  'sponsors/',
+]
+test('ホームから日程へ移動し2日目へ切り替えられる', async ({ page }) => {
   await page.goto('./')
-  await expect(page.getByRole('heading', { level: 1 })).toContainText('徳山高専')
-  await page.locator('#schedule').getByRole('button', { name: '11月1日（日）' }).click()
+  await expect(page.getByRole('heading', { level: 1 })).toContainText(
+    '徳山高専',
+  )
+  if (await page.getByRole('button', { name: 'メニューを開く' }).isVisible())
+    await page.getByRole('button', { name: 'メニューを開く' }).click()
+  await page
+    .getByRole('navigation', { name: 'メインメニュー' })
+    .getByRole('link', { name: '日程', exact: true })
+    .click()
+  await expect(page).toHaveURL(/\/schedule\/$/)
+  await page
+    .locator('#schedule')
+    .getByRole('button', { name: '11月1日（日）' })
+    .click()
   await expect(page.locator('#schedule')).toContainText('イントロクイズ')
   await expect(page.locator('#schedule')).toContainText('在校生のみ')
 })
-
-test('模擬店を検索しポスターを確認できる', async ({ page }) => {
-  await page.goto('./#booths')
+test('検索・保存・おまかせ・ポスター詳細を使える', async ({ page }) => {
+  await page.goto('./events/booths/')
   await page.getByRole('searchbox').fill('ワッフル')
-  await page.getByRole('button', { name: /ワッフル.*詳細を見る/ }).click()
+  await page
+    .getByRole('button', { name: /ワッフル.*行きたい企画に保存/ })
+    .click()
+  await page.reload()
+  await page.getByRole('button', { name: /保存した企画だけ/ }).click()
+  await expect(page.getByRole('button', { name: /詳細を見る/ })).toHaveCount(1)
+  await page.getByRole('button', { name: 'おまかせで1企画選ぶ' }).click()
   const dialog = page.getByRole('dialog')
   await expect(dialog).toContainText('吹奏楽部')
   await expect(dialog.getByRole('img')).toBeVisible()
   await page.keyboard.press('Escape')
   await expect(dialog).not.toBeVisible()
 })
-
-test('直接リンクの再読込・地図・準備版PDFが使える', async ({ page, request }) => {
-  await page.goto('./#access')
-  await page.reload()
+test('深いページが直接アクセスと再読込で表示される', async ({
+  page,
+  request,
+}) => {
+  for (const route of routes) {
+    const response = await page.goto(`./${route}`)
+    expect(response?.status()).toBe(200)
+    await page.reload()
+    await expect(page.getByRole('heading', { level: 1 })).toBeVisible()
+    if (route)
+      await expect(
+        page.getByRole('navigation', { name: 'パンくず' }),
+      ).toBeVisible()
+    expect(
+      await page.evaluate(
+        () => document.documentElement.scrollWidth <= window.innerWidth,
+      ),
+    ).toBe(true)
+  }
+  await page.goto('./guide/access/')
   await expect(page.locator('#access')).toContainText('大学高専下')
-  const response = await request.get('documents/pamphlet-preparation.pdf')
-  expect(response.ok()).toBe(true)
-  expect(response.headers()['content-type']).toContain('application/pdf')
-  await expect(page.locator('#campus-map .campus-figure img')).toBeVisible()
+  await page.goto('./guide/map/')
+  await expect(page.locator('.campus-figure img')).toBeVisible()
+  const pdf = await request.get('documents/pamphlet-preparation.pdf')
+  expect(pdf.ok()).toBe(true)
+  expect(pdf.headers()['content-type']).toContain('application/pdf')
 })
-
-test('JavaScriptなしでも開催情報と主要リンクを読める', async ({ browser, baseURL }) => {
+test('スポンサー30枚の画像リンクが表示される', async ({ page }) => {
+  await page.goto('./sponsors/')
+  const links = page.locator('#sponsor-banners a')
+  await expect(links).toHaveCount(30)
+  for (const link of await links.all()) {
+    expect(await link.getAttribute('href')).toMatch(/^https:\/\//)
+    await expect(link).toHaveAttribute('target', '_blank')
+  }
+  await page.locator('#sponsor-banners').scrollIntoViewIfNeeded()
+  await expect(links.first().getByRole('img')).toBeVisible()
+})
+test('JavaScriptなしでも階層とPDFリンクを使える', async ({
+  browser,
+  baseURL,
+}) => {
   const context = await browser.newContext({ javaScriptEnabled: false })
   const page = await context.newPage()
-  await page.goto(baseURL!)
-  await expect(page.getByRole('heading', { level: 1 })).toContainText('徳山高専')
-  await expect(page.getByRole('link', { name: /準備版PDFをダウンロード/ })).toBeVisible()
+  await page.goto(baseURL! + 'guide/')
+  await page.getByRole('link', { name: /PAMPHLET パンフレット/ }).click()
+  await expect(
+    page.getByRole('link', { name: /準備版PDFをダウンロード/ }),
+  ).toBeVisible()
   await context.close()
 })
-
-test('横にはみ出さず、読み込み失敗した画像がない', async ({ page }) => {
+test('動きを減らす設定でも内容を読め、時計や画像にエラーがない', async ({
+  page,
+}) => {
   const errors: string[] = []
-  page.on('pageerror', error => errors.push(error.message))
+  page.on('pageerror', (error) => errors.push(error.message))
+  await page.clock.install({ time: new Date('2026-10-08T12:00:00+09:00') })
+  await page.emulateMedia({ reducedMotion: 'reduce' })
   await page.goto('./')
-  await page.locator('#pamphlet').scrollIntoViewIfNeeded()
-  await page.locator('#top').scrollIntoViewIfNeeded()
-  expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true)
-  expect(await page.locator('img').evaluateAll(images => images.filter(img => img instanceof HTMLImageElement && img.complete && img.naturalWidth === 0).length)).toBe(0)
+  await expect(page.locator('.countdown-digits')).toBeVisible()
+  await page.locator('#sponsors').scrollIntoViewIfNeeded()
+  await expect(page.locator('#sponsors h2')).toBeVisible()
+  expect(
+    await page
+      .locator('img')
+      .evaluateAll(
+        (imgs) =>
+          imgs.filter(
+            (img) =>
+              img instanceof HTMLImageElement &&
+              img.complete &&
+              img.naturalWidth === 0,
+          ).length,
+      ),
+  ).toBe(0)
   expect(errors).toEqual([])
+})
+test('旧ページ内リンクから新しい階層に移動できる', async ({ page }) => {
+  await page.goto('./#booths')
+  await expect(page).toHaveURL(/\/events\/booths\/#booths$/)
+  await expect(page.getByRole('searchbox')).toBeVisible()
 })

@@ -5,7 +5,15 @@ import refresh from 'eslint-plugin-react-refresh'
 import globals from 'globals'
 
 export default tseslint.config(
-  { ignores: ['dist/**', 'tmp/**', 'coverage/**', 'playwright-report/**', 'test-results/**'] },
+  {
+    ignores: [
+      'dist/**',
+      'tmp/**',
+      'coverage/**',
+      'playwright-report/**',
+      'test-results/**',
+    ],
+  },
   js.configs.recommended,
   ...tseslint.configs.recommended,
   {
@@ -15,6 +23,12 @@ export default tseslint.config(
   {
     files: ['src/**/*.{ts,tsx}'],
     plugins: { 'react-hooks': hooks, 'react-refresh': refresh },
-    rules: { ...hooks.configs.recommended.rules, 'react-refresh/only-export-components': ['warn', { allowConstantExport: true }] },
+    rules: {
+      ...hooks.configs.recommended.rules,
+      'react-refresh/only-export-components': [
+        'warn',
+        { allowConstantExport: true },
+      ],
+    },
   },
 )
