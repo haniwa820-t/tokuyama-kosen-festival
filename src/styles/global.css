@@ -9,7 +9,7 @@
   color: var(--color-text);
   background: var(--color-surface);
   font-synthesis: none;
-  font-weight: 400;
+  font-weight: var(--weight-regular);
   line-height: 1.8;
 }
 html {
@@ -60,8 +60,12 @@ h1,
 h2,
 h3 {
   line-height: 1.5;
-  font-weight: 700;
+  font-weight: var(--weight-bold);
   overflow-wrap: anywhere;
+}
+h1,
+h2 {
+  font-weight: var(--weight-heavy);
 }
 section {
   scroll-margin-top: 104px;
@@ -75,7 +79,7 @@ section {
 }
 .eyebrow {
   font-size: var(--text-sm);
-  font-weight: 700;
+  font-weight: var(--weight-semibold);
   color: var(--color-action);
 }
 .section-title {
@@ -85,7 +89,7 @@ section {
   letter-spacing: 0.02em;
   font-size: var(--text-h2);
   padding-top: var(--space-4);
-  border-top: 1px solid var(--color-text);
+  border-top: 1px solid var(--color-border);
 }
 .section-lead {
   margin: 0 0 var(--space-8);
@@ -101,7 +105,7 @@ section {
 }
 .text-link {
   display: inline-block;
-  font-weight: 700;
+  font-weight: var(--weight-semibold);
   margin-top: var(--space-6);
 }
 .button {
@@ -116,9 +120,12 @@ section {
   border-radius: var(--radius-control);
   padding: var(--space-3) var(--space-6);
   font-size: var(--text-body);
-  font-weight: 700;
+  font-weight: var(--weight-semibold);
   text-decoration: none;
-  transition: background var(--motion-fast);
+  transition:
+    background var(--motion-fast),
+    border-color var(--motion-fast),
+    color var(--motion-fast);
 }
 .button span {
   transition: transform 240ms var(--motion-ease);
@@ -152,7 +159,7 @@ section {
   justify-content: space-between;
   gap: var(--space-6);
   padding: var(--space-3) 40px;
-  background: var(--color-surface);
+  background: var(--color-paper);
   border-bottom: 1px solid var(--color-border);
   position: sticky;
   top: 0;
@@ -164,7 +171,7 @@ section {
   gap: var(--space-3);
   color: var(--color-text);
   font-size: var(--text-sm);
-  font-weight: 700;
+  font-weight: var(--weight-semibold);
   text-decoration: none;
   line-height: 1.5;
   flex-shrink: 0;
@@ -178,7 +185,7 @@ section {
   display: block;
   color: var(--color-text-muted);
   font-size: 12px;
-  font-weight: 400;
+  font-weight: var(--weight-regular);
   margin-top: 4px;
 }
 .nav {
@@ -195,16 +202,17 @@ section {
   border-radius: var(--radius-control);
   color: var(--color-text);
   font-size: var(--text-sm);
-  font-weight: 700;
+  font-weight: var(--weight-semibold);
   text-decoration: none;
   white-space: nowrap;
 }
 .nav a:hover {
-  background: var(--color-surface-subtle);
+  color: var(--color-action);
+  background: var(--color-surface-blue);
 }
 .nav a[aria-current='page'] {
   color: var(--color-action);
-  background: transparent;
+  background: var(--color-surface-blue);
   text-decoration: underline;
   text-decoration-thickness: 2px;
   text-underline-offset: 7px;
@@ -221,12 +229,14 @@ section {
   padding: 8px 12px;
   min-height: var(--control-height);
   font-size: var(--text-sm);
-  font-weight: 700;
+  font-weight: var(--weight-semibold);
   display: none;
 }
 
 /* Restore the user's original poster-led home composition. */
 .hero {
+  --color-text: var(--color-hero-text);
+  color: var(--color-hero-text);
   position: relative;
   isolation: isolate;
   overflow: hidden;
@@ -269,6 +279,7 @@ section {
   margin-bottom: var(--space-6);
 }
 .hero-copy h1 {
+  font-weight: var(--weight-bold);
   font-size: 20px;
   letter-spacing: 0.08em;
 }
@@ -277,7 +288,7 @@ section {
 }
 .hero-tagline {
   font-size: clamp(24px, 2.5vw, 29px);
-  font-weight: 700;
+  font-weight: var(--weight-bold);
   line-height: 1.5;
   letter-spacing: 0.04em;
   margin-bottom: var(--space-8);
@@ -313,14 +324,14 @@ section {
   writing-mode: vertical-rl;
 }
 .hero-date strong {
-  font: 700 49px/1.2 var(--font-numerals);
+  font: var(--weight-heavy) 49px/1.2 var(--font-numerals);
   min-width: 152px;
   letter-spacing: -0.06em;
 }
 .hero-date strong span {
   padding-inline: 3px;
   font-size: 0.75em;
-  font-weight: 400;
+  font-weight: var(--weight-regular);
 }
 .hero-date > div {
   display: flex;
@@ -337,19 +348,19 @@ section {
 }
 .hero-date time {
   font-size: var(--text-body);
-  font-weight: 700;
+  font-weight: var(--weight-semibold);
   font-variant-numeric: tabular-nums;
   white-space: nowrap;
 }
 .hero-venue {
-  font-weight: 700;
+  font-weight: var(--weight-semibold);
   font-size: var(--text-body);
   margin-bottom: var(--space-6);
 }
 .hero-venue span {
   display: block;
   font-size: var(--text-sm);
-  font-weight: 400;
+  font-weight: var(--weight-regular);
 }
 .hero-poster-note {
   position: relative;
@@ -385,7 +396,7 @@ section {
 }
 .countdown {
   padding: var(--space-6) 0;
-  background: var(--color-action);
+  background: var(--color-strong);
   color: var(--color-on-action);
 }
 .countdown-inner {
@@ -396,11 +407,11 @@ section {
 }
 .countdown .eyebrow {
   color: var(--color-on-action);
-  font-weight: 400;
+  font-weight: var(--weight-regular);
 }
 .countdown-label {
   font-size: var(--text-h3);
-  font-weight: 700;
+  font-weight: var(--weight-bold);
 }
 .countdown-digits {
   display: flex;
@@ -412,7 +423,7 @@ section {
   align-items: baseline;
 }
 .countdown-digits strong {
-  font: 700 40px/1.2 var(--font-numerals);
+  font: var(--weight-heavy) 40px/1.2 var(--font-numerals);
   font-variant-numeric: tabular-nums;
   color: var(--color-highlight);
 }
@@ -425,35 +436,43 @@ section {
 .quick-links {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 0;
+  gap: var(--space-3);
   padding-block: var(--space-8);
 }
 .quick-links a {
   position: relative;
   padding: var(--space-4) var(--space-6);
-  border-bottom: 1px solid var(--color-text);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-panel);
   color: var(--color-text);
   font-size: var(--text-lg);
-  font-weight: 700;
+  font-weight: var(--weight-semibold);
   text-decoration: none;
-  background: transparent;
-}
-.quick-links a + a {
-  border-left: 1px solid var(--color-border);
+  background: var(--color-paper);
+  transition:
+    background var(--motion-fast),
+    border-color var(--motion-fast);
 }
 .quick-links span {
   display: block;
   color: var(--color-text-muted);
   font-size: var(--text-sm);
-  font-weight: 400;
+  font-weight: var(--weight-regular);
   margin-bottom: 4px;
 }
 .quick-links b {
   float: right;
-  color: var(--color-action);
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  color: var(--color-on-accent);
 }
 .quick-links a:hover {
-  background: var(--color-surface-subtle);
+  border-color: var(--color-action);
+  background: var(--color-surface-blue);
 }
 .theme-layout {
   display: grid;
@@ -480,6 +499,7 @@ section {
   border-bottom: 1px solid var(--color-border);
 }
 .breadcrumbs {
+  font-weight: var(--weight-medium);
   display: flex;
   flex-wrap: wrap;
   gap: var(--space-3);
@@ -517,12 +537,15 @@ section {
 }
 .guide-card {
   display: block;
-  padding: var(--space-6) 0;
-  border-top: 2px solid var(--color-action);
-  border-bottom: 1px solid var(--color-border);
+  padding: var(--space-6);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-panel);
+  background: var(--color-paper);
   color: var(--color-text);
   text-decoration: none;
-  transition: border-color var(--motion-fast);
+  transition:
+    background var(--motion-fast),
+    border-color var(--motion-fast);
 }
 .guide-card h2,
 .guide-card h3 {
@@ -535,7 +558,8 @@ section {
   color: var(--color-text-muted);
 }
 .guide-card:hover {
-  border-top-color: var(--color-accent);
+  border-color: var(--color-action);
+  background: var(--color-surface-blue);
 }
 .guide-card:hover :is(h2, h3) {
   text-decoration: underline;
@@ -565,12 +589,12 @@ section {
   background: var(--color-surface);
   padding: 12px 24px;
   font-size: var(--text-lg);
-  font-weight: 700;
+  font-weight: var(--weight-semibold);
 }
 .day-tabs button span {
   display: block;
   font-size: var(--text-sm);
-  font-weight: 400;
+  font-weight: var(--weight-regular);
 }
 .day-tabs button[aria-pressed='true'] {
   background: var(--color-action);
@@ -583,6 +607,7 @@ section {
   gap: var(--space-12);
 }
 .table-caption {
+  font-weight: var(--weight-medium);
   font-size: var(--text-sm);
   padding-bottom: var(--space-4);
   border-bottom: 2px solid var(--color-action);
@@ -595,14 +620,14 @@ section {
   border-bottom: 1px solid var(--color-border);
 }
 .time-row time {
-  font: 700 24px/1.5 var(--font-numerals);
+  font: var(--weight-bold) 24px/1.5 var(--font-numerals);
   min-width: 88px;
   color: var(--color-action);
 }
 .time-row time span {
   display: block;
   font-size: var(--text-sm);
-  font-weight: 400;
+  font-weight: var(--weight-regular);
   color: var(--color-text-muted);
 }
 .time-row h3 {
@@ -619,11 +644,11 @@ section {
   border: 1px solid currentColor;
   border-radius: var(--radius-control);
   font-size: var(--text-sm);
-  font-weight: 700;
+  font-weight: var(--weight-semibold);
 }
 .all-day {
   height: fit-content;
-  background: var(--color-surface);
+  background: var(--color-paper);
   padding: var(--space-6);
   border-radius: var(--radius-panel);
   border: 1px solid var(--color-border);
@@ -676,7 +701,7 @@ section {
   padding: var(--space-3) 0;
 }
 .facts dt {
-  font-weight: 700;
+  font-weight: var(--weight-semibold);
   flex-shrink: 0;
 }
 .facts dd {
@@ -718,7 +743,7 @@ section {
   border-bottom: 1px solid var(--color-border);
 }
 .department-code {
-  font: 700 40px var(--font-numerals);
+  font: var(--weight-heavy) 40px var(--font-numerals);
   color: var(--color-action);
 }
 .department h3 {
@@ -786,15 +811,46 @@ section {
   border: 1px solid var(--color-action);
   border-radius: var(--radius-control);
   font-size: var(--text-sm);
-  font-weight: 700;
+  font-weight: var(--weight-semibold);
   padding: 8px 12px;
   background: var(--color-surface);
   color: var(--color-action);
 }
-.discovery-actions .surprise-button,
 .discovery-actions button[aria-pressed='true'] {
   background: var(--color-action);
   color: var(--color-on-action);
+}
+.discovery-actions .surprise-button {
+  background: var(--color-accent);
+  color: var(--color-on-accent);
+  border-color: var(--color-accent);
+  font-weight: var(--weight-bold);
+}
+.discovery-actions .surprise-button:hover {
+  background: var(--color-accent-hover);
+  border-color: var(--color-accent-hover);
+}
+:is(
+    .filters button,
+    .day-tabs button,
+    .favorite-button,
+    .saved-filter,
+    .menu-toggle
+  ):hover:not(:disabled):not([aria-pressed='true']) {
+  background: var(--color-surface-blue);
+  border-color: var(--color-action);
+}
+:is(
+  .filters button,
+  .day-tabs button,
+  .favorite-button,
+  .discovery-actions button,
+  .menu-toggle
+) {
+  transition:
+    background var(--motion-fast),
+    border-color var(--motion-fast),
+    color var(--motion-fast);
 }
 button:disabled {
   color: var(--color-disabled-text) !important;
@@ -820,7 +876,7 @@ button:disabled {
   border: 1px solid var(--color-control-border);
   background: var(--color-surface);
   border-radius: var(--radius-control);
-  font-weight: 700;
+  font-weight: var(--weight-semibold);
 }
 .filters button[aria-pressed='true'] {
   background: var(--color-action);
@@ -830,15 +886,16 @@ button:disabled {
 .search {
   display: block;
   font-size: var(--text-sm);
-  font-weight: 700;
+  font-weight: var(--weight-semibold);
   width: 320px;
 }
 .search input {
+  font-weight: var(--weight-regular);
   display: block;
   width: 100%;
   min-height: var(--control-height);
   border: 1px solid var(--color-control-border);
-  background: var(--color-surface);
+  background: var(--color-paper);
   border-radius: var(--radius-control);
   padding: 8px 12px;
   margin-top: var(--space-2);
@@ -905,7 +962,7 @@ button:disabled {
   text-align: right;
   color: var(--color-action);
   font-size: var(--text-sm);
-  font-weight: 700;
+  font-weight: var(--weight-semibold);
 }
 .booth > p {
   font-size: var(--text-sm);
@@ -936,7 +993,7 @@ button:disabled {
 }
 .favorite-button span {
   font-size: var(--text-sm);
-  font-weight: 700;
+  font-weight: var(--weight-semibold);
 }
 .favorite-button[aria-pressed='true'] {
   background: var(--color-surface-warm);
@@ -998,7 +1055,7 @@ button:disabled {
   max-height: 90dvh;
   overflow: auto;
   padding: var(--space-8);
-  border-radius: 6px;
+  border-radius: var(--radius-panel);
   box-shadow: var(--shadow-overlay);
   animation: popup-in var(--motion-enter) ease-out;
 }
@@ -1039,6 +1096,7 @@ button:disabled {
 
 /* Visitor information */
 .campus-figure {
+  background: var(--color-paper);
   padding: var(--space-6);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-control);
@@ -1076,6 +1134,29 @@ button:disabled {
 .map-details {
   margin-top: var(--space-6);
 }
+.map-details details {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-panel);
+  background: var(--color-paper);
+  margin-bottom: var(--space-3);
+}
+.map-details details[open] {
+  border-color: var(--color-action);
+}
+.map-details summary {
+  padding-inline: var(--space-6);
+  border-radius: var(--radius-panel);
+}
+.map-details summary:hover,
+.map-details details[open] summary {
+  color: var(--color-action);
+  background: var(--color-surface-blue);
+}
+.map-details summary span {
+  color: var(--color-action);
+  font-weight: var(--weight-bold);
+}
+
 details {
   border-top: 1px solid var(--color-border);
 }
@@ -1089,7 +1170,7 @@ summary {
   min-height: var(--control-height);
   padding: var(--space-4) 0;
   font-size: var(--text-body);
-  font-weight: 700;
+  font-weight: var(--weight-semibold);
 }
 summary::-webkit-details-marker {
   display: none;
@@ -1121,7 +1202,7 @@ details[open] summary span {
   border-top: 1px solid var(--color-border);
 }
 .routes dt {
-  font-weight: 700;
+  font-weight: var(--weight-semibold);
   margin-bottom: var(--space-2);
 }
 .routes dd {
@@ -1205,12 +1286,12 @@ details[open] summary span {
   border-radius: var(--radius-control);
   padding: var(--space-4) var(--space-6);
   font-size: var(--text-h3);
-  font-weight: 700;
+  font-weight: var(--weight-semibold);
   text-decoration: none;
 }
 .social-links span {
   font-size: var(--text-sm);
-  font-weight: 400;
+  font-weight: var(--weight-regular);
 }
 
 /* Sponsors and footer */
@@ -1231,10 +1312,10 @@ details[open] summary span {
   display: block;
   text-decoration: none;
   color: var(--color-text);
-  border-bottom: 1px solid var(--color-border);
-  border-radius: var(--radius-control);
-  overflow: hidden;
-  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-panel);
+  padding: var(--space-3);
+  background: var(--color-paper);
   transition: border-color var(--motion-fast);
 }
 .sponsor-card img {
@@ -1247,7 +1328,7 @@ details[open] summary span {
   gap: var(--space-3);
   padding: var(--space-3) var(--space-4);
   font-size: var(--text-sm);
-  font-weight: 700;
+  font-weight: var(--weight-semibold);
   line-height: 1.6;
 }
 a.sponsor-card:hover {
@@ -1275,7 +1356,7 @@ a.sponsor-card:hover > span {
   margin: 0 0 var(--space-6);
 }
 footer {
-  background: var(--color-action);
+  background: var(--color-strong);
   color: var(--color-on-action);
   padding: var(--space-12) 0 var(--space-6);
 }
@@ -1417,8 +1498,9 @@ footer a {
     right: 0;
     top: 100%;
     padding: var(--space-4) var(--space-6);
-    background: var(--color-surface);
-    border-bottom: 1px solid var(--color-control-border);
+    background: var(--color-paper);
+    border-bottom: 1px solid var(--color-border);
+    border-radius: 0 0 var(--radius-panel) var(--radius-panel);
     grid-template-columns: repeat(2, 1fr);
     gap: var(--space-2);
     box-shadow: var(--shadow-overlay);
@@ -1601,9 +1683,6 @@ footer a {
   .quick-links a {
     font-size: 18px;
   }
-  .quick-links a + a {
-    border-left: 0;
-  }
   .theme-layout,
   .guide-grid,
   .feature,
@@ -1627,13 +1706,10 @@ footer a {
     padding-top: var(--space-8);
   }
   .guide-grid {
-    gap: 0;
+    gap: var(--space-3);
   }
   .guide-card {
     padding-block: var(--space-6);
-  }
-  .guide-card + .guide-card {
-    border-top: 0;
   }
   .day-tabs {
     gap: 8px;

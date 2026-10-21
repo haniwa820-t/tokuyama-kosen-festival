@@ -60,7 +60,7 @@ PagesのSourceはGitHub Actionsを使用する。公開状況はREADMEを参照�
 
 ## 検証
 
-`npm run check`：型、lint、45件の単体・画面操作テスト、カバレッジ80%以上、素材・出典確認、13組の配色コントラスト、ビルド、10件のHTML（9ページ＋404）の内部リンク・画像・配布資料・metadata検証。
+`npm run check`：型、lint、45件の単体・画面操作テスト、カバレッジ80%以上、素材・出典確認、24組の配色コントラスト、ビルド、10件のHTML（9ページ＋404）の内部リンク・画像・配布資料・metadata検証。
 `npm run test:e2e`：2画面サイズで計20件。日程、検索、保存の再読込、おまかせ、詳細、88件のスポンサー画像と大口5社のリンク、PDF、地図、全階層の直接URL・再読込、旧URL、JavaScript無効、動きを減らす設定、ホームへのメニュー・メインロゴ、320〜1440pxの横はみ出し、画像とブラウザーエラーを確認する。
 
 参考公式資料：[Viteの静的公開](https://vite.dev/guide/static-deploy.html#github-pages)、[GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages)、[React hydrateRoot](https://react.dev/reference/react-dom/client/hydrateRoot)。

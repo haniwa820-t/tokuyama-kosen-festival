@@ -1,29 +1,40 @@
-/* Echo: navy type, a pale blue hero and paper surfaces from the approved home. */
+/* Echo: vivid actions, readable surfaces and the established pale-blue home. */
 :root {
-  --color-text: #0b315b;
-  --color-text-muted: #526577;
-  --color-surface: #f7f3ec;
+  --color-text: #111827;
+  --color-text-muted: #4b5563;
+  --color-surface: #f7f8fa;
   --color-paper: #ffffff;
-  --color-surface-subtle: #ede9e2;
-  --color-surface-blue: #e5ebf5;
-  --color-surface-warm: #f4e8d2;
+  --color-surface-subtle: #eef2f7;
+  --color-surface-blue: #eaf1ff;
+  --color-surface-warm: #fff1e7;
   --color-hero: #ececf3;
   --color-ring: #b2c1e2;
-  --color-action: #173456;
-  --color-action-hover: #0b2543;
+  --color-action: #2563eb;
+  --color-action-hover: #1d4ed8;
   --color-on-action: #ffffff;
-  --color-accent: #b64c79;
-  --color-highlight: #f2b6cf;
-  --color-echo-dot: #5387d9;
-  --color-warning-text: #843d16;
-  --color-focus: #b04718;
-  --color-border: #b8c0c9;
-  --color-control-border: #718393;
+  --color-strong: #111827;
+  --color-hero-text: #0b315b;
+  --color-on-accent: #111827;
+  --color-accent-hover: #ea580c;
+  --color-accent: #f97316;
+  --color-highlight: #f97316;
+  --color-echo-dot: #f97316;
+  --color-warning-text: #9a3412;
+  --color-focus: #c2410c;
+  --color-border: #e5e7eb;
+  --color-control-border: #6b7280;
   --color-backdrop: #102d45cc;
-  --color-disabled-text: #526577;
-  --color-disabled-bg: #e7edf1;
-  --font-body: 'Hiragino Kaku Gothic ProN', 'Yu Gothic', Meiryo, sans-serif;
+  --color-disabled-text: #4b5563;
+  --color-disabled-bg: #e5e7eb;
+  --font-body:
+    'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Yu Gothic', Meiryo,
+    sans-serif;
   --font-numerals: Arial, sans-serif;
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+  --weight-heavy: 800;
   --text-sm: 0.875rem;
   --text-body: 1rem;
   --text-lg: 1.125rem;
@@ -40,8 +51,8 @@
   --space-12: 48px;
   --space-16: 64px;
   --space-20: 80px;
-  --radius-control: 0;
-  --radius-panel: 0;
+  --radius-control: 12px;
+  --radius-panel: 20px;
   --control-height: 48px;
   --content-width: 1200px;
   --motion-fast: 160ms;

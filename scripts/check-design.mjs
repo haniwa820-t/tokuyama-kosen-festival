@@ -25,13 +25,28 @@ const pairs = [
   ['on-action', 'action-hover', 4.5],
   ['action', 'surface-blue', 4.5],
   ['warning-text', 'surface-warm', 4.5],
-  ['highlight', 'action', 4.5],
+  ['highlight', 'strong', 4.5],
+  ['on-action', 'strong', 4.5],
+  ['on-accent', 'accent', 4.5],
+  ['on-accent', 'accent-hover', 4.5],
+  ['action', 'paper', 4.5],
+  ['action', 'surface-warm', 4.5],
+  ['text-muted', 'paper', 4.5],
+  ['text-muted', 'surface-blue', 4.5],
+  ['hero-text', 'hero', 4.5],
+  ['focus', 'paper', 3],
+  ['focus', 'strong', 3],
+  ['control-border', 'paper', 3],
   ['text', 'hero', 4.5],
   ['focus', 'surface', 3],
   ['control-border', 'surface', 3],
   ['disabled-text', 'disabled-bg', 4.5],
 ]
 for (const [foreground, background, minimum] of pairs) {
+  assert(
+    colors[`color-${foreground}`] && colors[`color-${background}`],
+    `Missing color token for ${foreground}/${background}`,
+  )
   const a = luminance(colors[`color-${foreground}`]),
     b = luminance(colors[`color-${background}`])
   const ratio = (Math.max(a, b) + 0.05) / (Math.min(a, b) + 0.05)
