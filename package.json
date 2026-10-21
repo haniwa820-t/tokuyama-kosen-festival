@@ -20,7 +20,8 @@
     "assets:sponsors": "node scripts/create-sponsor-samples.mjs",
     "format": "prettier --write src scripts tests vite.config.ts playwright.config.ts eslint.config.js index.html",
     "format:check": "prettier --check src scripts tests vite.config.ts playwright.config.ts eslint.config.js index.html",
-    "check:design": "node scripts/check-design.mjs"
+    "check:design": "node scripts/check-design.mjs",
+    "assets:provided": "node scripts/prepare-supplied-assets.mjs"
   },
   "dependencies": {
     "react": "^19.3.0",

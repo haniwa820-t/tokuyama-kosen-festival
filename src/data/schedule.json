@@ -74,11 +74,11 @@
     "title": "後夜祭",
     "start": "16:30",
     "end": "18:30",
-    "note": "在校生のみ参加可能",
+    "note": "一般の方も参加できます",
     "id": "stage-8",
-    "venue": "会場は当日の在校生向け案内をご確認ください",
+    "venue": "会場は当日の案内をご確認ください",
     "source": "pamphlet:p12",
     "status": "planned",
-    "audienceSource": "user:2026-10-08"
+    "audienceSource": "user:2026-10-21"
   }
 ]

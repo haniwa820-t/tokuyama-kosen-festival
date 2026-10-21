@@ -1,9 +1,19 @@
 import { defineConfig } from 'vitest/config'
 import react from '@vitejs/plugin-react'
+import { deploymentConfig } from './src/lib/deployment.ts'
+
+const deployment = deploymentConfig(process.env)
 
 export default defineConfig({
-  base: '/tokuyama-kosen-festival/',
-  plugins: [react()],
+  base: deployment.base,
+  plugins: [
+    react(),
+    {
+      name: 'deployment-metadata',
+      transformIndexHtml: (html) =>
+        html.replaceAll('__SITE_URL__', deployment.siteUrl),
+    },
+  ],
   test: {
     environment: 'jsdom',
     env: { BASE_URL: '/tokuyama-kosen-festival/' },

@@ -13,7 +13,13 @@
     "noEmit": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "types": ["vite/client", "node", "vitest/globals", "@testing-library/jest-dom"]
+    "types": [
+      "vite/client",
+      "node",
+      "vitest/globals",
+      "@testing-library/jest-dom"
+    ],
+    "allowImportingTsExtensions": true
   },
   "include": ["src", "tests", "vite.config.ts", "playwright.config.ts"]
 }

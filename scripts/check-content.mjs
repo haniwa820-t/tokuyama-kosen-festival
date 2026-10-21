@@ -1,6 +1,7 @@
 import { readFile, access } from 'node:fs/promises'
 import { createHash } from 'node:crypto'
 import assert from 'node:assert/strict'
+import sharp from 'sharp'
 const json = async (p) => JSON.parse(await readFile(p, 'utf8'))
 const manifest = await json('assets/source/manifest.json')
 for (const file of manifest.files) {
@@ -44,7 +45,7 @@ for (const e of schedule) {
 }
 assert.equal(
   schedule.find((e) => e.title === '後夜祭').note,
-  '在校生のみ参加可能',
+  '一般の方も参加できます',
 )
 const original = await readFile(festival.pamphlet.source)
 assert.deepEqual(
@@ -58,17 +59,63 @@ console.log(
 )
 
 const banners = await json('src/data/sponsor-banners.json')
-const suppliedSponsors = await json('src/data/sponsors.json')
-assert.equal(banners.length, 30)
-assert.equal(new Set(banners.map((b) => b.id)).size, 30)
+const expectedUrls = [
+  'https://www.tosoh.co.jp/',
+  'https://fujikoatsu.jp/',
+  'https://www.tokuyama.co.jp/',
+  'https://www.tkworks.jp/',
+  'https://www.shunan-ds.com/',
+]
+assert.equal(banners.length, 88)
+assert.equal(new Set(banners.map((b) => b.id)).size, banners.length)
+assert.deepEqual(
+  banners.filter((b) => b.tier === 'major').map((b) => b.url),
+  expectedUrls,
+)
+const tiers = ['major', 'full', 'quarter', 'eighth']
+let previousTier = 0
 for (const b of banners) {
-  assert(suppliedSponsors.names.includes(b.sourceName ?? b.name))
-  assert.equal(new URL(b.url).protocol, 'https:')
-  assert.equal(b.imageStatus, 'sample')
-  const image = await readFile(`public/${b.image}`, 'utf8')
-  assert(image.includes('画像差し替え用サンプル'))
-  assert(!image.includes('<script') && !image.includes('href='))
+  assert.equal(b.imageStatus, 'supplied')
+  assert(manifest.files.some((f) => f.path === b.source))
+  assert(
+    !b.source.includes('東ソー様 B5.pdf'),
+    'Tosoh pamphlet ad must not be published',
+  )
+  const tier = tiers.indexOf(b.tier)
+  assert(tier >= previousTier, 'Sponsor tiers must be largest first')
+  previousTier = tier
+  assert.equal(
+    Boolean(b.url),
+    b.tier === 'major',
+    'Only major sponsors have links',
+  )
+  assert(b.width > 0 && b.height > 0)
+  await access(`public/${b.image}`)
+  const output = await sharp(`public/${b.image}`).metadata()
+  assert.equal(output.width, b.width)
+  assert.equal(output.height, b.height)
+  if (!b.source.endsWith('.pdf')) {
+    const input = await sharp(b.source).metadata()
+    const ratio =
+      b.rotation === 270
+        ? input.height / input.width
+        : input.width / input.height
+    assert(
+      Math.abs(b.width / b.height / ratio - 1) < 0.01,
+      `Aspect ratio changed: ${b.source}`,
+    )
+  }
+}
+const maps = await json('src/data/campus-maps.json')
+assert.equal(maps.length, 9)
+for (const map of maps) {
+  assert(map.source.startsWith('assets/source/map/'))
+  assert(manifest.files.some((f) => f.path === map.source))
+  await access(`public/${map.image}`)
+  const image = await sharp(`public/${map.image}`).metadata()
+  assert.equal(image.width, map.width)
+  assert.equal(image.height, map.height)
 }
 console.log(
-  '30 original sample sponsor images, supplied company names and HTTPS official URL records verified.',
+  '88 supplied sponsor images, five approved links, size order and nine supplied maps verified.',
 )

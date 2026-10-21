@@ -1,7 +1,8 @@
 import { readFile, writeFile, mkdir } from 'node:fs/promises'
 import { render, pages } from '../tmp/ssr/entry-server.js'
+import { deploymentConfig } from '../src/lib/deployment.ts'
 const template = await readFile('dist/index.html', 'utf8')
-const base = 'https://haniwa820-t.github.io/tokuyama-kosen-festival/'
+const { siteUrl: base } = deploymentConfig(process.env)
 const escape = (s) =>
   s.replaceAll('&', '&amp;').replaceAll('"', '&quot;').replaceAll('<', '&lt;')
 for (const page of pages) {

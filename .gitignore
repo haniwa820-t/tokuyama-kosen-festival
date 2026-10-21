@@ -28,3 +28,6 @@ npm-debug.log*
 tmp/
 .cache/
 AGENTS.md
+
+# Local Japanese copy review records
+.yomiyasu/

@@ -39,6 +39,8 @@ describe('高専祭の案内', () => {
     expect(schedule.getByText('カラオケ')).toBeVisible()
     await user.click(schedule.getByRole('button', { name: '11月1日（日）' }))
     expect(schedule.getByText('イントロクイズ')).toBeVisible()
+    expect(schedule.getByText('一般の方も参加できます')).toBeVisible()
+    expect(schedule.queryByText(/在校生のみ/)).not.toBeInTheDocument()
     expect(schedule.queryByText('カラオケ')).not.toBeInTheDocument()
     await user.click(schedule.getByRole('button', { name: '10月31日（土）' }))
     expect(schedule.getByText('カラオケ')).toBeVisible()
@@ -163,20 +165,57 @@ describe('ページの階層', () => {
       screen.getByRole('navigation', { name: 'パンくず' }),
     ).toBeInTheDocument()
   })
-  it('30枚のサンプル画像から企業の公式サイトへ移動できる', () => {
+  it('大口5社の提供画像から指定された公式サイトへ移動できる', () => {
     render(<App pageId="sponsors" />)
-    const links = within(
-      document.getElementById('sponsor-banners')!,
-    ).getAllByRole('link')
-    expect(links).toHaveLength(30)
+    const major = document.querySelector('[data-sponsor-tier="major"]')!
+    const links = within(major as HTMLElement).getAllByRole('link')
+    expect(links.map((link) => link.getAttribute('href'))).toEqual([
+      'https://www.tosoh.co.jp/',
+      'https://fujikoatsu.jp/',
+      'https://www.tokuyama.co.jp/',
+      'https://www.tkworks.jp/',
+      'https://www.shunan-ds.com/',
+    ])
     for (const link of links) {
       expect(link).toHaveAttribute('target', '_blank')
-      expect(link.getAttribute('href')).toMatch(/^https:\/\//)
-      expect(within(link).getByRole('img')).toHaveAttribute(
-        'alt',
-        expect.stringContaining('サンプル'),
+      expect(link).toHaveAttribute('rel', 'noopener noreferrer')
+      expect(within(link).getByRole('img').getAttribute('alt')).not.toContain(
+        'サンプル',
       )
     }
+    expect(within(links[0]).getByRole('img')).toHaveAttribute(
+      'alt',
+      '東ソー株式会社 南陽事業所のロゴマーク',
+    )
+    expect(document.querySelectorAll('#sponsor-banners a')).toHaveLength(5)
+    expect(document.querySelectorAll('#sponsor-banners article')).toHaveLength(
+      83,
+    )
+    expect(
+      Array.from(document.querySelectorAll('[data-sponsor-tier]')).map((node) =>
+        node.getAttribute('data-sponsor-tier'),
+      ),
+    ).toEqual(['major', 'full', 'quarter', 'eighth'])
+    expect(
+      document.querySelector('[data-sponsor-tier="quarter"]'),
+    ).toBeInTheDocument()
+    expect(
+      document.querySelector('[data-sponsor-tier="eighth"]'),
+    ).toBeInTheDocument()
+    expect(
+      screen.queryByText(/画像差し替え用のサンプル/),
+    ).not.toBeInTheDocument()
+  })
+  it('提供された会場図とスタンプ設置場所の説明を確認できる', () => {
+    render(<App pageId="map" />)
+    expect(document.querySelector('.campus-figure img')).toHaveAttribute(
+      'src',
+      '/tokuyama-kosen-festival/maps/campus.webp',
+    )
+    expect(
+      screen.getByText('星マークは、スタンプラリーのスタンプ設置場所です。'),
+    ).toBeInTheDocument()
+    expect(document.querySelectorAll('#campus-map img')).toHaveLength(9)
   })
   it('存在しないページは戻り先を示す', () => {
     render(<App pageId="not-found" />)

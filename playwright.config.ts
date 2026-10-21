@@ -1,10 +1,13 @@
 import { defineConfig, devices } from '@playwright/test'
+import { deploymentConfig } from './src/lib/deployment'
+
+const baseURL = `http://127.0.0.1:4173${deploymentConfig(process.env).base}`
 
 export default defineConfig({
   testDir: './tests/e2e',
   fullyParallel: true,
   use: {
-    baseURL: 'http://127.0.0.1:4173/tokuyama-kosen-festival/',
+    baseURL,
     trace: 'retain-on-failure',
   },
   projects: [
@@ -16,7 +19,7 @@ export default defineConfig({
   ],
   webServer: {
     command: 'npm run preview -- --port 4173',
-    url: 'http://127.0.0.1:4173/tokuyama-kosen-festival/',
+    url: baseURL,
     reuseExistingServer: !process.env.CI,
   },
 })

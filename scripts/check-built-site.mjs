@@ -1,7 +1,8 @@
 import { readFile, access } from 'node:fs/promises'
 import { pages } from '../tmp/ssr/entry-server.js'
 import assert from 'node:assert/strict'
-const base = '/tokuyama-kosen-festival/'
+import { deploymentConfig } from '../src/lib/deployment.ts'
+const { base, siteUrl } = deploymentConfig(process.env)
 const targets = new Map()
 for (const page of pages) {
   const file = page.id === 'not-found' ? '404.html' : `${page.path}index.html`
@@ -12,10 +13,15 @@ for (const page of pages) {
     `${file}: require one page title`,
   )
   assert(html.includes(`data-page="${page.id}"`))
+  assert(!html.includes('__SITE_URL__'))
+  assert(
+    html.includes(`property="og:image" content="${siteUrl}images/social.jpg"`),
+  )
+  assert(html.includes(`property="og:url" content="${siteUrl}${page.path}"`))
   const canonical = html.match(/<link\b[^>]*rel="canonical"[^>]*href="([^"]+)"/)
   assert.equal(
     canonical?.[1],
-    `https://haniwa820-t.github.io${base}${page.path}`,
+    `${siteUrl}${page.path}`,
     `${file}: incorrect canonical`,
   )
   const description = html.match(

@@ -1,3 +1,11 @@
+const currentBanners = JSON.parse(
+  await readFile('src/data/sponsor-banners.json', 'utf8'),
+)
+if (currentBanners.some((banner) => banner.imageStatus === 'supplied')) {
+  throw new Error(
+    'Provided sponsor images are in use; sample generation is disabled.',
+  )
+}
 import { readFile, writeFile, mkdir } from 'node:fs/promises'
 const supplied = JSON.parse(
   await readFile('src/data/sponsors.json', 'utf8'),

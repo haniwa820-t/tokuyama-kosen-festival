@@ -27,7 +27,29 @@ test('ホームから日程へ移動し2日目へ切り替えられる', async (
     .getByRole('button', { name: '11月1日（日）' })
     .click()
   await expect(page.locator('#schedule')).toContainText('イントロクイズ')
-  await expect(page.locator('#schedule')).toContainText('在校生のみ')
+  await expect(page.locator('#schedule')).toContainText(
+    '一般の方も参加できます',
+  )
+})
+test('開いたナビゲーションがフェードインする', async ({ page }) => {
+  await page.setViewportSize({ width: 800, height: 900 })
+  await page.goto('./')
+  await page.getByRole('button', { name: 'メニューを開く' }).click()
+  await expect
+    .poll(() =>
+      page
+        .getByRole('navigation', { name: 'メインメニュー' })
+        .evaluate((nav) => getComputedStyle(nav).animationName),
+    )
+    .toBe('nav-in')
+  await page.emulateMedia({ reducedMotion: 'reduce' })
+  await expect
+    .poll(() =>
+      page
+        .getByRole('navigation', { name: 'メインメニュー' })
+        .evaluate((nav) => getComputedStyle(nav).animationName),
+    )
+    .toBe('none')
 })
 test('検索・保存・おまかせ・ポスター詳細を使える', async ({ page }) => {
   await page.goto('./events/booths/')
@@ -72,16 +94,74 @@ test('深いページが直接アクセスと再読込で表示される', async
   expect(pdf.ok()).toBe(true)
   expect(pdf.headers()['content-type']).toContain('application/pdf')
 })
-test('スポンサー30枚の画像リンクが表示される', async ({ page }) => {
+test('大口だけ公式リンクを持ち、広告は大きい区分から並ぶ', async ({ page }) => {
   await page.goto('./sponsors/')
+  const groups = page.locator('[data-sponsor-tier]')
+  expect(
+    await groups.evaluateAll((nodes) =>
+      nodes.map((node) => node.getAttribute('data-sponsor-tier')),
+    ),
+  ).toEqual(['major', 'full', 'quarter', 'eighth'])
   const links = page.locator('#sponsor-banners a')
-  await expect(links).toHaveCount(30)
-  for (const link of await links.all()) {
-    expect(await link.getAttribute('href')).toMatch(/^https:\/\//)
-    await expect(link).toHaveAttribute('target', '_blank')
-  }
+  await expect(links).toHaveCount(5)
+  expect(
+    await links.evaluateAll((nodes) =>
+      nodes.map((node) => node.getAttribute('href')),
+    ),
+  ).toEqual([
+    'https://www.tosoh.co.jp/',
+    'https://fujikoatsu.jp/',
+    'https://www.tokuyama.co.jp/',
+    'https://www.tkworks.jp/',
+    'https://www.shunan-ds.com/',
+  ])
+  await expect(page.locator('#sponsor-banners article')).toHaveCount(83)
   await page.locator('#sponsor-banners').scrollIntoViewIfNeeded()
-  await expect(links.first().getByRole('img')).toBeVisible()
+  for (const img of await page.locator('#sponsor-banners img').all()) {
+    await img.scrollIntoViewIfNeeded()
+    await expect
+      .poll(() =>
+        img.evaluate(
+          (node: HTMLImageElement) => node.complete && node.naturalWidth > 0,
+        ),
+      )
+      .toBe(true)
+    const ratio = await img.evaluate((node: HTMLImageElement) => ({
+      shown: node.width / node.height,
+      original: node.naturalWidth / node.naturalHeight,
+    }))
+    expect(ratio.shown).toBeCloseTo(ratio.original, 1)
+  }
+})
+test('提供された地図9枚を拡大でき、星マークの意味が分かる', async ({
+  page,
+  request,
+}) => {
+  await page.goto('./guide/map/')
+  await expect(
+    page.getByText('星マークは、スタンプラリーのスタンプ設置場所です。'),
+  ).toBeVisible()
+  const details = page.locator('#campus-map details')
+  await expect(details).toHaveCount(8)
+  for (const detail of await details.all()) {
+    await detail.locator('summary').click()
+    const image = detail.getByRole('img')
+    await image.scrollIntoViewIfNeeded()
+    await expect
+      .poll(() =>
+        image.evaluate(
+          (node: HTMLImageElement) => node.complete && node.naturalWidth > 0,
+        ),
+      )
+      .toBe(true)
+    expect(
+      (
+        await request.get(
+          (await detail.getByRole('link').getAttribute('href'))!,
+        )
+      ).ok(),
+    ).toBe(true)
+  }
 })
 test('JavaScriptなしでも階層とPDFリンクを使える', async ({
   browser,
@@ -132,6 +212,7 @@ test('旧ページ内リンクから新しい階層に移動できる', async ({
 
 test('メインロゴが表示され、各画面のメニューからホームに戻れる', async ({
   page,
+  baseURL,
 }) => {
   await page.goto('./events/booths/')
   await expect(
@@ -147,7 +228,7 @@ test('メインロゴが表示され、各画面のメニューからホーム�
   await expect(home).toBeVisible()
   expect((await home.boundingBox())!.height).toBeGreaterThanOrEqual(44)
   await home.click()
-  await expect(page).toHaveURL(/\/tokuyama-kosen-festival\/$/)
+  await expect(page).toHaveURL(baseURL!)
   await expect(page.getByText('Echo.', { exact: true })).toBeVisible()
   for (const width of [320, 768, 1024, 1440]) {
     await page.setViewportSize({ width, height: 900 })

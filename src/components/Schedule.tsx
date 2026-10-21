@@ -36,9 +36,7 @@ export default function Schedule() {
                     <h3>{e.title}</h3>
                     {'note' in e && <p className="restricted">{e.note}</p>}
                     {e.title === '後夜祭' && (
-                      <p className="small">
-                        会場は当日の在校生向け案内をご確認ください。
-                      </p>
+                      <p className="small">{e.venue}。</p>
                     )}
                   </div>
                 </div>
@@ -80,7 +78,7 @@ export default function Schedule() {
         </aside>
       </div>
       <p className="note">
-        後夜祭は在校生のみ参加可能です。準備版パンフレットに基づく予定です。日程は変更する場合がございます。
+        後夜祭は一般の方も参加できます。準備版パンフレットに基づく予定です。日程は変更する場合がございます。
       </p>
     </>
   )

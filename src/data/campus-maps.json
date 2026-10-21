@@ -1,0 +1,83 @@
+[
+  {
+    "label": "会場全体図",
+    "image": "maps/campus.webp",
+    "alt": "会場全体図。星マークはスタンプラリーのスタンプ設置場所。",
+    "width": 1280,
+    "height": 720,
+    "source": "assets/source/map/Slide1.jpg",
+    "verifiedOn": "2026-10-21"
+  },
+  {
+    "label": "全体図の凡例",
+    "image": "maps/campus-legend.webp",
+    "alt": "全体図の凡例。星マークはスタンプラリーのスタンプ設置場所。",
+    "width": 1280,
+    "height": 720,
+    "source": "assets/source/map/Slide2.jpg",
+    "verifiedOn": "2026-10-21"
+  },
+  {
+    "label": "飲食エリア1（A）",
+    "image": "maps/outdoor-a.webp",
+    "alt": "飲食エリア1（A）。星マークはスタンプラリーのスタンプ設置場所。",
+    "width": 1280,
+    "height": 720,
+    "source": "assets/source/map/Slide3.jpg",
+    "verifiedOn": "2026-10-21"
+  },
+  {
+    "label": "飲食エリア2（B）",
+    "image": "maps/outdoor-b.webp",
+    "alt": "飲食エリア2（B）。星マークはスタンプラリーのスタンプ設置場所。",
+    "width": 1280,
+    "height": 720,
+    "source": "assets/source/map/Slide4.jpg",
+    "verifiedOn": "2026-10-21"
+  },
+  {
+    "label": "教室・管理棟1階",
+    "image": "maps/indoor-1.webp",
+    "alt": "教室・管理棟1階。星マークはスタンプラリーのスタンプ設置場所。",
+    "width": 1280,
+    "height": 720,
+    "source": "assets/source/map/Slide5.jpg",
+    "verifiedOn": "2026-10-21"
+  },
+  {
+    "label": "1階の企画・凡例",
+    "image": "maps/indoor-1-legend.webp",
+    "alt": "1階の企画・凡例。星マークはスタンプラリーのスタンプ設置場所。",
+    "width": 1280,
+    "height": 720,
+    "source": "assets/source/map/Slide6.jpg",
+    "verifiedOn": "2026-10-21"
+  },
+  {
+    "label": "教室・管理棟2階",
+    "image": "maps/indoor-2.webp",
+    "alt": "教室・管理棟2階。星マークはスタンプラリーのスタンプ設置場所。",
+    "width": 1280,
+    "height": 720,
+    "source": "assets/source/map/Slide7.jpg",
+    "verifiedOn": "2026-10-21"
+  },
+  {
+    "label": "専門棟2階・教室・管理棟3階",
+    "image": "maps/indoor-3.webp",
+    "alt": "専門棟2階・教室・管理棟3階。星マークはスタンプラリーのスタンプ設置場所。",
+    "width": 1280,
+    "height": 720,
+    "source": "assets/source/map/Slide8.jpg",
+    "verifiedOn": "2026-10-21"
+  },
+  {
+    "label": "専門棟3階・教室・管理棟4階",
+    "image": "maps/indoor-4.webp",
+    "alt": "専門棟3階・教室・管理棟4階。星マークはスタンプラリーのスタンプ設置場所。",
+    "width": 1280,
+    "height": 720,
+    "source": "assets/source/map/Slide9.jpg",
+    "verifiedOn": "2026-10-21"
+  }
+]

@@ -1,16 +1,16 @@
 # 技術構成と公開
 
-2026-10-08実装。React + TypeScript + Vite、npm、GitHub Pagesを採用した。
+2026-10-21更新。React + TypeScript + Vite、npmを使用。Cloudflare PagesのGitHub連携に対応し、既存のGitHub Pages用ビルドも維持する。
 Node.jsは開発とビルドに使用し、公開後に常駐サーバーやデータベースは不要。
 CIはNode.js 24 LTS（`.nvmrc`）。依存関係は`package-lock.json`で固定する。
 
 ## 表示と静的生成
 
-9ページの階層を持つ静的サイト。通常のリンクで移動し、各ディレクトリへindex.htmlを生成するため、GitHub Pagesの直接アクセス・再読込に対応する。
+9ページの階層を持つ静的サイト。通常のリンクで移動し、各ディレクトリへindex.htmlを生成するため、静的ホスティングでの直接アクセス・再読込に対応する。
 
 | URL（リポジトリのbaseに続く部分） | 内容 |
 | --- | --- |
-| `/` | 開催概要、カウントダウン、テーマ、お知らせ、スポンサー6枠 |
+| `/` | 開催概要、カウントダウン、テーマ、お知らせ、大口スポンサー5社 |
 | `/schedule/` | 2日間の予定 |
 | `/events/` | メイン企画、学科企画、併催企画 |
 | `/events/booths/` | 32企画の検索、保存、おまかせ、ポスター詳細 |
@@ -18,7 +18,7 @@ CIはNode.js 24 LTS（`.nvmrc`）。依存関係は`package-lock.json`で固定�
 | `/guide/map/` | 会場・屋内外の地図 |
 | `/guide/access/` | 交通・駐車場 |
 | `/guide/pamphlet/` | 準備版PDF |
-| `/sponsors/` | サンプル画像30枠と準備版の協賛一覧 |
+| `/sponsors/` | 提供広告88件、大口5社の公式リンク、準備版の協賛一覧 |
 
 共通メニュー、パンくず、親・関連ページへのリンク、ページ固有のtitle・description・canonical・OG URL、404.htmlとsitemap.xmlを生成する。
 旧URLの`#booths`等は対応する階層へ移動する。
@@ -42,11 +42,17 @@ SSRの時計は固定の開催日表示にし、ブラウザーで現在時刻�
 Git上の日本語パスはNFC表記で記録し、MacとLinuxのCIで同じ原素材を参照する。移動前の原名はmanifestのoriginalPathで保持する。
 `tmp/`、`dist/`、`node_modules/`、検証出力はGitへ追加しない。
 
-## GitHub Pages
+## Cloudflare Pages
+
+通常のビルドはルートパス`/`で配信する。Cloudflare Pagesでは`npm run check`、出力`dist`、Node.js 24を設定する。
+`SITE_URL`に正式な公開URLを設定するとcanonical・OG URL・OG画像・sitemapへ反映する。未設定時はCloudflareが提供する`CF_PAGES_URL`を使い、ローカルでは`http://localhost:4173/`を使う。
+各階層のindex.htmlと404.htmlを生成するため、SPA用の全URL転送は不要。[手順と未完了の接続作業](cloudflare-pages.md)を参照。
+
+## 既存のGitHub Pages
 
 公開先：`https://haniwa820-t.github.io/tokuyama-kosen-festival/`
-Viteの`base`は`/tokuyama-kosen-festival/`。画像と資料のURLは`assetUrl()`がbaseを付ける。
-独自ドメインへ変更する場合はViteのbaseとindex.htmlのcanonical/OG URLを併せて変更する。
+Actionsで`SITE_BASE_PATH=/tokuyama-kosen-festival/`と`SITE_URL`を設定し、従来のURLを維持する。画像と資料のURLは`assetUrl()`がbaseを付ける。
+公開先を変更する場合は`SITE_BASE_PATH`と`SITE_URL`を揃える。ソース内のURLを書き換える必要はない。
 
 `.github/workflows/pages.yml`がmainへのpush時に`npm ci`、型・lint・テスト・出典確認・静的ビルド、ブラウザーテストを行い、成功した`dist/`だけをPagesへ公開する。
 PRでは検証のみ。公開権限はdeployジョブに限定し、公式アクションのコミットSHAを固定する。
@@ -54,7 +60,7 @@ PagesのSourceはGitHub Actionsを使用する。公開状況はREADMEを参照�
 
 ## 検証
 
-`npm run check`：型、lint、41件の単体・画面操作テスト、カバレッジ80%以上、素材・出典確認、13組の配色コントラスト、ビルド、10件のHTML（9ページ＋404）の内部リンク・画像・配布資料・metadata検証。
-`npm run test:e2e`：2画面サイズで計16件。日程、検索、保存の再読込、おまかせ、詳細、30スポンサー、PDF、地図、全階層の直接URL・再読込、旧URL、JavaScript無効、動きを減らす設定、ホームへのメニュー・メインロゴ、320〜1440pxの横はみ出し、画像とブラウザーエラーを確認する。
+`npm run check`：型、lint、45件の単体・画面操作テスト、カバレッジ80%以上、素材・出典確認、13組の配色コントラスト、ビルド、10件のHTML（9ページ＋404）の内部リンク・画像・配布資料・metadata検証。
+`npm run test:e2e`：2画面サイズで計20件。日程、検索、保存の再読込、おまかせ、詳細、88件のスポンサー画像と大口5社のリンク、PDF、地図、全階層の直接URL・再読込、旧URL、JavaScript無効、動きを減らす設定、ホームへのメニュー・メインロゴ、320〜1440pxの横はみ出し、画像とブラウザーエラーを確認する。
 
 参考公式資料：[Viteの静的公開](https://vite.dev/guide/static-deploy.html#github-pages)、[GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages)、[React hydrateRoot](https://react.dev/reference/react-dom/client/hydrateRoot)。

@@ -229,6 +229,706 @@
       "bytes": 8286954,
       "sha256": "e1245a256cd6932d563f2f72f1c7f90dd034fa2ccaa8067902bcb69af0c80675",
       "importedOn": "2026-10-08"
+    },
+    {
+      "originalPath": "スポンサーポスター/1ページ/やまぐち健口フェスタ.pdf",
+      "path": "assets/source/スポンサーポスター/1ページ/やまぐち健口フェスタ.pdf",
+      "bytes": 1347835,
+      "sha256": "8e7a54ed027c0e645c7c5a26941cc4f22b73407c8802792e8b9e3f54239fea74",
+      "recordedOn": "2026-10-21"
+    },
+    {
+      "originalPath": "スポンサーポスター/1ページ/りんかい日産建設 1.png",
+      "path": "assets/source/スポンサーポスター/1ページ/りんかい日産建設 1.png",
+      "bytes": 2998570,
+      "sha256": "ee1c00806851d9898821c58d441f0699a39acc08b629c6be46bd04c55ff138d9",
+      "recordedOn": "2026-10-21"
+    },
+    {
+      "originalPath": "スポンサーポスター/1ページ/下松自動車学校_20261007_143449.png",
+      "path": "assets/source/スポンサーポスター/1ページ/下松自動車学校_20261007_143449.png",
+      "bytes": 1463578,
+      "sha256": "24442bbe0be55287e3cbc52cf6a5fa5c9470aed2ffe61ee68efeacb8ea602504",
+      "recordedOn": "2026-10-21"
+    },
+    {
+      "originalPath": "スポンサーポスター/1ページ/焼き鳥マル八　紹介パンフレット　文化祭.pdf",
+      "path": "assets/source/スポンサーポスター/1ページ/焼き鳥マル八　紹介パンフレット　文化祭.pdf",
+      "bytes": 9878504,
+      "sha256": "2e9f20843633a5c6af5d4ac253a43a06fbd7d1e4341c972627f7f370a5bef047",
+      "recordedOn": "2026-10-21"
+    },
+    {
+      "originalPath": "スポンサーポスター/4分の1/010 八千代興産有限会社.jpeg",
+      "path": "assets/source/スポンサーポスター/4分の1/010 八千代興産有限会社.jpeg",
+      "bytes": 302573,
+      "sha256": "4ea50045e94849e540c5f3ed49010de2066e0bc4c90078426fdb83eb7c9d680e",
+      "recordedOn": "2026-10-21"
+    },
+    {
+      "originalPath": "スポンサーポスター/4分の1/044 毘沙門.png",
+      "path": "assets/source/スポンサーポスター/4分の1/044 毘沙門.png",
+      "bytes": 536978,
+      "sha256": "8bab5868259b3c31612a38281adfd9a7278e9a5ae421f16fed7b9062303e43ca",
+      "recordedOn": "2026-10-21"
+    },
+    {
+      "originalPath": "スポンサーポスター/4分の1/097 KRY山口放送 1.jpeg",
+      "path": "assets/source/スポンサーポスター/4分の1/097 KRY山口放送 1.jpeg",
+      "bytes": 424642,
+      "sha256": "7c04ada19bf6a8d5564711432e811d178a17b9c9c81161d4295420598c9b82b5",
+      "recordedOn": "2026-10-21"
+    },
+    {
+      "originalPath": "スポンサーポスター/4分の1/097 KRY山口放送.jpeg",
+      "path": "assets/source/スポンサーポスター/4分の1/097 KRY山口放送.jpeg",
+      "bytes": 424642,
+      "sha256": "7c04ada19bf6a8d5564711432e811d178a17b9c9c81161d4295420598c9b82b5",
+      "recordedOn": "2026-10-21"
+    },
+    {
+      "originalPath": "スポンサーポスター/4分の1/nail salon fanon.pdf",
+      "path": "assets/source/スポンサーポスター/4分の1/nail salon fanon.pdf",
+      "bytes": 801165,
+      "sha256": "6e446618d60006d50a77ab55bc47c758bf18b7e7a50471da707cb900b1bc37a8",
+      "recordedOn": "2026-10-21"
+    },
+    {
+      "originalPath": "スポンサーポスター/4分の1/えびす.jpg",
+      "path": "assets/source/スポンサーポスター/4分の1/えびす.jpg",
+      "bytes": 64768,
+      "sha256": "026171c6272f365428db6b6426d041219419249ff294182c6b36e88d96c849a0",
+      "recordedOn": "2026-10-21"
+    },
+    {
+      "originalPath": "スポンサーポスター/4分の1/カシワバラコーポレーション　改.pdf",
+      "path": "assets/source/スポンサーポスター/4分の1/カシワバラコーポレーション　改.pdf",
+      "bytes": 8841476,
+      "sha256": "69779f9f49b8a525de65494036ecaeff5937680609b04123361e6ca3ca8ee480",
+      "recordedOn": "2026-10-21"
+    },
+    {
+      "originalPath": "スポンサーポスター/4分の1/改-新立電機株式会社.jpg",
+      "path": "assets/source/スポンサーポスター/4分の1/改-新立電機株式会社.jpg",
+      "bytes": 145937,
+      "sha256": "ea0d614aa75a85758a4475131c45b49c915148251d1d2359c2f709da8a5c36d7",
+      "recordedOn": "2026-10-21"
+    },
+    {
+      "originalPath": "スポンサーポスター/4分の1/津田胃腸科内科医院　改.jpeg",
+      "path": "assets/source/スポンサーポスター/4分の1/津田胃腸科内科医院　改.jpeg",
+      "bytes": 65018,
+      "sha256": "a0b935a507dcbc6a4893effc89cf58aa00342c831a905bca7e5d6cbaa45d4167",
+      "recordedOn": "2026-10-21"
+    },
+    {
+      "originalPath": "スポンサーポスター/大口/東洋鋼鈑様-高専祭パンフ用広告.pdf",
+      "path": "assets/source/スポンサーポスター/大口/東洋鋼鈑様-高専祭パンフ用広告.pdf",
+      "bytes": 784340,
+      "sha256": "4e076ab4980e05ccb5c6be2be97e0dd65e2d312a8e853b88318ec60a1efc65a4",
+      "recordedOn": "2026-10-21"
+    },
+    {
+      "originalPath": "スポンサーポスター/大口/高専祭パンフ広告-トクヤマ様.pdf",
+      "path": "assets/source/スポンサーポスター/大口/高専祭パンフ広告-トクヤマ様.pdf",
+      "bytes": 883994,
+      "sha256": "d257e155de0838640e0128f7383746105736c7257e849976892e68b8e24e19c4",
+      "recordedOn": "2026-10-21"
+    },
+    {
+      "originalPath": "スポンサーポスター/大口/高専祭パンフ広告-冨士高圧様.pdf",
+      "path": "assets/source/スポンサーポスター/大口/高専祭パンフ広告-冨士高圧様.pdf",
+      "bytes": 583590,
+      "sha256": "7bcbaf67ba4f4d1165d78bedb67d60eb33a467d346bc532376cc354a2565d476",
+      "recordedOn": "2026-10-21"
+    },
+    {
+      "originalPath": "スポンサーポスター/大口/高専祭パンフ広告-周南自動車様.pdf",
+      "path": "assets/source/スポンサーポスター/大口/高専祭パンフ広告-周南自動車様.pdf",
+      "bytes": 1833668,
+      "sha256": "48962b9b271500a051ecd921e9761106f08161150f7020739dce9cceabedaf47",
+      "recordedOn": "2026-10-21"
+    },
+    {
+      "originalPath": "スポンサーポスター/大口/高専祭パンフ用広告-東ソー様 B5.pdf",
+      "path": "assets/source/スポンサーポスター/大口/高専祭パンフ用広告-東ソー様 B5.pdf",
+      "bytes": 5862873,
+      "sha256": "6e769a5bdb9ebd0114d723f1fa85d98b540a2e7846f27c4e8563f9e18e5e832c",
+      "recordedOn": "2026-10-21"
+    },
+    {
+      "originalPath": "スポンサーポスター/大口/高専祭パンフ用広告-東ソー様 ロゴ.png",
+      "path": "assets/source/スポンサーポスター/大口/高専祭パンフ用広告-東ソー様 ロゴ.png",
+      "bytes": 449393,
+      "sha256": "c5d818d537bfa82073ad27861b95d97ecf3c54f71477ea0c1b09593bfc0b6072",
+      "recordedOn": "2026-10-21"
+    },
+    {
+      "originalPath": "スポンサーポスター/８分の1/009 佐波歯科医院.png",
+      "path": "assets/source/スポンサーポスター/８分の1/009 佐波歯科医院.png",
+      "bytes": 415179,
+      "sha256": "541c57fb49b04e44218c800acacd55f904de5bdb69b3ab808e0e27380f4b09d8",
+      "recordedOn": "2026-10-21"
+    },
+    {
+      "originalPath": "スポンサーポスター/８分の1/014 マックスバリュ周南久米店.jpeg",
+      "path": "assets/source/スポンサーポスター/８分の1/014 マックスバリュ周南久米店.jpeg",
+      "bytes": 310692,
+      "sha256": "26c636c452a459e4198be4783e9721f2f71c523609f480e571716bc98dc3c233",
+      "recordedOn": "2026-10-21"
+    },
+    {
+      "originalPath": "スポンサーポスター/８分の1/016 ハシモトスポーツ.png",
+      "path": "assets/source/スポンサーポスター/８分の1/016 ハシモトスポーツ.png",
+      "bytes": 154872,
+      "sha256": "6ea763f04777e07fdd48237cb1794b725fb4e4a174c09d86c6f904a39569a661",
+      "recordedOn": "2026-10-21"
+    },
+    {
+      "originalPath": "スポンサーポスター/８分の1/017 くだまつ健康パーク.jpeg",
+      "path": "assets/source/スポンサーポスター/８分の1/017 くだまつ健康パーク.jpeg",
+      "bytes": 98670,
+      "sha256": "579c09152fcd62e37f07c19be65c0851a84d60caf1dcef57788b17cb6e60472d",
+      "recordedOn": "2026-10-21"
+    },
+    {
+      "originalPath": "スポンサーポスター/８分の1/022 兼清電子.gif",
+      "path": "assets/source/スポンサーポスター/８分の1/022 兼清電子.gif",
+      "bytes": 7224,
+      "sha256": "37f76e77214e1837ecf002def07ae15d68d3ae48bf4c31cfc1748aeb21eb090f",
+      "recordedOn": "2026-10-21"
+    },
+    {
+      "originalPath": "スポンサーポスター/８分の1/023 周南建設株式会社.png",
+      "path": "assets/source/スポンサーポスター/８分の1/023 周南建設株式会社.png",
+      "bytes": 23642,
+      "sha256": "bf1fe1bd23509c0bb66d74f4e36706866db7e119301b6e7b5349b1d67c0039ff",
+      "recordedOn": "2026-10-21"
+    },
+    {
+      "originalPath": "スポンサーポスター/８分の1/027 焼肉牛太　光店.png",
+      "path": "assets/source/スポンサーポスター/８分の1/027 焼肉牛太　光店.png",
+      "bytes": 169724,
+      "sha256": "9f77cdfe2dc60ba87bd056fb73a46064bda5bdfdd6e86aa392af1b8421197041",
+      "recordedOn": "2026-10-21"
+    },
+    {
+      "originalPath": "スポンサーポスター/８分の1/028 銀色バイク.png",
+      "path": "assets/source/スポンサーポスター/８分の1/028 銀色バイク.png",
+      "bytes": 72071,
+      "sha256": "4a3477e4d4ab95dc5e2a3b228039e93b94a2dfc084ccb8cecfe2ee02e0d3c2e5",
+      "recordedOn": "2026-10-21"
+    },
+    {
+      "originalPath": "スポンサーポスター/８分の1/030 京都五条きもの桔梗.jpeg",
+      "path": "assets/source/スポンサーポスター/８分の1/030 京都五条きもの桔梗.jpeg",
+      "bytes": 88294,
+      "sha256": "4cc3703de9b3568a49a4d4b6911ebdbb7bda06124438f45040578f4c7222c77a",
+      "recordedOn": "2026-10-21"
+    },
+    {
+      "originalPath": "スポンサーポスター/８分の1/037 やすきゅう.png",
+      "path": "assets/source/スポンサーポスター/８分の1/037 やすきゅう.png",
+      "bytes": 209912,
+      "sha256": "62b778f1766ce5aa4a89a745658420e02d3a8deef15fabf0cc11d1aacea3d983",
+      "recordedOn": "2026-10-21"
+    },
+    {
+      "originalPath": "スポンサーポスター/８分の1/038 清水歯科医院.jpeg",
+      "path": "assets/source/スポンサーポスター/８分の1/038 清水歯科医院.jpeg",
+      "bytes": 85155,
+      "sha256": "33e65b06b8b2788e0e80761c04d041d106858b57111372564c79b2586bc14a62",
+      "recordedOn": "2026-10-21"
+    },
+    {
+      "originalPath": "スポンサーポスター/８分の1/040 ふじい歯科クリニック.png",
+      "path": "assets/source/スポンサーポスター/８分の1/040 ふじい歯科クリニック.png",
+      "bytes": 203976,
+      "sha256": "f31261918afde3cb1c600dadb0176be6cbe4fda9b9a2755ef2499e855508f807",
+      "recordedOn": "2026-10-21"
+    },
+    {
+      "originalPath": "スポンサーポスター/８分の1/043 徳山商工会議所.png",
+      "path": "assets/source/スポンサーポスター/８分の1/043 徳山商工会議所.png",
+      "bytes": 43685,
+      "sha256": "3b3384b1f88244e7d316a0bfccecdfb68af896ba64a768d4793e02933d856920",
+      "recordedOn": "2026-10-21"
+    },
+    {
+      "originalPath": "スポンサーポスター/８分の1/050 hair salon LaMer.png",
+      "path": "assets/source/スポンサーポスター/８分の1/050 hair salon LaMer.png",
+      "bytes": 51724,
+      "sha256": "7a4e2ecb06db8c5165d9106a4377d369dbd76252fd38c5436be6828eac987435",
+      "recordedOn": "2026-10-21"
+    },
+    {
+      "originalPath": "スポンサーポスター/８分の1/052 RAKU hair 美容院楽　下松店.png",
+      "path": "assets/source/スポンサーポスター/８分の1/052 RAKU hair 美容院楽　下松店.png",
+      "bytes": 225098,
+      "sha256": "c99f4c9608c956050e6eaf4f4c34a964a56dcd9b131f62bbabf76578b11c09e9",
+      "recordedOn": "2026-10-21"
+    },
+    {
+      "originalPath": "スポンサーポスター/８分の1/054 黒川病院 (1).png",
+      "path": "assets/source/スポンサーポスター/８分の1/054 黒川病院 (1).png",
+      "bytes": 172556,
+      "sha256": "816b674597fd6220ae585b2609f2ed5570e15b2a1b148f50809d7cb3006126ab",
+      "recordedOn": "2026-10-21"
+    },
+    {
+      "originalPath": "スポンサーポスター/８分の1/057 大嶋運輸機工株式会社.jpeg",
+      "path": "assets/source/スポンサーポスター/８分の1/057 大嶋運輸機工株式会社.jpeg",
+      "bytes": 44271,
+      "sha256": "b3b4ed1cf2bf27e924024042823d4866d7263d24e75ccc879900837cba13064d",
+      "recordedOn": "2026-10-21"
+    },
+    {
+      "originalPath": "スポンサーポスター/８分の1/060 ピーコック.png",
+      "path": "assets/source/スポンサーポスター/８分の1/060 ピーコック.png",
+      "bytes": 226923,
+      "sha256": "b5d263927560c68155f58bcaacae9b071c531a13e523c05963f3d814be13b1b9",
+      "recordedOn": "2026-10-21"
+    },
+    {
+      "originalPath": "スポンサーポスター/８分の1/061 ENGLISH CLUB MAY.png",
+      "path": "assets/source/スポンサーポスター/８分の1/061 ENGLISH CLUB MAY.png",
+      "bytes": 220530,
+      "sha256": "593cf9533c74891abf1581a3f7a2c1167f929e1e5d32f2abb8f1db9c11c88ae6",
+      "recordedOn": "2026-10-21"
+    },
+    {
+      "originalPath": "スポンサーポスター/８分の1/067 株式会社　ムラシゲスポーツ.png",
+      "path": "assets/source/スポンサーポスター/８分の1/067 株式会社　ムラシゲスポーツ.png",
+      "bytes": 304114,
+      "sha256": "f5a49b034d1d8daca9ec19c05c90fa156de3991f8cddf000d33cabc67b3c094d",
+      "recordedOn": "2026-10-21"
+    },
+    {
+      "originalPath": "スポンサーポスター/８分の1/070 虹ヶ丘鍼灸院.png",
+      "path": "assets/source/スポンサーポスター/８分の1/070 虹ヶ丘鍼灸院.png",
+      "bytes": 286987,
+      "sha256": "e066af5601805db4a3fc07e84c5233f705af4813dbb5b75e696cf01fab2c8a52",
+      "recordedOn": "2026-10-21"
+    },
+    {
+      "originalPath": "スポンサーポスター/８分の1/071 瀬戸内料理にしむら.png",
+      "path": "assets/source/スポンサーポスター/８分の1/071 瀬戸内料理にしむら.png",
+      "bytes": 499176,
+      "sha256": "697aee1bcadf937480201fafb5be4fd0784c7dd7720f2a6924f89378e4ec6dc1",
+      "recordedOn": "2026-10-21"
+    },
+    {
+      "originalPath": "スポンサーポスター/８分の1/081 アルク秋月店.png",
+      "path": "assets/source/スポンサーポスター/８分の1/081 アルク秋月店.png",
+      "bytes": 200552,
+      "sha256": "a50d0f870291f018c346ced45d9cf54ba4f2e1398152ed7e39c3d1046de1c11c",
+      "recordedOn": "2026-10-21"
+    },
+    {
+      "originalPath": "スポンサーポスター/８分の1/085 くだまつスポーツセンター.png",
+      "path": "assets/source/スポンサーポスター/８分の1/085 くだまつスポーツセンター.png",
+      "bytes": 232318,
+      "sha256": "5ce5908cee50c8ef926ae5aa76ba0465ce41913e8aa6ba21738366808defb082",
+      "recordedOn": "2026-10-21"
+    },
+    {
+      "originalPath": "スポンサーポスター/８分の1/086 マックスバリュ末武店.jpeg",
+      "path": "assets/source/スポンサーポスター/８分の1/086 マックスバリュ末武店.jpeg",
+      "bytes": 112425,
+      "sha256": "ea2e09851db0d6c2264981e426bcfbc69a54936f26bceaed407d0a631bcae299",
+      "recordedOn": "2026-10-21"
+    },
+    {
+      "originalPath": "スポンサーポスター/８分の1/089 伊東歯科医院.png",
+      "path": "assets/source/スポンサーポスター/８分の1/089 伊東歯科医院.png",
+      "bytes": 194016,
+      "sha256": "769c248bd663c76baa7b77889d807f9650222c5c5e55dfd15c1f404471a45478",
+      "recordedOn": "2026-10-21"
+    },
+    {
+      "originalPath": "スポンサーポスター/８分の1/093 福祉タクシーハミングバード.jpeg",
+      "path": "assets/source/スポンサーポスター/８分の1/093 福祉タクシーハミングバード.jpeg",
+      "bytes": 113400,
+      "sha256": "3876d0875bf91c7fc7eb3011080eedb85d0b3ff50e90d1497ba47e921cc21de9",
+      "recordedOn": "2026-10-21"
+    },
+    {
+      "originalPath": "スポンサーポスター/８分の1/095 きえら.png",
+      "path": "assets/source/スポンサーポスター/８分の1/095 きえら.png",
+      "bytes": 353273,
+      "sha256": "87d1f812890660c71d464d47d7e434408107265b3cacafd3035c535838cc8f95",
+      "recordedOn": "2026-10-21"
+    },
+    {
+      "originalPath": "スポンサーポスター/８分の1/096 トキワ自工.png",
+      "path": "assets/source/スポンサーポスター/８分の1/096 トキワ自工.png",
+      "bytes": 84322,
+      "sha256": "dc92441c74a56b431474f52f75135f0f923513f104ecc241d6e86562df7f9cf0",
+      "recordedOn": "2026-10-21"
+    },
+    {
+      "originalPath": "スポンサーポスター/８分の1/098 ラーメン大将.png",
+      "path": "assets/source/スポンサーポスター/８分の1/098 ラーメン大将.png",
+      "bytes": 21784,
+      "sha256": "49b0daa8d5f157f151b174c0bf8903da9de7914482d27e3e1a1b8105040b17c9",
+      "recordedOn": "2026-10-21"
+    },
+    {
+      "originalPath": "スポンサーポスター/８分の1/103 手打ちうどん くうかい.png",
+      "path": "assets/source/スポンサーポスター/８分の1/103 手打ちうどん くうかい.png",
+      "bytes": 161523,
+      "sha256": "91999a3dd04ac5aaf850f791dd764b77cfa0e759c53a73dc6474f193fcc7c9fa",
+      "recordedOn": "2026-10-21"
+    },
+    {
+      "originalPath": "スポンサーポスター/８分の1/ALASKA.jpeg",
+      "path": "assets/source/スポンサーポスター/８分の1/ALASKA.jpeg",
+      "bytes": 415733,
+      "sha256": "175549f3659b14b0c4bfb7b652284dc1eb6f5517e138891ab76c4e44ea37e456",
+      "recordedOn": "2026-10-21"
+    },
+    {
+      "originalPath": "スポンサーポスター/８分の1/Bamboo.jpg",
+      "path": "assets/source/スポンサーポスター/８分の1/Bamboo.jpg",
+      "bytes": 198188,
+      "sha256": "c061cbee9f43d1dcebbe67c83f6aeff6194f395e5ca2d4444bf50f57f9fd9fc3",
+      "recordedOn": "2026-10-21"
+    },
+    {
+      "originalPath": "スポンサーポスター/８分の1/PATIO'.jpeg",
+      "path": "assets/source/スポンサーポスター/８分の1/PATIO'.jpeg",
+      "bytes": 67214,
+      "sha256": "f27fc26c3d5394b57294ae0f7008a2c5840e07b218b51ee965ab5778ea0f75db",
+      "recordedOn": "2026-10-21"
+    },
+    {
+      "originalPath": "スポンサーポスター/８分の1/SunsetChill.png",
+      "path": "assets/source/スポンサーポスター/８分の1/SunsetChill.png",
+      "bytes": 1707607,
+      "sha256": "5f6e5b173f2b73cb991e3b453cab24fd15ae1ae8584ed4290e8fc0ade73438ff",
+      "recordedOn": "2026-10-21"
+    },
+    {
+      "originalPath": "スポンサーポスター/８分の1/YUNAGI LOGO_RGB-07.png",
+      "path": "assets/source/スポンサーポスター/８分の1/YUNAGI LOGO_RGB-07.png",
+      "bytes": 66065,
+      "sha256": "ca96dd3675e322174cbd8a3f00f5328f05b06ae19a86d4a1631c5ad5c8c5abee",
+      "recordedOn": "2026-10-21"
+    },
+    {
+      "originalPath": "スポンサーポスター/８分の1/feliceto.png",
+      "path": "assets/source/スポンサーポスター/８分の1/feliceto.png",
+      "bytes": 897731,
+      "sha256": "73053773b17f7ab458d77fec439261222fff0221b560b55894611b27c933def5",
+      "recordedOn": "2026-10-21"
+    },
+    {
+      "originalPath": "スポンサーポスター/８分の1/meiken_kousensai.png",
+      "path": "assets/source/スポンサーポスター/８分の1/meiken_kousensai.png",
+      "bytes": 365689,
+      "sha256": "9dcb5fcce3776ae950b65f0630e63c5fd11d5516cf28666c789d5e86b5026084",
+      "recordedOn": "2026-10-21"
+    },
+    {
+      "originalPath": "スポンサーポスター/８分の1/seahorseマリーナ＆レストラン.png",
+      "path": "assets/source/スポンサーポスター/８分の1/seahorseマリーナ＆レストラン.png",
+      "bytes": 77115,
+      "sha256": "0175237e4f455b1268318bc28ac9c7fd52b98333ed073fbdedb937b904612d3a",
+      "recordedOn": "2026-10-21"
+    },
+    {
+      "originalPath": "スポンサーポスター/８分の1/thekku.jpg",
+      "path": "assets/source/スポンサーポスター/８分の1/thekku.jpg",
+      "bytes": 199125,
+      "sha256": "551f539ca2e9ed8c003057b23435486d2c907c981e82267171a1c1193bda4fd3",
+      "recordedOn": "2026-10-21"
+    },
+    {
+      "originalPath": "スポンサーポスター/８分の1/あい歯科クリニック.png",
+      "path": "assets/source/スポンサーポスター/８分の1/あい歯科クリニック.png",
+      "bytes": 507408,
+      "sha256": "5ab1d0860403bc97d43f453aa31830ea6ba698a0491d5c5c3fdbb0fb12ad937f",
+      "recordedOn": "2026-10-21"
+    },
+    {
+      "originalPath": "スポンサーポスター/８分の1/たむら耳鼻咽喉　改.png",
+      "path": "assets/source/スポンサーポスター/８分の1/たむら耳鼻咽喉　改.png",
+      "bytes": 1512436,
+      "sha256": "6b91cee201435547389ca051c876d4ef5bf0a64fc3dace4c0199d67f58d97640",
+      "recordedOn": "2026-10-21"
+    },
+    {
+      "originalPath": "スポンサーポスター/８分の1/としみつ歯科医院.jpg",
+      "path": "assets/source/スポンサーポスター/８分の1/としみつ歯科医院.jpg",
+      "bytes": 1058466,
+      "sha256": "5850765c28893f76c3f38503db6d5b5d81e79a88246e279377f2b52c16e7abc4",
+      "recordedOn": "2026-10-21"
+    },
+    {
+      "originalPath": "スポンサーポスター/８分の1/とりでん周南店.png",
+      "path": "assets/source/スポンサーポスター/８分の1/とりでん周南店.png",
+      "bytes": 1154825,
+      "sha256": "0df468623d18bd707dbfe0b0a6a681e5d0ce62ab402c4590c45b364bf899a14f",
+      "recordedOn": "2026-10-21"
+    },
+    {
+      "originalPath": "スポンサーポスター/８分の1/みほり峠　徳山店.jpg",
+      "path": "assets/source/スポンサーポスター/８分の1/みほり峠　徳山店.jpg",
+      "bytes": 42197,
+      "sha256": "dbe4bc04b7108f4e7b7c181c129090d98ff330332c4ae362dd51e04cd02f3ecf",
+      "recordedOn": "2026-10-21"
+    },
+    {
+      "originalPath": "スポンサーポスター/８分の1/やすきゅう.png",
+      "path": "assets/source/スポンサーポスター/８分の1/やすきゅう.png",
+      "bytes": 209912,
+      "sha256": "62b778f1766ce5aa4a89a745658420e02d3a8deef15fabf0cc11d1aacea3d983",
+      "recordedOn": "2026-10-21"
+    },
+    {
+      "originalPath": "スポンサーポスター/８分の1/カインドオール.png",
+      "path": "assets/source/スポンサーポスター/８分の1/カインドオール.png",
+      "bytes": 2113366,
+      "sha256": "ae72de4759c05bccb63400b14e5a9fb36a1ffb8d923c814d0916707edb9c2e0b",
+      "recordedOn": "2026-10-21"
+    },
+    {
+      "originalPath": "スポンサーポスター/８分の1/サクラ食堂.jpg",
+      "path": "assets/source/スポンサーポスター/８分の1/サクラ食堂.jpg",
+      "bytes": 222927,
+      "sha256": "687821e7eab889ae8d59c9df3f922d5d971c770b33be2a77d9c224a9ffc1fd04",
+      "recordedOn": "2026-10-21"
+    },
+    {
+      "originalPath": "スポンサーポスター/８分の1/セラピーラボ.jpg",
+      "path": "assets/source/スポンサーポスター/８分の1/セラピーラボ.jpg",
+      "bytes": 43099,
+      "sha256": "d29350ae2d43d8936adae657a8567dc007a5f20ff5c6825effd4fe91db5b1f8f",
+      "recordedOn": "2026-10-21"
+    },
+    {
+      "originalPath": "スポンサーポスター/８分の1/バーディバーディゴルフスクール.png",
+      "path": "assets/source/スポンサーポスター/８分の1/バーディバーディゴルフスクール.png",
+      "bytes": 62739,
+      "sha256": "e66c56d1da2ce73159377caa10db7a2fe66d5dd7b9325cec19b93faac2d2bc31",
+      "recordedOn": "2026-10-21"
+    },
+    {
+      "originalPath": "スポンサーポスター/８分の1/フジ新南陽店　改.png",
+      "path": "assets/source/スポンサーポスター/８分の1/フジ新南陽店　改.png",
+      "bytes": 369235,
+      "sha256": "793e100a6a338be49ee33369cabfd445e3a56b53858376aef80d2e4cec9d5fd2",
+      "recordedOn": "2026-10-21"
+    },
+    {
+      "originalPath": "スポンサーポスター/８分の1/メディカルフィットネスウィンズ　改.jpeg",
+      "path": "assets/source/スポンサーポスター/８分の1/メディカルフィットネスウィンズ　改.jpeg",
+      "bytes": 87905,
+      "sha256": "a5d92f0962feae804e7fcf2194f3f3c0573a5d03a0d43007926cc275bdf25e8a",
+      "recordedOn": "2026-10-21"
+    },
+    {
+      "originalPath": "スポンサーポスター/８分の1/三栄建設.png",
+      "path": "assets/source/スポンサーポスター/８分の1/三栄建設.png",
+      "bytes": 340055,
+      "sha256": "17121433707d557a87affcc3152fe9d74d8546ff5eea1eca3b62a4976f744a1f",
+      "recordedOn": "2026-10-21"
+    },
+    {
+      "originalPath": "スポンサーポスター/８分の1/下関ゴルフセンター.png",
+      "path": "assets/source/スポンサーポスター/８分の1/下関ゴルフセンター.png",
+      "bytes": 74067,
+      "sha256": "4ec11c99474ad27e0e3d18a1e5bbcb70a16b07040db46526094712dd1cc391e8",
+      "recordedOn": "2026-10-21"
+    },
+    {
+      "originalPath": "スポンサーポスター/８分の1/中林建設.png",
+      "path": "assets/source/スポンサーポスター/８分の1/中林建設.png",
+      "bytes": 14299144,
+      "sha256": "990ba56b9ec36fcd60b948c2381c10833a3e5d0db71cc7608128ca3c9c162561",
+      "recordedOn": "2026-10-21"
+    },
+    {
+      "originalPath": "スポンサーポスター/８分の1/中華そば　紅蘭.png",
+      "path": "assets/source/スポンサーポスター/８分の1/中華そば　紅蘭.png",
+      "bytes": 97426,
+      "sha256": "7d23681f65f39070e7a9e611bfe8c11a8a36add158f3f1f398fa8a0d4b659cf1",
+      "recordedOn": "2026-10-21"
+    },
+    {
+      "originalPath": "スポンサーポスター/８分の1/京いち家.png",
+      "path": "assets/source/スポンサーポスター/８分の1/京いち家.png",
+      "bytes": 151413,
+      "sha256": "d13d9e3cc3693281124776acc4c00fb277d9668e7c823503d0355dd2f99d58db",
+      "recordedOn": "2026-10-21"
+    },
+    {
+      "originalPath": "スポンサーポスター/８分の1/京瀧.png",
+      "path": "assets/source/スポンサーポスター/８分の1/京瀧.png",
+      "bytes": 23443,
+      "sha256": "a09c55c57d25eddf5d09131c89c3f723c16c4006373f8ca06bcba20077a3043f",
+      "recordedOn": "2026-10-21"
+    },
+    {
+      "originalPath": "スポンサーポスター/８分の1/原田屋.jpeg",
+      "path": "assets/source/スポンサーポスター/８分の1/原田屋.jpeg",
+      "bytes": 677196,
+      "sha256": "302e363bf6bd67cff772dbc4607743e089b85857e659f2af3d966ed3f763ff83",
+      "recordedOn": "2026-10-21"
+    },
+    {
+      "originalPath": "スポンサーポスター/８分の1/吉武建設株式会社.png",
+      "path": "assets/source/スポンサーポスター/８分の1/吉武建設株式会社.png",
+      "bytes": 698550,
+      "sha256": "24df0b78fd97b420b7b5953f06db88cbab85662349fe1345c3da75fc84e60389",
+      "recordedOn": "2026-10-21"
+    },
+    {
+      "originalPath": "スポンサーポスター/８分の1/周南レンタカー　改.png",
+      "path": "assets/source/スポンサーポスター/８分の1/周南レンタカー　改.png",
+      "bytes": 82015,
+      "sha256": "967237e9426a22c5d005926a99fb14376810178fad0637563792de6b00a32f08",
+      "recordedOn": "2026-10-21"
+    },
+    {
+      "originalPath": "スポンサーポスター/８分の1/寿司満.png",
+      "path": "assets/source/スポンサーポスター/８分の1/寿司満.png",
+      "bytes": 2518946,
+      "sha256": "2ec0e4c76157f5892ce66947ea95d83aff5feaa35ccf7265bf4f1a688b147d02",
+      "recordedOn": "2026-10-21"
+    },
+    {
+      "originalPath": "スポンサーポスター/８分の1/山田石油株式会社.jpg",
+      "path": "assets/source/スポンサーポスター/８分の1/山田石油株式会社.jpg",
+      "bytes": 170035,
+      "sha256": "83a9e85b39aaa6b383571dff7c6c331fccf5d525d155cd90922374c9eb0f8e98",
+      "recordedOn": "2026-10-21"
+    },
+    {
+      "originalPath": "スポンサーポスター/８分の1/岩崎畳店.png",
+      "path": "assets/source/スポンサーポスター/８分の1/岩崎畳店.png",
+      "bytes": 210957,
+      "sha256": "ebb05b8bd1d8ba660d7814da559658f8faf9ef2cb9265eadab021002a0cb6f44",
+      "recordedOn": "2026-10-21"
+    },
+    {
+      "originalPath": "スポンサーポスター/８分の1/平岡医院.png",
+      "path": "assets/source/スポンサーポスター/８分の1/平岡医院.png",
+      "bytes": 134655,
+      "sha256": "223103344626cb620c6b74cdedf504f8be0e66d86d6977cebd02055a2c707ef2",
+      "recordedOn": "2026-10-21"
+    },
+    {
+      "originalPath": "スポンサーポスター/８分の1/廣華楼.jpg",
+      "path": "assets/source/スポンサーポスター/８分の1/廣華楼.jpg",
+      "bytes": 13888,
+      "sha256": "e88921e5ca480817aad298be87e7e4476ca3f7feb2778a91ed3f540f1affd1af",
+      "recordedOn": "2026-10-21"
+    },
+    {
+      "originalPath": "スポンサーポスター/８分の1/徳山中央幼稚園　改.pdf",
+      "path": "assets/source/スポンサーポスター/８分の1/徳山中央幼稚園　改.pdf",
+      "bytes": 147630,
+      "sha256": "da633a65bba21d1df340579ec3b7bf88288a7fb12e8719f29b0db3adcb7c1c57",
+      "recordedOn": "2026-10-21"
+    },
+    {
+      "originalPath": "スポンサーポスター/８分の1/桜木クリニック.png",
+      "path": "assets/source/スポンサーポスター/８分の1/桜木クリニック.png",
+      "bytes": 163501,
+      "sha256": "c178e1265dbf55bb53ef7c0c59b079b346454576ada00890bc3a6e95b224e3cf",
+      "recordedOn": "2026-10-21"
+    },
+    {
+      "originalPath": "スポンサーポスター/８分の1/第一ドライセンター城ケ丘店.png",
+      "path": "assets/source/スポンサーポスター/８分の1/第一ドライセンター城ケ丘店.png",
+      "bytes": 790459,
+      "sha256": "45612267b212617e744bcc948ea14f1f9d3edf00eb8bd081b83d489ac96b239d",
+      "recordedOn": "2026-10-21"
+    },
+    {
+      "originalPath": "スポンサーポスター/８分の1/藤田建設.pdf",
+      "path": "assets/source/スポンサーポスター/８分の1/藤田建設.pdf",
+      "bytes": 24706,
+      "sha256": "dab134899aa4ce4f5f41053a664802ece6f404592791a944695427eeb1a884b1",
+      "recordedOn": "2026-10-21"
+    },
+    {
+      "originalPath": "スポンサーポスター/８分の1/長沼建設株式会社.png",
+      "path": "assets/source/スポンサーポスター/８分の1/長沼建設株式会社.png",
+      "bytes": 367720,
+      "sha256": "27dd4cb5839b66c038e7f8028ed05f2ea167cef1f212e38e0ea86822fb9c1f02",
+      "recordedOn": "2026-10-21"
+    },
+    {
+      "originalPath": "スポンサーポスター/８分の1/𦩒𣂼护.jpeg",
+      "path": "assets/source/スポンサーポスター/８分の1/𦩒𣂼护.jpeg",
+      "bytes": 441787,
+      "sha256": "a644e107073d2ccfc74a188614627823278d5f85628c65d1421b70500825dbd5",
+      "recordedOn": "2026-10-21"
+    },
+    {
+      "originalPath": "map/Slide1.jpg",
+      "path": "assets/source/map/Slide1.jpg",
+      "bytes": 122201,
+      "sha256": "d311ac76a2658836387f7156b1cbf7d27d711f0e389700f3651169c521a7e456",
+      "recordedOn": "2026-10-21"
+    },
+    {
+      "originalPath": "map/Slide2.jpg",
+      "path": "assets/source/map/Slide2.jpg",
+      "bytes": 92442,
+      "sha256": "9fbc5393d9d4576292b97031d07bd9bd00857477d5272ebf90e3090ef375c6d0",
+      "recordedOn": "2026-10-21"
+    },
+    {
+      "originalPath": "map/Slide3.jpg",
+      "path": "assets/source/map/Slide3.jpg",
+      "bytes": 101750,
+      "sha256": "518b649b48ab2cdf2890cb3d91ffcef0335eaf6f1b9d1f22a6ef5138c8b5d4d8",
+      "recordedOn": "2026-10-21"
+    },
+    {
+      "originalPath": "map/Slide4.jpg",
+      "path": "assets/source/map/Slide4.jpg",
+      "bytes": 63427,
+      "sha256": "042e9718ea5d1aec2a8df2b04534700c4628b61875e11e741524659513317746",
+      "recordedOn": "2026-10-21"
+    },
+    {
+      "originalPath": "map/Slide5.jpg",
+      "path": "assets/source/map/Slide5.jpg",
+      "bytes": 91710,
+      "sha256": "77dd35690b3129a928efca91c309b87170cbb9e9df999aa8c625505a08abfec0",
+      "recordedOn": "2026-10-21"
+    },
+    {
+      "originalPath": "map/Slide6.jpg",
+      "path": "assets/source/map/Slide6.jpg",
+      "bytes": 69762,
+      "sha256": "d415fa7bdbaef5ff54d2fb7435a9c483d31d05e4800c7f28aec4b7feac214c6b",
+      "recordedOn": "2026-10-21"
+    },
+    {
+      "originalPath": "map/Slide7.jpg",
+      "path": "assets/source/map/Slide7.jpg",
+      "bytes": 82281,
+      "sha256": "e967fc02982275c6bea393dbc48d0d23c61e65962cc3d6933fbf7123ced4c7cb",
+      "recordedOn": "2026-10-21"
+    },
+    {
+      "originalPath": "map/Slide8.jpg",
+      "path": "assets/source/map/Slide8.jpg",
+      "bytes": 88501,
+      "sha256": "22dd6230cdcaa325ff45c624736a73e7b90e1a7fffa377776a021a4b56926b29",
+      "recordedOn": "2026-10-21"
+    },
+    {
+      "originalPath": "map/Slide9.jpg",
+      "path": "assets/source/map/Slide9.jpg",
+      "bytes": 55495,
+      "sha256": "796a45ae7852d7da45f8244c0df247b0f197901a9f9f8cc4fe7fa79f5abd8c27",
+      "recordedOn": "2026-10-21"
     }
   ]
 }

@@ -13,7 +13,8 @@ export const pages = [
     title: '2日間の予定',
     label: '日程',
     en: 'SCHEDULE',
-    description: 'ステージ企画と日ごとのプログラム。後夜祭は在校生限定です。',
+    description:
+      'ステージ企画と日ごとのプログラム。後夜祭は一般の方も参加できます。',
     parent: 'home',
   },
   {
@@ -78,7 +79,7 @@ export const pages = [
     label: 'スポンサー',
     en: 'SPONSORS',
     description:
-      '準備版掲載企業の公式サイトへ。30枠のサンプルバナーを掲載しています。',
+      '高専祭にご協賛いただいた企業・団体の広告と、大口スポンサーの公式サイトをご紹介します。',
     parent: 'home',
   },
   {

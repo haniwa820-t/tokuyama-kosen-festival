@@ -1213,11 +1213,19 @@ details[open] summary span {
   font-weight: 400;
 }
 
-/* Sponsor samples and footer */
+/* Sponsors and footer */
+.sponsor-group + .sponsor-group {
+  margin-top: var(--space-8);
+}
 .sponsor-grid {
   display: grid;
+  align-items: start;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: var(--space-6);
+}
+.sponsor-grid--major,
+.sponsor-grid--full {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 .sponsor-card {
   display: block;
@@ -1242,10 +1250,10 @@ details[open] summary span {
   font-weight: 700;
   line-height: 1.6;
 }
-.sponsor-card:hover {
+a.sponsor-card:hover {
   border-color: var(--color-action);
 }
-.sponsor-card:hover > span {
+a.sponsor-card:hover > span {
   text-decoration: underline;
   text-underline-offset: 4px;
 }
@@ -1376,6 +1384,16 @@ footer a {
     transform: none;
   }
 }
+@keyframes nav-in {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
 @keyframes toast-in {
   from {
     opacity: 0;
@@ -1407,6 +1425,7 @@ footer a {
   }
   .nav.is-open {
     display: grid;
+    animation: nav-in var(--motion-fast) var(--motion-ease) both;
   }
   .nav a {
     justify-content: flex-start;
@@ -1767,6 +1786,10 @@ footer a {
   .sponsor-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 16px 12px;
+  }
+  .sponsor-grid--major,
+  .sponsor-grid--full {
+    grid-template-columns: 1fr;
   }
   .sponsor-card > span {
     font-size: 13px;

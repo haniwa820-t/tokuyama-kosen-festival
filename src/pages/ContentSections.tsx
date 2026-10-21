@@ -1,3 +1,4 @@
+import campusMaps from '../data/campus-maps.json'
 import festival from '../data/festival.json'
 import departments from '../data/departments.json'
 import sponsors from '../data/sponsors.json'
@@ -163,7 +164,7 @@ export function MainEventsSection() {
           <p className="eyebrow">スタンプラリー</p>
           <h3>会場をめぐる、スタンプラリー。</h3>
           <p>
-            景品をご用意しています（先着順）。受付や参加方法の詳細は準備中です。
+            景品をご用意しています（先着順）。会場マップの星マークがスタンプ設置場所です。受付や参加方法の詳細は後日掲載します。
           </p>
         </div>
       </aside>
@@ -285,31 +286,37 @@ export function RelatedEventsSection() {
 export function CampusMapSection() {
   return (
     <section id="campus-map" className="container section">
-      <SectionTitle>会場を歩こう</SectionTitle>
+      {/* <SectionTitle>会場を歩こう</SectionTitle>
       <p className="section-lead">
         模擬店、体育館、実習工場。行きたい場所を見つけてから出発。
+      </p> */}
+      <p className="section-lead">
+        星マークは、スタンプラリーのスタンプ設置場所です。
+      </p>
+      <p className="note">
+        受付や参加方法など、スタンプラリーの詳細は後日掲載します。
       </p>
       <figure className="campus-figure">
         <a href={assetUrl('maps/campus.webp')} target="_blank" rel="noreferrer">
           <img
             src={assetUrl('maps/campus.webp')}
-            alt="準備版の会場図。飲食エリアAは教室棟前、Bは専門棟付近。第一体育館はステージ、第二体育館はバレーボール体験、柔道場はコーンホール、実習工場は学科企画。陸上競技場は臨時駐車場。"
-            width="905"
-            height="864"
+            alt="提供された会場全体図。Aは飲食エリア1、Bは飲食エリア2、Cは屋内模擬店、Dは野球場の体験企画、Eは実習工場とME学科企画。陸上競技場は臨時駐車場。星マークはスタンプ設置場所。"
+            width={campusMaps[0].width}
+            height={campusMaps[0].height}
             loading="lazy"
           />
         </a>
-        <figcaption>準備版パンフレットから / 画像をタップして拡大 ↗</figcaption>
+        <figcaption>会場全体図 / 画像をタップして拡大 ↗</figcaption>
       </figure>
       <ul className="map-legend">
         <li>
-          <b>A</b> 飲食エリアA
+          <b>A</b> 飲食エリア1
         </li>
         <li>
-          <b>B</b> 飲食エリアB
+          <b>B</b> 飲食エリア2
         </li>
         <li>
-          <b>C</b> 教室・管理棟の屋内企画
+          <b>C</b> 屋内模擬店
         </li>
         <li>
           <b>D</b> 野球場の体験企画
@@ -317,25 +324,22 @@ export function CampusMapSection() {
         <li>
           <b>E</b> 実習工場・ME学科企画
         </li>
+        <li>
+          <b>☆</b> スタンプ設置場所
+        </li>
       </ul>
       <div className="map-details">
-        {[
-          ['outdoor', '屋外の模擬店配置'],
-          ['indoor-1', '教室・管理棟 1階'],
-          ['indoor-2', '教室・管理棟 2階・3階'],
-        ].map(([id, label]) => (
-          <details key={id}>
+        {campusMaps.slice(1).map((map) => (
+          <details key={map.image}>
             <summary>
-              {label}を見る <span>＋</span>
+              {map.label}を見る <span>＋</span>
             </summary>
-            <a
-              href={assetUrl(`maps/${id}.webp`)}
-              target="_blank"
-              rel="noreferrer"
-            >
+            <a href={assetUrl(map.image)} target="_blank" rel="noreferrer">
               <img
-                src={assetUrl(`maps/${id}.webp`)}
-                alt={`準備版の${label}の図`}
+                src={assetUrl(map.image)}
+                alt={map.alt}
+                width={map.width}
+                height={map.height}
                 loading="lazy"
               />
             </a>
@@ -388,9 +392,7 @@ export function AccessSection() {
           <aside id="parking">
             <p className="eyebrow">駐車場</p>
             <h3>臨時駐車場</h3>
-            <p>
-              準備版の会場図では、陸上競技場を臨時駐車場として案内しています。
-            </p>
+            <p>会場図では、陸上競技場を臨時駐車場として案内しています。</p>
             <a href={sectionUrl('campus-map')}>会場図を見る ↑</a>
             <p className="note">
               入口・出口など、当日の詳しい運用は確認中です。
