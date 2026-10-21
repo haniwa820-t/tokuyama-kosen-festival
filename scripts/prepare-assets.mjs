@@ -5,6 +5,7 @@ import path from 'node:path'
 const json = async (p) => JSON.parse(await readFile(p, 'utf8'))
 const booths = await json('src/data/booths.json')
 const departments = await json('src/data/departments.json')
+const festival = await json('src/data/festival.json')
 const names = await readdir('assets/source/模擬店ポスター')
 const source = async (p) => {
   if (!p.endsWith('.pdf')) return p
@@ -64,11 +65,8 @@ await sharp('tmp/pdfs/pamphlet/page-1.png')
   .resize({ width: 600 })
   .webp({ quality: 85 })
   .toFile('public/images/pamphlet-cover.webp')
-await copyFile(
-  'assets/source/pamphlet/テンプレート(182 x 257 mm).pdf',
-  'public/documents/pamphlet-preparation.pdf',
-)
+await copyFile(festival.pamphlet.source, `public/${festival.pamphlet.path}`)
 await prepareSuppliedAssets()
 console.log(
-  '35 posters, main artwork, supplied maps, sponsor banners and preparation PDF generated; originals unchanged.',
+  '35 posters, main artwork, supplied maps, sponsor banners and final PDF generated; originals unchanged.',
 )

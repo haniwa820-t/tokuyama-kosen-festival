@@ -208,7 +208,7 @@ export default function App({ pageId = 'home' }: { pageId?: string }) {
                 href={assetUrl(festival.pamphlet.path)}
                 download
               >
-                準備版PDFをダウンロード ↓
+                パンフレットPDFをダウンロード ↓
               </a>
             </section>
             <NewsSection />
@@ -235,7 +235,7 @@ export default function App({ pageId = 'home' }: { pageId?: string }) {
           <section id="guide" className="container section">
             <GuideCards />
             <p className="note">
-              会場図とパンフレットは準備版です。バス時刻表・駐車場の詳しい運用は準備中です。
+              完成版パンフレットと開催日のバス時刻表を掲載しています。駐車場の詳しい運用は確認中です。
             </p>
           </section>
         )}

@@ -17,7 +17,7 @@ CIはNode.js 24 LTS。`.nvmrc`は依存パッケージの対応範囲に合わ�
 | `/guide/` | 来場ガイド入口 |
 | `/guide/map/` | 会場・屋内外の地図 |
 | `/guide/access/` | 交通・駐車場 |
-| `/guide/pamphlet/` | 準備版PDF |
+| `/guide/pamphlet/` | 完成版PDF |
 | `/sponsors/` | 提供広告88件、大口5社の公式リンク、確定した協賛一覧 |
 
 共通メニュー、パンくず、親・関連ページへのリンク、ページ固有のtitle・description・canonical・OG URL、404.htmlとsitemap.xmlを生成する。
@@ -33,7 +33,7 @@ SSRの時計は固定の開催日表示にし、ブラウザーで現在時刻�
 - `src/components/`：日程と企画検索、キーボード操作可能な詳細画面。
 - `src/styles/tokens.css`：役割別の色・書体・余白・状態。`src/styles/global.css`：部品の適用とモバイル対応。日本語は端末標準ゴシック、追加Webフォントなし。要件は`docs/design-system.md`。
 - `assets/source/`：提供原素材とチェックサム。
-- `public/`：WebPに最適化した画像、会場図、変更していない準備版PDF。
+- `public/`：WebPに最適化した画像、会場図、変更していない完成版PDF。
 - `scripts/prepare-assets.mjs`：加工済み画像の再生成（元PDFのローカルレンダーが必要）。
 - `scripts/check-content.mjs`：原素材の整合性、日付と曜日、出典、公開素材、PDF同一性の検証。
 - `tests/e2e/`：PC・スマートフォンのブラウザー検証。

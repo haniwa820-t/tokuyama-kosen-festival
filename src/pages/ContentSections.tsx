@@ -1,5 +1,6 @@
 import campusMaps from '../data/campus-maps.json'
 import festival from '../data/festival.json'
+import busTimetable from '../data/bus-timetable.json'
 import departments from '../data/departments.json'
 import sponsors from '../data/sponsors.json'
 import { assetUrl } from '../lib/catalog'
@@ -224,7 +225,7 @@ export function BoothsSection() {
       </p>
       <BoothCatalog />
       <p className="note">
-        会場表記は準備版の配置図に基づきます。IE2の会場階数は資料間で相違があるため確認中です。
+        会場表記は提供資料の配置図に基づきます。IE2の会場階数は資料間で相違があるため確認中です。
       </p>
     </section>
   )
@@ -385,7 +386,7 @@ export function AccessSection() {
               学校公式のアクセス案内 ↗
             </a>
             <p className="note">
-              開催日のバス時刻表は準備中です。上記は学校公式の通常のアクセス案内です。
+              上記は学校公式の通常のアクセス案内です。開催日の防長バス時刻表は下記をご確認ください。
             </p>
           </div>
           <aside id="parking">
@@ -398,6 +399,21 @@ export function AccessSection() {
             </p>
           </aside>
         </div>
+        <section id="bus-timetable" className="section">
+          <h3>開催日の防長バス時刻表</h3>
+          <p className="note">（臨）は臨時便、（定）は定期便です。</p>
+          <dl className="routes">
+            {busTimetable.services.map((service) => (
+              <div key={service.route}>
+                <dt>
+                  （{service.kind}）
+                  {service.kind === '臨' ? '臨時便' : '定期便'}
+                </dt>
+                <dd>{service.route}</dd>
+              </div>
+            ))}
+          </dl>
+        </section>
       </div>
     </section>
   )
@@ -409,26 +425,29 @@ export function PamphletSection() {
       <div className="pamphlet-art">
         <img
           src={assetUrl('images/pamphlet-cover.webp')}
-          alt="徳山高専2026高専祭パンフレット準備版の表紙"
+          alt="徳山高専2026高専祭パンフレット完成版の表紙"
           width="600"
           height="846"
           loading="lazy"
         />
       </div>
       <div>
-        <SectionTitle>準備版PDF</SectionTitle>
-        <span className="badge">準備版</span>
+        <SectionTitle>パンフレットPDF</SectionTitle>
+        <span className="badge">完成版</span>
         <p>
-          日程、会場図、企画のポスターをまとめた冊子です。空欄や調整中のページを含む、現在の準備版を配布しています。
+          日程、会場図、企画のポスター、バス時刻表などをまとめた完成版パンフレットです。
         </p>
         <a
           className="button"
           href={assetUrl(festival.pamphlet.path)}
-          download="徳山高専2026高専祭-パンフレット準備版.pdf"
+          download="徳山高専2026高専祭-パンフレット.pdf"
         >
-          準備版PDFをダウンロード <span>↓</span>
+          パンフレットPDFをダウンロード <span>↓</span>
         </a>
-        <p className="small">PDF / 57ページ / 約8.3 MB</p>
+        <p className="small">
+          PDF / {festival.pamphlet.pages}ページ / 約
+          {(festival.pamphlet.bytes / 1_000_000).toFixed(1)} MB
+        </p>
         <a
           className="text-link"
           href={assetUrl(festival.pamphlet.path)}
@@ -447,8 +466,8 @@ export function NewsSection() {
     <section id="news" className="container section news">
       <SectionTitle>お知らせ</SectionTitle>
       <div className="news-row">
-        <time dateTime="2026-10-08">2026.10.08</time>
-        <p>パンフレットの準備版と、現在の開催案内を掲載しました。</p>
+        <time dateTime="2026-10-21">2026.10.21</time>
+        <p>完成版パンフレットと、開催日の防長バス時刻表を掲載しました。</p>
       </div>
       <p className="note">
         日程・会場は変更する場合がございます。公式SNSでも最新の案内をご確認ください。

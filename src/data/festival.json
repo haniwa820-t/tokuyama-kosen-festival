@@ -76,9 +76,9 @@
       "purpose": "掲載項目の参考。今回の開催情報の出典ではない。"
     },
     "pamphlet": {
-      "path": "assets/source/pamphlet/テンプレート(182 x 257 mm).pdf",
-      "reviewStatus": "all-page-overview-and-relevant-pages-visually-reviewed",
-      "status": "preparation"
+      "path": "assets/source/pamphlet/高専祭パンフレット.2026.10.21.pdf",
+      "reviewStatus": "all-pages-rendered;cover-and-bus-timetable-visually-reviewed",
+      "status": "final"
     }
   },
   "yearSource": "https://www.tokuyama.ac.jp/school/images/2026gyouziyoteihyou.pdf",
@@ -91,11 +91,11 @@
   "addressSource": "https://www.tokuyama.ac.jp/campus/areamap.html",
   "accessSource": "https://www.tokuyama.ac.jp/campus/areamap.html",
   "pamphlet": {
-    "path": "documents/pamphlet-preparation.pdf",
-    "status": "preparation",
-    "pages": 57,
-    "bytes": 8286954,
-    "source": "assets/source/pamphlet/テンプレート(182 x 257 mm).pdf",
-    "distributionAuthorized": "user:2026-10-08"
+    "path": "documents/festival-pamphlet-2026.pdf",
+    "status": "final",
+    "pages": 48,
+    "bytes": 12184835,
+    "source": "assets/source/pamphlet/高専祭パンフレット.2026.10.21.pdf",
+    "distributionAuthorized": "user:2026-10-21"
   }
 }

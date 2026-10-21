@@ -88,9 +88,13 @@ test('深いページが直接アクセスと再読込で表示される', async
   }
   await page.goto('./guide/access/')
   await expect(page.locator('#access')).toContainText('大学高専下')
+  await expect(page.locator('#bus-timetable .routes > div')).toHaveCount(6)
+  await expect(page.locator('#bus-timetable')).toContainText(
+    '徳山高専（16:25） → （桜木経由） → 徳山駅（16:45）',
+  )
   await page.goto('./guide/map/')
   await expect(page.locator('.campus-figure img')).toBeVisible()
-  const pdf = await request.get('documents/pamphlet-preparation.pdf')
+  const pdf = await request.get('documents/festival-pamphlet-2026.pdf')
   expect(pdf.ok()).toBe(true)
   expect(pdf.headers()['content-type']).toContain('application/pdf')
 })
@@ -171,10 +175,10 @@ test('JavaScriptなしでも階層とPDFリンクを使える', async ({
   const page = await context.newPage()
   await page.goto(baseURL! + 'guide/')
   await page
-    .getByRole('link', { name: /パンフレット.*現在の準備版PDF/ })
+    .getByRole('link', { name: /パンフレット.*完成版パンフレットPDF/ })
     .click()
   await expect(
-    page.getByRole('link', { name: /準備版PDFをダウンロード/ }),
+    page.getByRole('link', { name: /パンフレットPDFをダウンロード/ }),
   ).toBeVisible()
   await context.close()
 })

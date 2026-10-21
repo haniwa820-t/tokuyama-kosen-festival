@@ -11,7 +11,7 @@ beforeEach(() =>
 afterEach(() => vi.restoreAllMocks())
 
 describe('高専祭の案内', () => {
-  it('開催日時・最低限の掲載項目・準備版資料を確認できる', () => {
+  it('開催日時・最低限の掲載項目・完成版資料を確認できる', () => {
     render(<App />)
     expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent(
       '徳山高専',
@@ -24,10 +24,10 @@ describe('高専祭の案内', () => {
         .querySelector('a'),
     ).toHaveAttribute('href', '/tokuyama-kosen-festival/')
     expect(
-      screen.getByRole('link', { name: /準備版PDFをダウンロード/ }),
+      screen.getByRole('link', { name: /パンフレットPDFをダウンロード/ }),
     ).toHaveAttribute(
       'href',
-      '/tokuyama-kosen-festival/documents/pamphlet-preparation.pdf',
+      '/tokuyama-kosen-festival/documents/festival-pamphlet-2026.pdf',
     )
     expect(screen.getByText('開幕まで')).toBeInTheDocument()
   })

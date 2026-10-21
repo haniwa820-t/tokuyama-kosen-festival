@@ -224,13 +224,6 @@
       "sha256": "d2b948ff3d4886e04350aec59b26a5abed9397b403b237078edbc13049748609"
     },
     {
-      "originalPath": "/Users/yamanetakeru/Downloads/テンプレート(182 x 257 mm).pdf",
-      "path": "assets/source/pamphlet/テンプレート(182 x 257 mm).pdf",
-      "bytes": 8286954,
-      "sha256": "e1245a256cd6932d563f2f72f1c7f90dd034fa2ccaa8067902bcb69af0c80675",
-      "importedOn": "2026-10-08"
-    },
-    {
       "originalPath": "スポンサーポスター/1ページ/やまぐち健口フェスタ.pdf",
       "path": "assets/source/スポンサーポスター/1ページ/やまぐち健口フェスタ.pdf",
       "bytes": 1347835,
@@ -942,6 +935,13 @@
       "path": "assets/source/stamp-rally/2026-10-21 16.20の画像.jpeg",
       "bytes": 172016,
       "sha256": "23dbf81c01da955734ebb81f2caaf17b219ff722ea9bb2fe36d3a133c57df603",
+      "recordedOn": "2026-10-21"
+    },
+    {
+      "originalPath": "高専祭パンフレット.2026.10.21.pdf",
+      "path": "assets/source/pamphlet/高専祭パンフレット.2026.10.21.pdf",
+      "bytes": 12184835,
+      "sha256": "34cba7b7dd609b97d223c9647c71fee34e6495cfa1e0d3205561ceae16fc2e96",
       "recordedOn": "2026-10-21"
     }
   ]

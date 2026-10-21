@@ -52,11 +52,11 @@ const original = await readFile(festival.pamphlet.source)
 assert.deepEqual(
   await readFile(`public/${festival.pamphlet.path}`),
   original,
-  'Distribution PDF differs from supplied preparation version',
+  'Distribution PDF differs from supplied final version',
 )
-assert.equal(festival.pamphlet.status, 'preparation')
+assert.equal(festival.pamphlet.status, 'final')
 console.log(
-  `${manifest.files.length} originals intact; dates, 32 booth assets, source records and preparation PDF verified.`,
+  `${manifest.files.length} originals intact; dates, 32 booth assets, source records and final PDF verified.`,
 )
 
 const banners = await json('src/data/sponsor-banners.json')

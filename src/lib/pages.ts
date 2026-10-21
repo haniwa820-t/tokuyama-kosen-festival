@@ -42,7 +42,7 @@ export const pages = [
     title: '来場ガイド',
     label: '来場ガイド',
     en: 'VISITOR GUIDE',
-    description: '会場図、アクセス・駐車場、準備版パンフレットはこちらから。',
+    description: '会場図、アクセス・駐車場、完成版パンフレットはこちらから。',
     parent: 'home',
   },
   {
@@ -60,7 +60,7 @@ export const pages = [
     title: 'アクセス・駐車場',
     label: 'アクセス・駐車場',
     en: 'ACCESS / PARKING',
-    description: '徳山高専への通常の交通案内と臨時駐車場の案内。',
+    description: '開催日の防長バス時刻表と、徳山高専への交通・臨時駐車場の案内。',
     parent: 'guide',
   },
   {
@@ -69,7 +69,7 @@ export const pages = [
     title: 'パンフレット',
     label: 'パンフレット',
     en: 'PAMPHLET',
-    description: '現在の準備版PDF（全57ページ）を配布しています。',
+    description: '完成版パンフレットPDF（全48ページ）を配布しています。',
     parent: 'guide',
   },
   {
