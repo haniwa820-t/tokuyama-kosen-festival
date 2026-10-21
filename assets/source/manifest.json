@@ -936,6 +936,13 @@
       "bytes": 40832,
       "sha256": "56ccbd09947e16dc3cfa93ee885c52a102f61f1dc9d8ff750ac271a3bc83d3b2",
       "recordedOn": "2026-10-21"
+    },
+    {
+      "originalPath": "2026-10-21 16.20の画像.jpeg",
+      "path": "assets/source/stamp-rally/2026-10-21 16.20の画像.jpeg",
+      "bytes": 172016,
+      "sha256": "23dbf81c01da955734ebb81f2caaf17b219ff722ea9bb2fe36d3a133c57df603",
+      "recordedOn": "2026-10-21"
     }
   ]
 }

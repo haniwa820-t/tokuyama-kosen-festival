@@ -41,9 +41,12 @@
   "stampRally": {
     "announced": true,
     "hasPrizes": true,
-    "firstComeFirstServed": true,
-    "detailsStatus": "needs-confirmation",
-    "source": "assets/source/メインポスター.jpg"
+    "stampCount": 6,
+    "prizeSelection": "lottery",
+    "description": "校内周遊型スタンプラリーを実施します。校内全6か所を回ってスタンプを集めると、豪華景品が当たる抽選に参加できます！模擬店や企画とあわせてお楽しみください。",
+    "detailsStatus": "partially-confirmed",
+    "source": "user:2026-10-21",
+    "posterSource": "assets/source/stamp-rally/2026-10-21 16.20の画像.jpeg"
   },
   "contact": {
     "organization": "徳山工業高等専門学校",

@@ -164,7 +164,8 @@ export function MainEventsSection() {
           <p className="eyebrow">スタンプラリー</p>
           <h3>会場をめぐる、スタンプラリー。</h3>
           <p>
-            景品をご用意しています（先着順）。会場マップの星マークがスタンプ設置場所です。受付や参加方法の詳細は後日掲載します。
+            {festival.stampRally.description}
+            会場マップの星マークがスタンプ設置場所です。
           </p>
         </div>
       </aside>
@@ -293,9 +294,7 @@ export function CampusMapSection() {
       <p className="section-lead">
         星マークは、スタンプラリーのスタンプ設置場所です。
       </p>
-      <p className="note">
-        受付や参加方法など、スタンプラリーの詳細は後日掲載します。
-      </p>
+      <p className="note">{festival.stampRally.description}</p>
       <figure className="campus-figure">
         <a href={assetUrl('maps/campus.webp')} target="_blank" rel="noreferrer">
           <img
