@@ -390,6 +390,9 @@ section {
   text-align: center;
   padding-top: var(--space-2);
 }
+.hero-poster-note a {
+  color: var(--color-action-hover);
+}
 .hero-poster-note > span {
   font-family: var(--font-numerals);
   letter-spacing: 0.06em;

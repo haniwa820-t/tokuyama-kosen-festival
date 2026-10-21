@@ -34,6 +34,8 @@ const pairs = [
   ['text-muted', 'paper', 4.5],
   ['text-muted', 'surface-blue', 4.5],
   ['hero-text', 'hero', 4.5],
+  ['action-hover', 'hero', 4.5],
+  ['action', 'surface-subtle', 4.5],
   ['focus', 'paper', 3],
   ['focus', 'strong', 3],
   ['control-border', 'paper', 3],
