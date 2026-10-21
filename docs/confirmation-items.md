@@ -30,4 +30,4 @@
 
 上記の未確定情報は捏造せず、確認済み情報と準備版の表示を区別する。公開はユーザーから依頼済み。
 
-Cloudflare Pages用のルートパス・公開URL切り替えを実装。実公開にはCloudflareへのログインとGitHub連携が必要。既存のGitHub Pages設定は移行完了まで維持する。
+2026-10-21にCloudflare Pagesへの初回公開とGitHub連携が完了。公開先は`https://tokuyama-kosen-festival.pages.dev/`。`main`へのpushで自動更新する。既存のGitHub Pagesも維持する。

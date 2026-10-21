@@ -1,8 +1,9 @@
 # 徳山高専 高専祭 2026 — Echo
 
-第52回高専祭の案内サイト。React + TypeScript + Viteで制作し、Cloudflare PagesのGitHub連携で静的公開できる構成です。
+第52回高専祭の案内サイト。React + TypeScript + Viteで制作し、Cloudflare PagesのGitHub連携で静的公開しています。
+公開先：<https://tokuyama-kosen-festival.pages.dev/>
+2026-10-21にCloudflare Pagesへ公開。GitHubの`main`へのpushで検証・ビルド・公開が自動実行されます。[公開設定と運用](docs/cloudflare-pages.md)を参照してください。
 既存のGitHub Pages：<https://haniwa820-t.github.io/tokuyama-kosen-festival/>
-Cloudflare Pagesはログインとリポジトリ連携が未完了です。[公開手順](docs/cloudflare-pages.md)を参照してください。
 
 10月31日（土）9:45〜15:30、11月1日（日）9:45〜15:00。
 テーマ：Echo — あの感動をもう一度。
