@@ -15,7 +15,7 @@ Cloudflare Pagesのプロジェクト名は`tokuyama-kosen-festival`、公開元
 | ルートディレクトリ | リポジトリのルート |
 | ビルドコマンド | `npm run check` |
 | 出力ディレクトリ | `dist` |
-| 環境変数 | `NODE_VERSION=24` |
+| 環境変数 | `NODE_VERSION=24.15.0` |
 | 公開URL | `SITE_URL=https://tokuyama-kosen-festival.pages.dev/` |
 | 配信パス | `SITE_BASE_PATH`は未設定、または`/` |
 
@@ -51,3 +51,5 @@ SITE_BASE_PATH=/tokuyama-kosen-festival/ npm run test:e2e
 
 2026-10-21に、ホーム・スポンサー・会場マップ・企画検索・アクセス・日程のHTTP 200とページ固有のcanonicalを確認しました。準備版PDFの配信と容量、メイン画像、会場全体図、東ソーのロゴ画像も確認済みです。
 ブラウザーではスポンサー画像88件と大口5社のリンク、地図9枚と星マークの説明、企画検索、深いURLからの再読込を確認しました。
+
+本番・プレビューのNode.jsは24.15.0に固定しています。依存するjsdomの対応範囲に合わせ、`.nvmrc`と`package.json`にも同じ最低バージョンを反映しました。

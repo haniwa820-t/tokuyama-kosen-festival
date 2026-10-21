@@ -2,7 +2,7 @@
 
 2026-10-21更新。React + TypeScript + Vite、npmを使用。Cloudflare PagesのGitHub連携に対応し、既存のGitHub Pages用ビルドも維持する。
 Node.jsは開発とビルドに使用し、公開後に常駐サーバーやデータベースは不要。
-CIはNode.js 24 LTS（`.nvmrc`）。依存関係は`package-lock.json`で固定する。
+CIはNode.js 24 LTS。`.nvmrc`は依存パッケージの対応範囲に合わせて24.15.0に固定する。依存関係は`package-lock.json`で固定する。
 
 ## 表示と静的生成
 
@@ -44,7 +44,7 @@ Git上の日本語パスはNFC表記で記録し、MacとLinuxのCIで同じ原�
 
 ## Cloudflare Pages
 
-通常のビルドはルートパス`/`で配信する。Cloudflare Pagesでは`npm run check`、出力`dist`、Node.js 24を設定済み。
+通常のビルドはルートパス`/`で配信する。Cloudflare Pagesでは`npm run check`、出力`dist`、Node.js 24.15.0を設定済み。
 公開先は`https://tokuyama-kosen-festival.pages.dev/`。2026-10-21に初回公開し、GitHubの`main`へのpushで自動ビルド・公開する。
 `SITE_URL`に正式な公開URLを設定するとcanonical・OG URL・OG画像・sitemapへ反映する。未設定時はCloudflareが提供する`CF_PAGES_URL`を使い、ローカルでは`http://localhost:4173/`を使う。
 各階層のindex.htmlと404.htmlを生成するため、SPA用の全URL転送は不要。[設定と運用](cloudflare-pages.md)を参照。

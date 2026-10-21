@@ -21,7 +21,7 @@
 
 ## 開発
 
-Node.js 24 LTSを推奨（`.nvmrc`）。
+Node.js 24.15.0 LTSを推奨（`.nvmrc`）。
 
 ```sh
 npm ci
