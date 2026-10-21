@@ -479,11 +479,8 @@ export function SponsorNames() {
   return (
     <details className="sponsors">
       <summary>
-        準備版パンフレットの掲載一覧<span>＋</span>
+        協賛企業・団体一覧<span>＋</span>
       </summary>
-      <p className="note">
-        準備版p43〜44の一覧です。確定情報は完成版で更新します。
-      </p>
       <ul>
         {sponsors.names.map((name, i) => (
           <li key={i}>{name}</li>

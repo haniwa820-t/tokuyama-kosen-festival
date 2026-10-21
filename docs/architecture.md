@@ -18,7 +18,7 @@ CIはNode.js 24 LTS。`.nvmrc`は依存パッケージの対応範囲に合わ�
 | `/guide/map/` | 会場・屋内外の地図 |
 | `/guide/access/` | 交通・駐車場 |
 | `/guide/pamphlet/` | 準備版PDF |
-| `/sponsors/` | 提供広告88件、大口5社の公式リンク、準備版の協賛一覧 |
+| `/sponsors/` | 提供広告88件、大口5社の公式リンク、確定した協賛一覧 |
 
 共通メニュー、パンくず、親・関連ページへのリンク、ページ固有のtitle・description・canonical・OG URL、404.htmlとsitemap.xmlを生成する。
 旧URLの`#booths`等は対応する階層へ移動する。
