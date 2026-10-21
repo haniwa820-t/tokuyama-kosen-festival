@@ -322,45 +322,10 @@
       "recordedOn": "2026-10-21"
     },
     {
-      "originalPath": "スポンサーポスター/大口/東洋鋼鈑様-高専祭パンフ用広告.pdf",
-      "path": "assets/source/スポンサーポスター/大口/東洋鋼鈑様-高専祭パンフ用広告.pdf",
-      "bytes": 784340,
-      "sha256": "4e076ab4980e05ccb5c6be2be97e0dd65e2d312a8e853b88318ec60a1efc65a4",
-      "recordedOn": "2026-10-21"
-    },
-    {
-      "originalPath": "スポンサーポスター/大口/高専祭パンフ広告-トクヤマ様.pdf",
-      "path": "assets/source/スポンサーポスター/大口/高専祭パンフ広告-トクヤマ様.pdf",
-      "bytes": 883994,
-      "sha256": "d257e155de0838640e0128f7383746105736c7257e849976892e68b8e24e19c4",
-      "recordedOn": "2026-10-21"
-    },
-    {
-      "originalPath": "スポンサーポスター/大口/高専祭パンフ広告-冨士高圧様.pdf",
-      "path": "assets/source/スポンサーポスター/大口/高専祭パンフ広告-冨士高圧様.pdf",
-      "bytes": 583590,
-      "sha256": "7bcbaf67ba4f4d1165d78bedb67d60eb33a467d346bc532376cc354a2565d476",
-      "recordedOn": "2026-10-21"
-    },
-    {
-      "originalPath": "スポンサーポスター/大口/高専祭パンフ広告-周南自動車様.pdf",
-      "path": "assets/source/スポンサーポスター/大口/高専祭パンフ広告-周南自動車様.pdf",
-      "bytes": 1833668,
-      "sha256": "48962b9b271500a051ecd921e9761106f08161150f7020739dce9cceabedaf47",
-      "recordedOn": "2026-10-21"
-    },
-    {
       "originalPath": "スポンサーポスター/大口/高専祭パンフ用広告-東ソー様 B5.pdf",
       "path": "assets/source/スポンサーポスター/大口/高専祭パンフ用広告-東ソー様 B5.pdf",
       "bytes": 5862873,
       "sha256": "6e769a5bdb9ebd0114d723f1fa85d98b540a2e7846f27c4e8563f9e18e5e832c",
-      "recordedOn": "2026-10-21"
-    },
-    {
-      "originalPath": "スポンサーポスター/大口/高専祭パンフ用広告-東ソー様 ロゴ.png",
-      "path": "assets/source/スポンサーポスター/大口/高専祭パンフ用広告-東ソー様 ロゴ.png",
-      "bytes": 449393,
-      "sha256": "c5d818d537bfa82073ad27861b95d97ecf3c54f71477ea0c1b09593bfc0b6072",
       "recordedOn": "2026-10-21"
     },
     {
@@ -928,6 +893,41 @@
       "path": "assets/source/map/Slide9.jpg",
       "bytes": 55495,
       "sha256": "796a45ae7852d7da45f8244c0df247b0f197901a9f9f8cc4fe7fa79f5abd8c27",
+      "recordedOn": "2026-10-21"
+    },
+    {
+      "originalPath": "スポンサーポスター/大口/東ソー様　HPバナー用ロゴ (1).jpg",
+      "path": "assets/source/スポンサーポスター/大口/東ソー様　HPバナー用ロゴ (1).jpg",
+      "bytes": 34178,
+      "sha256": "6df12a4b923a75fff34423aa6bcf8a535881326863f313167088ab31c69e93b3",
+      "recordedOn": "2026-10-21"
+    },
+    {
+      "originalPath": "スポンサーポスター/大口/冨士高圧フレキシブルホース様　高専祭広告 (1).pdf",
+      "path": "assets/source/スポンサーポスター/大口/冨士高圧フレキシブルホース様　高専祭広告 (1).pdf",
+      "bytes": 779283,
+      "sha256": "a200de4d050708eb323762106ca5c8894d17590b19f6c9ab718072bdce7dadfa",
+      "recordedOn": "2026-10-21"
+    },
+    {
+      "originalPath": "スポンサーポスター/大口/W184xH66_子供Ver_BW 2026年度版　トクヤマ　様 1 (1).pdf",
+      "path": "assets/source/スポンサーポスター/大口/W184xH66_子供Ver_BW 2026年度版　トクヤマ　様 1 (1).pdf",
+      "bytes": 1041185,
+      "sha256": "83c8b439df28895de41ce434f51dc449118400ebe85cecd03e313ef4bf224499",
+      "recordedOn": "2026-10-21"
+    },
+    {
+      "originalPath": "スポンサーポスター/大口/R8東洋鋼鈑　下松事業所　様　広告図案 (1).pdf",
+      "path": "assets/source/スポンサーポスター/大口/R8東洋鋼鈑　下松事業所　様　広告図案 (1).pdf",
+      "bytes": 2470811,
+      "sha256": "57765276d17e104c190f5e6858dd03f87e7215395a577e0464a77f68437d02e2",
+      "recordedOn": "2026-10-21"
+    },
+    {
+      "originalPath": "スポンサーポスター/大口/周南自動車学校様　高専祭広告 (1).pdf",
+      "path": "assets/source/スポンサーポスター/大口/周南自動車学校様　高専祭広告 (1).pdf",
+      "bytes": 29801998,
+      "sha256": "1146b4df3f575f8b347f2448d91b445ab873ac0d3a09c489efd781d0ee19b58a",
       "recordedOn": "2026-10-21"
     }
   ]
