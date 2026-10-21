@@ -41,7 +41,8 @@ for (const b of booths) {
 const schedule = await json('src/data/schedule.json')
 for (const e of schedule) {
   assert(e.start < e.end)
-  assert(e.source.startsWith('pamphlet:'))
+  assert(manifest.files.some((file) => file.path === e.source))
+  assert(e.venueSource.startsWith('pamphlet:'))
 }
 assert.equal(
   schedule.find((e) => e.title === '後夜祭').note,

@@ -929,6 +929,13 @@
       "bytes": 29801998,
       "sha256": "1146b4df3f575f8b347f2448d91b445ab873ac0d3a09c489efd781d0ee19b58a",
       "recordedOn": "2026-10-21"
+    },
+    {
+      "originalPath": "S__10838026.jpg",
+      "path": "assets/source/schedule/S__10838026.jpg",
+      "bytes": 40832,
+      "sha256": "56ccbd09947e16dc3cfa93ee885c52a102f61f1dc9d8ff750ac271a3bc83d3b2",
+      "recordedOn": "2026-10-21"
     }
   ]
 }
