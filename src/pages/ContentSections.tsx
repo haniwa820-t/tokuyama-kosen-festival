@@ -142,7 +142,7 @@ export function MainEventsSection() {
           <p className="eyebrow">会場：柔道場</p>
           <h3>コーンホール</h3>
           <p>
-            袋を投げて、ボードの穴をねらう。初めてでも楽しめるコーンホールが、今年のメイン企画です。
+            袋を投げてボードの穴をねらう。初めてでも楽しめるコーンホールが、今年のメイン企画です。
           </p>
           <dl className="facts">
             <div>
@@ -163,7 +163,7 @@ export function MainEventsSection() {
         <span aria-hidden="true">↺</span>
         <div>
           <p className="eyebrow">スタンプラリー</p>
-          <h3>会場をめぐる、スタンプラリー。</h3>
+          <h3>会場をめぐるスタンプラリー</h3>
           <p>
             {festival.stampRally.description}
             会場マップの星マークがスタンプ設置場所です。
@@ -224,9 +224,7 @@ export function BoothsSection() {
         クラス、部活、研究室。それぞれの企画を、ポスターから探してみてください。
       </p>
       <BoothCatalog />
-      <p className="note">
-        会場表記は提供資料の配置図に基づきます。IE2の会場階数は資料間で相違があるため確認中です。
-      </p>
+      <p className="note">IE2の会場は当日の案内をご確認ください。</p>
     </section>
   )
 }
@@ -293,14 +291,14 @@ export function CampusMapSection() {
         模擬店、体育館、実習工場。行きたい場所を見つけてから出発。
       </p> */}
       <p className="section-lead">
-        星マークは、スタンプラリーのスタンプ設置場所です。
+        星マークはスタンプラリーのスタンプ設置場所です。
       </p>
       <p className="note">{festival.stampRally.description}</p>
       <figure className="campus-figure">
         <a href={assetUrl('maps/campus.webp')} target="_blank" rel="noreferrer">
           <img
             src={assetUrl('maps/campus.webp')}
-            alt="提供された会場全体図。Aは飲食エリア1、Bは飲食エリア2、Cは屋内模擬店、Dは野球場の体験企画、Eは実習工場とME学科企画。陸上競技場は臨時駐車場。星マークはスタンプ設置場所。"
+            alt="会場全体図。Aは飲食エリア1、Bは飲食エリア2、Cは屋内模擬店、Dは野球場の体験企画、Eは実習工場とME学科企画。陸上競技場は臨時駐車場。星マークはスタンプ設置場所。"
             width={campusMaps[0].width}
             height={campusMaps[0].height}
             loading="lazy"
@@ -385,9 +383,7 @@ export function AccessSection() {
             >
               学校公式のアクセス案内 ↗
             </a>
-            <p className="note">
-              上記は学校公式の通常のアクセス案内です。開催日の防長バス時刻表は下記をご確認ください。
-            </p>
+            <p className="note">開催日のバスは下記の時刻表をご確認ください。</p>
           </div>
           <aside id="parking">
             <p className="eyebrow">駐車場</p>
@@ -395,7 +391,7 @@ export function AccessSection() {
             <p>会場図では、陸上競技場を臨時駐車場として案内しています。</p>
             <a href={sectionUrl('campus-map')}>会場図を見る ↑</a>
             <p className="note">
-              入口・出口など、当日の詳しい運用は確認中です。
+              駐車場の入口・出口は当日の案内をご確認ください。
             </p>
           </aside>
         </div>
@@ -425,7 +421,7 @@ export function PamphletSection() {
       <div className="pamphlet-art">
         <img
           src={assetUrl('images/pamphlet-cover.webp')}
-          alt="徳山高専2026高専祭パンフレット完成版の表紙"
+          alt="徳山高専2026高専祭パンフレットの表紙"
           width="600"
           height="846"
           loading="lazy"
@@ -433,9 +429,8 @@ export function PamphletSection() {
       </div>
       <div>
         <SectionTitle>パンフレットPDF</SectionTitle>
-        <span className="badge">完成版</span>
         <p>
-          日程、会場図、企画のポスター、バス時刻表などをまとめた完成版パンフレットです。
+          日程、会場図、企画のポスター、バス時刻表などをまとめたパンフレットです。
         </p>
         <a
           className="button"
@@ -467,10 +462,10 @@ export function NewsSection() {
       <SectionTitle>お知らせ</SectionTitle>
       <div className="news-row">
         <time dateTime="2026-10-21">2026.10.21</time>
-        <p>完成版パンフレットと、開催日の防長バス時刻表を掲載しました。</p>
+        <p>パンフレットと開催日の防長バス時刻表を掲載しました。</p>
       </div>
       <p className="note">
-        日程・会場は変更する場合がございます。公式SNSでも最新の案内をご確認ください。
+        日程・会場は変更になる場合があります。公式SNSでも最新の案内をご確認ください。
       </p>
       <div className="social-links">
         <a href={festival.social.instagram} target="_blank" rel="noreferrer">

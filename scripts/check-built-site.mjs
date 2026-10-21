@@ -1,8 +1,10 @@
 import { readFile, access } from 'node:fs/promises'
-import { pages } from '../tmp/ssr/entry-server.js'
+import { createHash } from 'node:crypto'
+import { pages, canonicalSiteUrl } from '../tmp/ssr/entry-server.js'
 import assert from 'node:assert/strict'
 import { deploymentConfig } from '../src/lib/deployment.ts'
-const { base, siteUrl } = deploymentConfig(process.env)
+const { base } = deploymentConfig(process.env)
+const siteUrl = canonicalSiteUrl
 const targets = new Map()
 for (const page of pages) {
   const file = page.id === 'not-found' ? '404.html' : `${page.path}index.html`
@@ -32,8 +34,29 @@ for (const page of pages) {
     page.description,
     `${file}: incorrect description`,
   )
+  const jsonLd = html.match(
+    /<script type="application\/ld\+json">(.*?)<\/script>/,
+  )?.[1]
+  assert(jsonLd, `${file}: structured data missing`)
+  assert.equal(JSON.parse(jsonLd)['@context'], 'https://schema.org')
+  const hash = createHash('sha256').update(jsonLd).digest('base64')
+  assert(html.includes(`script-src 'self' 'sha256-${hash}'`))
+  assert(!html.includes("script-src 'self' 'unsafe-inline'"))
+  assert.equal(
+    html.includes('name="robots" content="noindex"'),
+    page.id === 'not-found',
+  )
   targets.set(file, html)
 }
+assert(
+  (await readFile('dist/robots.txt', 'utf8')).includes(`${siteUrl}sitemap.xml`),
+)
+const sitemap = await readFile('dist/sitemap.xml', 'utf8')
+for (const page of pages.filter((item) => item.id !== 'not-found'))
+  assert(sitemap.includes(`<loc>${siteUrl}${page.path}</loc>`))
+const headers = await readFile('dist/_headers', 'utf8')
+assert(headers.includes('X-Content-Type-Options: nosniff'))
+assert(headers.includes("frame-ancestors 'none'"))
 for (const [file, html] of targets) {
   for (const match of html.matchAll(/(?:href|src)="([^"<>]+)"/g)) {
     const href = match[1]

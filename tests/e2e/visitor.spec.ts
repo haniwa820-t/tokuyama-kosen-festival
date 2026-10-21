@@ -143,7 +143,7 @@ test('提供された地図9枚を拡大でき、星マークの意味が分か�
 }) => {
   await page.goto('./guide/map/')
   await expect(
-    page.getByText('星マークは、スタンプラリーのスタンプ設置場所です。'),
+    page.getByText('星マークはスタンプラリーのスタンプ設置場所です。'),
   ).toBeVisible()
   const details = page.locator('#campus-map details')
   await expect(details).toHaveCount(8)
@@ -175,7 +175,7 @@ test('JavaScriptなしでも階層とPDFリンクを使える', async ({
   const page = await context.newPage()
   await page.goto(baseURL! + 'guide/')
   await page
-    .getByRole('link', { name: /パンフレット.*完成版パンフレットPDF/ })
+    .getByRole('link', { name: /パンフレット.*パンフレットPDF/ })
     .click()
   await expect(
     page.getByRole('link', { name: /パンフレットPDFをダウンロード/ }),
@@ -245,4 +245,35 @@ test('メインロゴが表示され、各画面のメニューからホーム�
       page.getByRole('link', { name: '徳山高専 高専祭 ホームへ戻る' }),
     ).toBeVisible()
   }
+})
+
+test('検索文字列をHTMLとして扱わず、未承認のスクリプトをCSPで拒否する', async ({
+  page,
+}) => {
+  await page.goto('./events/booths/')
+  await page.getByRole('searchbox').fill('<img src=x onerror=alert(1)>')
+  await expect(page.locator('img[onerror]')).toHaveCount(0)
+  await expect(
+    page.getByText('該当する企画が見つかりませんでした。'),
+  ).toBeVisible()
+  const violation = await page.evaluate(
+    () =>
+      new Promise<string>((resolve) => {
+        document.addEventListener(
+          'securitypolicyviolation',
+          (event) => {
+            resolve(event.effectiveDirective)
+          },
+          { once: true },
+        )
+        const script = document.createElement('script')
+        script.textContent =
+          'document.documentElement.dataset.unapprovedScript = "ran"'
+        document.body.append(script)
+      }),
+  )
+  expect(violation).toBe('script-src-elem')
+  expect(
+    await page.locator('html').getAttribute('data-unapproved-script'),
+  ).toBeNull()
 })

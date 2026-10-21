@@ -213,7 +213,7 @@ describe('ページの階層', () => {
       '/tokuyama-kosen-festival/maps/campus.webp',
     )
     expect(
-      screen.getByText('星マークは、スタンプラリーのスタンプ設置場所です。'),
+      screen.getByText('星マークはスタンプラリーのスタンプ設置場所です。'),
     ).toBeInTheDocument()
     expect(document.querySelectorAll('#campus-map img')).toHaveLength(9)
   })

@@ -1,8 +1,13 @@
 import { readFile, writeFile, mkdir } from 'node:fs/promises'
-import { render, pages } from '../tmp/ssr/entry-server.js'
-import { deploymentConfig } from '../src/lib/deployment.ts'
+import { createHash } from 'node:crypto'
+import {
+  render,
+  pages,
+  canonicalSiteUrl as base,
+  structuredData,
+  serializeJsonLd,
+} from '../tmp/ssr/entry-server.js'
 const template = await readFile('dist/index.html', 'utf8')
-const { siteUrl: base } = deploymentConfig(process.env)
 const escape = (s) =>
   s.replaceAll('&', '&amp;').replaceAll('"', '&quot;').replaceAll('<', '&lt;')
 for (const page of pages) {
@@ -11,7 +16,14 @@ for (const page of pages) {
       ? page.title
       : `${page.title} | 徳山高専 高専祭 2026 — Echo`
   const url = base + page.path
+  const jsonLd = serializeJsonLd(structuredData(page.id))
+  const hash = createHash('sha256').update(jsonLd).digest('base64')
+  const policy = `default-src 'self'; script-src 'self' 'sha256-${hash}'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'`
   let html = template
+    .replace(
+      /(<meta charset="UTF-8"\s*\/>)/,
+      `$1<meta http-equiv="Content-Security-Policy" content="${policy}" />`,
+    )
     .replace(/<title>.*?<\/title>/, `<title>${escape(title)}</title>`)
     .replace(
       /(<meta\b[^>]*property="og:title"[^>]*content=")[^"]*/,
@@ -23,6 +35,14 @@ for (const page of pages) {
     )
     .replace(/(<link\b[^>]*rel="canonical"[^>]*href=")[^"]*/, `$1${url}`)
     .replace(/(<meta\b[^>]*property="og:url"[^>]*content=")[^"]*/, `$1${url}`)
+    .replace(
+      /(<meta\b[^>]*property="og:image"[^>]*content=")[^"]*/,
+      `$1${base}images/social.jpg`,
+    )
+    .replace(
+      '</head>',
+      `<script type="application/ld+json">${jsonLd}</script></head>`,
+    )
     .replace(
       '<div id="root"></div>',
       `<div id="root" data-page="${page.id}">${render(page.id)}</div>`,
@@ -43,6 +63,10 @@ await writeFile(
     .filter((p) => p.id !== 'not-found')
     .map((p) => `<url><loc>${base + p.path}</loc></url>`)
     .join('')}</urlset>`,
+)
+await writeFile(
+  'dist/robots.txt',
+  `User-agent: *\nAllow: /\nSitemap: ${base}sitemap.xml\n`,
 )
 console.log(
   `${pages.length - 1} static pages, 404 and sitemap generated; direct URLs work without a router server.`,

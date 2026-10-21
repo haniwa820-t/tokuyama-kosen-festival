@@ -5,7 +5,8 @@ export const pages = [
     title: '第52回 徳山高専 高専祭 2026 — Echo',
     label: 'ホーム',
     en: 'HOME',
-    description: '2026年10月31日・11月1日。Echo — あの感動をもう一度。',
+    description:
+      '徳山工業高等専門学校（山口県周南市）の第52回高専祭「Echo」。2026年10月31日9:45〜15:30・11月1日9:45〜15:00開催。ステージ日程、模擬店、学科企画、会場マップ、防長バス時刻表、パンフレットをご案内します。',
   },
   {
     id: 'schedule',
@@ -42,7 +43,7 @@ export const pages = [
     title: '来場ガイド',
     label: '来場ガイド',
     en: 'VISITOR GUIDE',
-    description: '会場図、アクセス・駐車場、完成版パンフレットはこちらから。',
+    description: '会場図、アクセス・駐車場、パンフレットはこちらから。',
     parent: 'home',
   },
   {
@@ -60,7 +61,8 @@ export const pages = [
     title: 'アクセス・駐車場',
     label: 'アクセス・駐車場',
     en: 'ACCESS / PARKING',
-    description: '開催日の防長バス時刻表と、徳山高専への交通・臨時駐車場の案内。',
+    description:
+      '開催日の防長バス時刻表と、徳山高専への交通・臨時駐車場の案内。',
     parent: 'guide',
   },
   {
@@ -69,7 +71,8 @@ export const pages = [
     title: 'パンフレット',
     label: 'パンフレット',
     en: 'PAMPHLET',
-    description: '完成版パンフレットPDF（全48ページ）を配布しています。',
+    description:
+      '第52回徳山高専高専祭のパンフレットPDF（全48ページ）です。日程、会場図、バス時刻表を確認できます。',
     parent: 'guide',
   },
   {

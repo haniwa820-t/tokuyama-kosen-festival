@@ -114,7 +114,7 @@ export default function BoothCatalog() {
       <div className="discovery-tools">
         <div>
           <p className="eyebrow">行きたい企画を保存</p>
-          <p>気になる企画は♡で保存。迷ったら、おまかせ。</p>
+          <p>気になる企画は♡で保存。迷ったらおまかせ。</p>
         </div>
         <div className="discovery-actions">
           <button
@@ -140,7 +140,7 @@ export default function BoothCatalog() {
         </div>
       </div>
       <p className="small">
-        保存内容はこの端末のブラウザーに残ります。検索条件の中から、おまかせで1件選びます。
+        保存内容はこの端末のブラウザーに残ります。おまかせでは検索結果から1件を選びます。
       </p>
       <div className="catalog-controls">
         <div className="filters" aria-label="企画の分類">

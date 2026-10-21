@@ -235,7 +235,7 @@ export default function App({ pageId = 'home' }: { pageId?: string }) {
           <section id="guide" className="container section">
             <GuideCards />
             <p className="note">
-              完成版パンフレットと開催日のバス時刻表を掲載しています。駐車場の詳しい運用は確認中です。
+              駐車場の入口・出口は当日の案内をご確認ください。
             </p>
           </section>
         )}

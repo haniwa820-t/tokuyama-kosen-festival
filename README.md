@@ -1,39 +1,34 @@
-# 徳山高専 高専祭 2026 — Echo
+# 徳山高専 高専祭2026
 
-第52回高専祭の案内サイト。React + TypeScript + Viteで制作し、Cloudflare PagesのGitHub連携で静的公開しています。
-公開先：<https://tokuyama-kosen-festival.pages.dev/>
-2026-10-21にCloudflare Pagesへ公開。GitHubの`main`へのpushで検証・ビルド・公開が自動実行されます。[公開設定と運用](docs/cloudflare-pages.md)を参照してください。
-既存のGitHub Pages：<https://haniwa820-t.github.io/tokuyama-kosen-festival/>
+徳山工業高等専門学校・第52回高専祭「Echo — あの感動をもう一度」の案内サイトです。
 
-10月31日（土）9:45〜15:30、11月1日（日）9:45〜15:00。
-テーマ：Echo — あの感動をもう一度。
+公開サイト：<https://tokuyama-kosen-festival.pages.dev/>
 
-## 実装内容
+開催日時は2026年10月31日（土）9:45〜15:30、11月1日（日）9:45〜15:00です。後夜祭は11月1日16:30〜18:50で、一般の方も参加できます。
 
-昨年度の11項目を網羅し、日程切り替え、32件の企画検索とポスター詳細、3学科企画、併催企画、会場図、来場・駐車案内、完成版PDF、公式SNS、協賛を掲載。
-9ページの階層、開催カウントダウン、企画の保存とおまかせ選択を備えています。提供されたスポンサー画像88件を、大口・1ページ・4分の1・8分の1の順で掲載し、大口5社だけに企業公式サイトへのリンクを設定しています。
-スクロール時のフェードイン、詳細のポップアップ、PCの文字サイズ拡大、動きを減らす設定にも対応しています。
-スマートフォン対応、キーボード操作とフォーカス復帰、静的HTML生成、SNS共有情報を備えます。
-メインロゴをヘッダー・テーマ紹介・フッター・faviconに使用。共通メニューにはホームを用意しています。
-配色・文字・余白・操作状態は[デザイン要件](docs/design-system.md)にまとめ、CSSのトークンで管理します。
-ホームはユーザーが添付した以前の画面に合わせ、大きなEcho.・淡青の同心円・斜めのポスターを復元。追加Webフォントは使わず、標準ゴシック体で統一しています。2026-10-21の指定に合わせて青とオレンジの配色、見出し・操作・本文のウェイト差、角丸を反映しました。ホームの淡青と紺のEcho.、同心円、ポスター配置は維持しています。パンフレット表紙の傾きと薄い影を維持し、登場とスクロール時のフェードは一度だけ行います。
-他高専のコード・文章・画像・固有デザインはコピーせず、提供素材を中心に独自制作しました。
+## 掲載内容
+
+9ページで開催概要、ステージ日程、32件の模擬店・展示・体験、3学科の企画、併催企画、スタンプラリー、会場マップ9枚、アクセス・防長バス6便、駐車案内を掲載しています。パンフレットは48ページ・約12.2 MBのPDFです。スポンサー広告は88件、協賛企業・団体一覧は101件で、大口5社の広告に公式サイトへのリンクを設定しています。
+
+企画の検索・保存・おまかせ選択、ポスターの拡大、開催カウントダウンに対応しています。保存先は来場者のブラウザー内です。アカウント登録やサーバーへの送信はありません。
 
 ## 開発
 
-Node.js 24.15.0 LTSを推奨（`.nvmrc`）。
+React・TypeScript・Viteを使用しています。Node.js 24.15.0以降の対応バージョンとnpmが必要です。推奨バージョンは`.nvmrc`を参照してください。
 
 ```sh
 npm ci
 npm run dev
 ```
 
-Viteが表示するローカルURLを開きます。公開用ビルドとプレビュー：
+公開用ビルドとプレビュー：
 
 ```sh
 npm run build
 npm run preview
 ```
+
+通常のビルドではPDFの変換は不要です。公開用の画像・PDFをGitで管理しています。
 
 ## 検証
 
@@ -41,44 +36,36 @@ npm run preview
 npm run check
 npx playwright install chromium
 npm run test:e2e
+npm audit
 ```
 
-`check`は型・lint・単体/画面操作テスト、80%以上のカバレッジ、素材・開催情報の整合性、26組の配色コントラスト、静的生成を確認します。
-E2EはPCとスマートフォン幅で合計20件を実行。Actionsではテスト成功後にのみ公開します。
+`check`は型、lint、単体・画面操作テスト、カバレッジ、原素材・開催情報の整合性、色のコントラスト、静的HTML生成を確認します。生成後には内部リンク、画像、PDF、canonical、構造化データ、CSP、robots.txt、sitemap.xmlも検証します。
+
+ブラウザーテストはPCとスマートフォンで、深いURLの直接表示・再読込、検索・保存、広告と地図、PDFリンク、JavaScript無効時の表示、CSPによるスクリプトの拒否を確認します。
 
 ## 更新する場所
 
-| 場所 | 用途 |
+| 場所 | 内容 |
 | --- | --- |
-| `src/data/` | 開催情報、32企画、学科、日程、協賛と出典 |
-| `src/App.tsx` / `src/lib/pages.ts` | 共通レイアウト・階層とURL |
-| `src/pages/ContentSections.tsx` | 来場・併催案内、本文 |
-| `src/components/` | 検索、保存、おまかせ、詳細、日程、時計、スポンサー |
-| `src/styles/tokens.css` / `src/styles/global.css` | 共通デザイン値と部品・モバイル対応 |
-| `assets/source/` | 原素材とチェックサム。加工・上書きしない |
-| `public/` | WebP画像・地図・PDFなどの公開用コピー |
-| `scripts/` | 画像加工、静的HTML生成、出典・素材の検証 |
-| `tests/e2e/` | ブラウザーでの動作検証 |
-| `.github/workflows/pages.yml` | mainへのpush時の検証・Pages公開 |
-| `docs/` | 構成、掲載情報、確認事項、参考サイトとの区別 |
+| `src/data/festival.json` | 開催情報、SNS、問い合わせ、PDFのパス・ページ数・容量 |
+| `src/data/schedule.json` / `bus-timetable.json` | ステージ日程、防長バス時刻表 |
+| `src/data/booths.json` / `departments.json` | 模擬店・展示・体験、学科企画 |
+| `src/data/sponsor-banners.json` / `sponsors.json` | 広告88件、確定した協賛一覧101件 |
+| `src/data/campus-maps.json` | 会場マップ9枚 |
+| `src/pages/ContentSections.tsx` / `src/components/` | 掲載本文、操作部品 |
+| `src/lib/pages.ts` / `seo.ts` | ページ階層、検索向けの説明・正規URL・構造化データ |
+| `src/styles/` | 共通のデザインと操作状態 |
+| `assets/source/` / `public/` | 提供原素材とチェックサム、公開用コピー |
+| `scripts/` / `tests/e2e/` | 素材加工、静的生成・検証、ブラウザーテスト |
 
-公開用画像は用意済みなので通常ビルドにPDFレンダーは不要。
-画像を再加工する場合は`scripts/inspect-pdf.swift`でPDFKitによるローカルレンダー後、`node scripts/prepare-assets.mjs`を実行します。
-`tmp/`と`dist/`、依存パッケージはGit管理しません。空フォルダ用`.gitkeep`もあります。
+名称・日時・会場は提供資料とユーザーの訂正を優先します。未確認事項と出典は[掲載情報](docs/content.md)と[確認事項](docs/confirmation-items.md)に記録しています。企業名や企画名を校正の都合で変更しないでください。
 
-## 新しい機能の更新
+## 公開と検索設定
 
-開催日時は`src/data/festival.json`で管理し、時計は日本時間で一般公開時間に合わせて切り替わります。
-企画の保存は来場者のブラウザー内だけに残ります。アカウント・サーバーへの送信はありません。
-スポンサー画像と掲載順は`src/data/sponsor-banners.json`、会場マップ9枚は`src/data/campus-maps.json`で管理します。原素材は保持し、公開用コピーだけをWebPに変換しています。
-名称・リンクも同じJSONで更新できます。画像の再生成は`npm run assets:provided`（広告PDFの初回レンダーにはmacOSのSwift/PDFKitが必要）を使います。通常のビルドは生成済み画像を使用します。`npm run assets:sponsors`は提供画像の上書きを防ぐため停止します。
-詳細は[スポンサー枠の更新](docs/sponsors.md)を参照。整形は`npm run format`、確認は`npm run format:check`。
+Cloudflare Pagesは`main`へのpushで`npm run check`を実行し、`dist/`を公開します。GitHub Actionsでも検証とブラウザーテストを行い、成功した成果物だけを[既存のGitHub Pages](https://haniwa820-t.github.io/tokuyama-kosen-festival/)へ公開します。
 
-## 配布資料と未確定情報
+検索向けの正規URLは両方の配信先でCloudflare Pagesに統一しています。変更する場合は`src/lib/seo.ts`の`canonicalSiteUrl`を更新してください。各ページを静的HTMLで生成し、ページ固有のtitle・description、SNS共有情報、イベント・パンくずの構造化データ、robots.txtとsitemap.xmlを出力します。404ページは検索対象から除外します。
 
-2026-10-21提供の完成版パンフレット（全48ページ・約12.2 MB）を変更せず配布し、旧PDFは削除しました。後夜祭は2026-10-21のユーザー訂正により、一般の方も参加できます。
-会場マップは`assets/source/map/`の画像に差し替え、星マークをスタンプ設置場所として案内しています。IE2会場の階数、スタンプラリーの受付手順、駐車場の入口・出口は確認中として表示しています。
-詳しくは[確認事項](docs/confirmation-items.md)、[出典](docs/content.md)、[構成と公開](docs/architecture.md)、[独自制作の方針](docs/reference/design-references.md)を参照。
-ローカル作業方針は`AGENTS.md`に記録しています（現在のignore設定に従いローカル管理）。
+CSPは生成HTMLに設定しています。Cloudflare Pagesでは`public/_headers`で埋め込み防止、MIMEタイプの推測防止、参照元・端末権限の制限も適用します。GitHub Pagesではこのヘッダーファイルは適用されません。
 
-開催日の防長バス6便は`src/data/bus-timetable.json`で管理し、アクセスページに臨時便・定期便を区別して掲載しています。出典は2026-10-21のユーザー提供情報と完成版パンフレットp26（誌面25）です。
+運用の詳細は[公開設定](docs/cloudflare-pages.md)、[技術構成](docs/architecture.md)、[スポンサーの更新](docs/sponsors.md)を参照してください。`node_modules/`、`dist/`、検証結果、秘密情報はコミットしません。

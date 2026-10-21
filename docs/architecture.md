@@ -1,6 +1,6 @@
 # 技術構成と公開
 
-2026-10-21更新。React + TypeScript + Vite、npmを使用。Cloudflare PagesのGitHub連携に対応し、既存のGitHub Pages用ビルドも維持する。
+2026-10-22更新。React + TypeScript + Vite、npmを使用。Cloudflare PagesのGitHub連携に対応し、既存のGitHub Pages用ビルドも維持する。
 Node.jsは開発とビルドに使用し、公開後に常駐サーバーやデータベースは不要。
 CIはNode.js 24 LTS。`.nvmrc`は依存パッケージの対応範囲に合わせて24.15.0に固定する。依存関係は`package-lock.json`で固定する。
 
@@ -20,7 +20,7 @@ CIはNode.js 24 LTS。`.nvmrc`は依存パッケージの対応範囲に合わ�
 | `/guide/pamphlet/` | 完成版PDF |
 | `/sponsors/` | 提供広告88件、大口5社の公式リンク、確定した協賛一覧 |
 
-共通メニュー、パンくず、親・関連ページへのリンク、ページ固有のtitle・description・canonical・OG URL、404.htmlとsitemap.xmlを生成する。
+共通メニュー、パンくず、親・関連ページへのリンク、ページ固有のtitle・description・canonical・OG URL、イベント・パンくずのJSON-LD、404.html、robots.txtとsitemap.xmlを生成する。
 旧URLの`#booths`等は対応する階層へ移動する。
 `src/entry-server.tsx`でReactをHTML化し、`scripts/prerender.mjs`が各ページのHTMLへ埋め込む。
 JavaScriptが無効でも開催日時と主要案内・PDFリンクを読める。日程の切り替え、全企画の展開、検索、保存・おまかせ、ポスター詳細はReactで操作する。
@@ -46,7 +46,7 @@ Git上の日本語パスはNFC表記で記録し、MacとLinuxのCIで同じ原�
 
 通常のビルドはルートパス`/`で配信する。Cloudflare Pagesでは`npm run check`、出力`dist`、Node.js 24.15.0を設定済み。
 公開先は`https://tokuyama-kosen-festival.pages.dev/`。2026-10-21に初回公開し、GitHubの`main`へのpushで自動ビルド・公開する。
-`SITE_URL`に正式な公開URLを設定するとcanonical・OG URL・OG画像・sitemapへ反映する。未設定時はCloudflareが提供する`CF_PAGES_URL`を使い、ローカルでは`http://localhost:4173/`を使う。
+配信URLは`SITE_URL`または`CF_PAGES_URL`、配信パスは`SITE_BASE_PATH`で指定する。検索向けのcanonical・OG URL・OG画像・JSON-LD・sitemapは、配信先にかかわらず`src/lib/seo.ts`の`canonicalSiteUrl`（Cloudflare Pages）を使用する。
 各階層のindex.htmlと404.htmlを生成するため、SPA用の全URL転送は不要。[設定と運用](cloudflare-pages.md)を参照。
 
 ## 既存のGitHub Pages
@@ -61,7 +61,17 @@ PagesのSourceはGitHub Actionsを使用する。公開状況はREADMEを参照�
 
 ## 検証
 
-`npm run check`：型、lint、45件の単体・画面操作テスト、カバレッジ80%以上、素材・出典確認、26組の配色コントラスト、ビルド、10件のHTML（9ページ＋404）の内部リンク・画像・配布資料・metadata検証。
-`npm run test:e2e`：2画面サイズで計20件。日程、検索、保存の再読込、おまかせ、詳細、88件のスポンサー画像と大口5社のリンク、PDF、地図、全階層の直接URL・再読込、旧URL、JavaScript無効、動きを減らす設定、ホームへのメニュー・メインロゴ、320〜1440pxの横はみ出し、画像とブラウザーエラーを確認する。
+`npm run check`：型、lint、48件の単体・画面操作テスト、カバレッジ80%以上、素材・出典確認、26組の配色コントラスト、ビルド、10件のHTML（9ページ＋404）の内部リンク・画像・配布資料・metadata検証。
+`npm run test:e2e`：2画面サイズで計22件。日程、検索、保存の再読込、おまかせ、詳細、88件のスポンサー画像と大口5社のリンク、PDF、地図、全階層の直接URL・再読込、旧URL、JavaScript無効、動きを減らす設定、ホームへのメニュー・メインロゴ、320〜1440pxの横はみ出し、画像とブラウザーエラーを確認する。
 
 参考公式資料：[Viteの静的公開](https://vite.dev/guide/static-deploy.html#github-pages)、[GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages)、[React hydrateRoot](https://react.dev/reference/react-dom/client/hydrateRoot)。
+
+## 2026-10-22の公開前確認
+
+来場者に不要な完成版・制作資料の説明を公開ページから外し、未確定のIE2会場と駐車場の入口・出口は当日の案内を確認する表現にした。日時・バス・企業名は変更していない。公開本文とREADMEにはyomiyasuのlint・差分検査と最終稿の照合を実施した。未使用の公開用サンプル広告SVG30件も削除した。記録はGit対象外の`.yomiyasu/`に保存する。
+
+HTMLのCSPでは同一サイトのスクリプトとJSON-LDのSHA-256ハッシュだけを許可し、eval・未承認のインラインスクリプトを許可しない。既存のフェード用CSS変数を保つためstyle-srcにはunsafe-inlineを許可する。Cloudflare Pagesの追加ヘッダーは`public/_headers`で管理する。GitHub PagesではCSPのmeta指定が有効で、埋め込み防止などの追加HTTPヘッダーは適用されない。
+
+認証・送信フォーム・API・データベースはない。検索語は文字列として照合し、保存データは既存企画IDで検証する。2026-10-22のnpm auditは既知の脆弱性0件。現在のGit管理テキストの既知形式の認証情報パターンと、履歴中の.env・鍵ファイル名の検査でも検出はなかった。この検査は外部サービスの設定全体やGit履歴中のあらゆる秘密情報の不存在を保証するものではない。
+
+参考（2026-10-22確認）：[Googleのイベント構造化データ](https://developers.google.com/search/docs/appearance/structured-data/event)、[正規URLの指定](https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls)、[Cloudflare Pagesのヘッダー](https://developers.cloudflare.com/pages/configuration/headers/)。検索掲載や順位は検索エンジンが決定し、設定だけで即時掲載されるものではない。
