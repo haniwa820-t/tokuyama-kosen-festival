@@ -36,6 +36,12 @@
 - 実ブラウザーで360px幅のスポンサー説明と献血案内を確認。横はみ出しなし。スポンサー説明はページ上部の1か所だけとなった。
 - 証跡は作業用の `tmp/content-update-2026-10-23/` に保存。公開後は両方の公開先の9ページ・画像・PDFと、削除画像の404を確認する。
 
+## 削除画像の配信キャッシュへの対応
+
+最初の公開後、Cloudflare Pagesの既存キャッシュから削除画像が返ることを検出した。[公式のAsset retention仕様](https://developers.cloudflare.com/pages/configuration/serving-pages/#asset-retention)では最大1週間保持される。削除した48 URLだけを存在しない画像パスへ302転送し、最終的に既存の404を返す `public/_redirects` を追加した。他の画像やページには適用しない。
+
+[公式のRedirects仕様](https://developers.cloudflare.com/pages/configuration/redirects/)に従い、静的ファイルがキャッシュに残る場合でも転送を優先する。ルールが削除一覧48件と一致し、転送先の画像が存在しないことを `check:content` で確認する。GitHub Pagesでは削除画像が直接404となる。資料の確認日：2026-10-23。
+
 ## yomiyasuの確認
 
 対象は変更したWeb掲載文。数値・場所・曜日・対象範囲を資料とユーザー回答に照らし、承認文を保持した。自動検査が挙げた意味変更の候補8件は、今回依頼された日時・会場等の訂正である。硬化候補の「団体の皆様の広告」もユーザー指定のため保持した。

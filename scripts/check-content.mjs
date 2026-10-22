@@ -137,6 +137,18 @@ for (const e of exclusions.entries) {
   await assert.rejects(access(`public/${e.image}`), { code: 'ENOENT' })
   await access(e.originalSource)
 }
+const removalRedirects = (await readFile('public/_redirects', 'utf8'))
+  .split('\n')
+  .filter((line) => line && !line.startsWith('#'))
+assert.deepEqual(
+  removalRedirects,
+  exclusions.entries.map(
+    (e) => `/${e.image} /images/sponsors/removed.webp 302`,
+  ),
+)
+await assert.rejects(access('public/images/sponsors/removed.webp'), {
+  code: 'ENOENT',
+})
 const donation = await json('src/data/blood-donation.json')
 assert.equal(donation.venue, '総務課前')
 assert.equal(donation.venueSource, 'user:2026-10-23')
