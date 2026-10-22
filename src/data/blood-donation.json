@@ -15,18 +15,19 @@
   "venueSource": "user:2026-10-23",
   "originalVenue": "正面玄関前",
   "venueCorrection": "The latest user instruction takes precedence over the printed venue.",
-  "image": "images/blood-donation-illustration.webp",
-  "imageWidth": 640,
-  "imageHeight": 584,
+  "image": "images/blood-donation-guide.webp",
+  "imageWidth": 1600,
+  "imageHeight": 906,
   "imageSource": "assets/source/pamphlet/高専祭パンフレット.2026.10.21.pdf",
   "imageSourcePage": 8,
   "imageRegion": {
-    "left": 790,
-    "top": 590,
-    "width": 330,
-    "height": 301,
+    "left": 75,
+    "top": 256,
+    "width": 1167,
+    "height": 661,
     "renderWidth": 1300
   },
   "imagePermissionSource": "user:2026-10-23",
-  "imageSha256": "3cb9d43c6e1d4ceb41e1c7823235494ab161f01dc7fe06fde4396e5403ec0f54"
+  "imageSha256": "5809acaf5fe311514b3554b1d592d470871e37d9cf57387fccb18a0e3f7af746",
+  "imageContent": "Complete donation notice matching the user attachment, extracted from the supplied pamphlet page 8 without text changes."
 }

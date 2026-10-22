@@ -281,7 +281,7 @@ export function RelatedEventsSection() {
           <article id="blood-donation">
             <img
               src={assetUrl(bloodDonation.image)}
-              alt="パンフレットの献血案内に掲載されたイラスト"
+              alt="献血の案内"
               loading="lazy"
               width={bloodDonation.imageWidth}
               height={bloodDonation.imageHeight}

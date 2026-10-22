@@ -65,3 +65,13 @@
 - 勢いの検査: 候補なし
 - 見直し候補: 原文0件 → 最終稿0件（件数は点数ではなく、増減は読みやすさの良し悪しを示さない）
 - yomiyasu-check: executed via=verify run=20261022T233543Z-4a3b5ce8 attempt=1 final=sha256:4529368d6d44 mode=rewrite doc_type=manual reader=informed checks=lint,diff,materials meaning_risk=8 replay=skipped
+
+## 同日の追加依頼：献血案内の画像差し替え
+
+ユーザーの添付画像に合わせ、イラストだけの画像を献血案内全体へ差し替えた。添付と同じ案内を10月21日版PDF p8から抽出し、文字・図柄は改変していない。画像内の会場「正面玄関前」と本文の「総務課前」の相違は作業前に報告した。本文は先に確定した総務課前を維持する。
+
+公開画像は `public/images/blood-donation-guide.webp`（1600×906px）。抽出範囲とSHA-256は `src/data/blood-donation.json`、再抽出処理は `scripts/extract-blood-donation-guide.swift` に記録。代替テキストは「献血の案内」に更新。CSS・その他の本文・リンク・配布PDFは変更しない。
+
+代替テキストもyomiyasuでlint・diff・資料照合・最終稿照合を実行。硬化・勢いの候補なし、見直し候補は原文0件→最終稿0件（件数は読みやすさの点数ではない）。`run=20261022T235205Z-98cb2f54`、`final=sha256:c0b15fe5bced`、`meaning_risk=0`。検査後の追加修正なし。
+
+この差し替えでは全9ページの本文・href一覧が一致し、献血のimg要素以外の本文HTML、CSS、配布PDFも完全一致した。`npm run check`成功。
