@@ -1302,17 +1302,17 @@ details[open] summary span {
   margin-top: var(--space-8);
 }
 .sponsor-grid {
-  display: grid;
-  align-items: start;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: var(--space-6);
+  column-count: 3;
+  column-gap: var(--space-6);
 }
 .sponsor-grid--major,
 .sponsor-grid--full {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-count: 2;
 }
 .sponsor-card {
   display: block;
+  break-inside: avoid;
+  margin-bottom: var(--space-6);
   text-decoration: none;
   color: var(--color-text);
   border: 1px solid var(--color-border);
@@ -1863,12 +1863,15 @@ footer a {
     font-size: 20px;
   }
   .sponsor-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 16px 12px;
+    column-count: 2;
+    column-gap: 12px;
   }
   .sponsor-grid--major,
   .sponsor-grid--full {
-    grid-template-columns: 1fr;
+    column-count: 1;
+  }
+  .sponsor-card {
+    margin-bottom: 16px;
   }
   .sponsor-card > span {
     font-size: 13px;
