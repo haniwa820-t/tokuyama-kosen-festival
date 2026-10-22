@@ -189,8 +189,14 @@ describe('ページの階層', () => {
     )
     expect(document.querySelectorAll('#sponsor-banners a')).toHaveLength(5)
     expect(document.querySelectorAll('#sponsor-banners article')).toHaveLength(
-      83,
+      82,
     )
+    expect(
+      screen.queryByText(/りんかい日産建設|RN建設/),
+    ).not.toBeInTheDocument()
+    expect(
+      screen.queryByAltText(/りんかい日産建設|RN建設/),
+    ).not.toBeInTheDocument()
     expect(
       Array.from(document.querySelectorAll('[data-sponsor-tier]')).map((node) =>
         node.getAttribute('data-sponsor-tier'),

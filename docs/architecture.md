@@ -18,7 +18,7 @@ CIはNode.js 24 LTS。`.nvmrc`は依存パッケージの対応範囲に合わ�
 | `/guide/map/` | 会場・屋内外の地図 |
 | `/guide/access/` | 交通・駐車場 |
 | `/guide/pamphlet/` | 完成版PDF |
-| `/sponsors/` | 提供広告88件、大口5社の公式リンク、確定した協賛一覧 |
+| `/sponsors/` | 提供広告87件、大口5社の公式リンク、確定した協賛一覧 |
 
 共通メニュー、パンくず、親・関連ページへのリンク、ページ固有のtitle・description・canonical・OG URL、イベント・パンくずのJSON-LD、404.html、robots.txtとsitemap.xmlを生成する。
 旧URLの`#booths`等は対応する階層へ移動する。
@@ -62,7 +62,7 @@ PagesのSourceはGitHub Actionsを使用する。公開状況はREADMEを参照�
 ## 検証
 
 `npm run check`：型、lint、48件の単体・画面操作テスト、カバレッジ80%以上、素材・出典確認、26組の配色コントラスト、ビルド、10件のHTML（9ページ＋404）の内部リンク・画像・配布資料・metadata検証。
-`npm run test:e2e`：2画面サイズで計22件。日程、検索、保存の再読込、おまかせ、詳細、88件のスポンサー画像と大口5社のリンク、PDF、地図、全階層の直接URL・再読込、旧URL、JavaScript無効、動きを減らす設定、ホームへのメニュー・メインロゴ、320〜1440pxの横はみ出し、画像とブラウザーエラーを確認する。
+`npm run test:e2e`：2画面サイズで計22件。日程、検索、保存の再読込、おまかせ、詳細、87件のスポンサー画像と大口5社のリンク、PDF、地図、全階層の直接URL・再読込、旧URL、JavaScript無効、動きを減らす設定、ホームへのメニュー・メインロゴ、320〜1440pxの横はみ出し、画像とブラウザーエラーを確認する。
 
 参考公式資料：[Viteの静的公開](https://vite.dev/guide/static-deploy.html#github-pages)、[GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages)、[React hydrateRoot](https://react.dev/reference/react-dom/client/hydrateRoot)。
 
