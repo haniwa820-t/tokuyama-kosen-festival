@@ -1,0 +1,390 @@
+{
+  "source": "user:2026-10-23",
+  "reason": "User requested removal from sponsor directory and public advertisements; original supplied files are retained.",
+  "entries": [
+    {
+      "requestedName": "佐波歯科医院",
+      "bannerId": "ad-019",
+      "bannerName": "佐波歯科医院",
+      "directoryName": "佐波歯科医院",
+      "image": "images/sponsors/ad-019.webp",
+      "originalSource": "assets/source/スポンサーポスター/８分の1/009 佐波歯科医院.png"
+    },
+    {
+      "requestedName": "くだまつ健康パーク",
+      "bannerId": "ad-022",
+      "bannerName": "くだまつ健康パーク",
+      "directoryName": "くだまつ健康パーク",
+      "image": "images/sponsors/ad-022.webp",
+      "originalSource": "assets/source/スポンサーポスター/８分の1/017 くだまつ健康パーク.jpeg"
+    },
+    {
+      "requestedName": "MaxValu",
+      "bannerId": "ad-020",
+      "bannerName": "マックスバリュイオンタウン周南久米店",
+      "directoryName": "マックスバリュイオンタウン周南久米店",
+      "image": "images/sponsors/ad-020.webp",
+      "originalSource": "assets/source/スポンサーポスター/８分の1/014 マックスバリュ周南久米店.jpeg"
+    },
+    {
+      "requestedName": "はしもとスポーツ",
+      "bannerId": "ad-021",
+      "bannerName": "ハシモトスポーツ",
+      "directoryName": "ハシモトスポーツ",
+      "image": "images/sponsors/ad-021.webp",
+      "originalSource": "assets/source/スポンサーポスター/８分の1/016 ハシモトスポーツ.png"
+    },
+    {
+      "requestedName": "きもの桔梗",
+      "bannerId": "ad-027",
+      "bannerName": "きもの桔梗",
+      "directoryName": "きもの桔梗",
+      "image": "images/sponsors/ad-027.webp",
+      "originalSource": "assets/source/スポンサーポスター/８分の1/030 京都五条きもの桔梗.jpeg"
+    },
+    {
+      "requestedName": "やすきゅう",
+      "bannerId": "ad-028",
+      "bannerName": "やすきゅう",
+      "directoryName": "やすきゅう",
+      "image": "images/sponsors/ad-028.webp",
+      "originalSource": "assets/source/スポンサーポスター/８分の1/037 やすきゅう.png"
+    },
+    {
+      "requestedName": "銀色バイク",
+      "bannerId": "ad-026",
+      "bannerName": "銀色バイク",
+      "directoryName": "銀色バイク",
+      "image": "images/sponsors/ad-026.webp",
+      "originalSource": "assets/source/スポンサーポスター/８分の1/028 銀色バイク.png"
+    },
+    {
+      "requestedName": "清水歯科医院",
+      "bannerId": "ad-029",
+      "bannerName": "清水歯科医院",
+      "directoryName": "清水歯科医院",
+      "image": "images/sponsors/ad-029.webp",
+      "originalSource": "assets/source/スポンサーポスター/８分の1/038 清水歯科医院.jpeg"
+    },
+    {
+      "requestedName": "ふじい歯科クリニック",
+      "bannerId": "ad-030",
+      "bannerName": "ふじい歯科クリニック",
+      "directoryName": "ふじい歯科クリニック",
+      "image": "images/sponsors/ad-030.webp",
+      "originalSource": "assets/source/スポンサーポスター/８分の1/040 ふじい歯科クリニック.png"
+    },
+    {
+      "requestedName": "Raku hair",
+      "bannerId": "ad-033",
+      "bannerName": "RAKU hair 美容院楽 下松店",
+      "directoryName": "RAKU hair 美容室楽 下松店",
+      "image": "images/sponsors/ad-033.webp",
+      "originalSource": "assets/source/スポンサーポスター/８分の1/052 RAKU hair 美容院楽　下松店.png"
+    },
+    {
+      "requestedName": "LaMer hair salon",
+      "bannerId": "ad-032",
+      "bannerName": "hair salon La Mer",
+      "directoryName": "hair salon La Mer",
+      "image": "images/sponsors/ad-032.webp",
+      "originalSource": "assets/source/スポンサーポスター/８分の1/050 hair salon LaMer.png"
+    },
+    {
+      "requestedName": "ムラシゲスポーツ",
+      "bannerId": "ad-038",
+      "bannerName": "株式会社ムラシゲスポーツ",
+      "directoryName": "株式会社 ムラシゲスポーツ",
+      "image": "images/sponsors/ad-038.webp",
+      "originalSource": "assets/source/スポンサーポスター/８分の1/067 株式会社　ムラシゲスポーツ.png"
+    },
+    {
+      "requestedName": "ピーコック",
+      "bannerId": "ad-036",
+      "bannerName": "ピーコック",
+      "directoryName": "株式会社ピーコック",
+      "image": "images/sponsors/ad-036.webp",
+      "originalSource": "assets/source/スポンサーポスター/８分の1/060 ピーコック.png"
+    },
+    {
+      "requestedName": "虹ヶ丘鍼灸院",
+      "bannerId": "ad-039",
+      "bannerName": "虹ヶ丘鍼灸院",
+      "directoryName": "虹ヶ丘鍼灸院",
+      "image": "images/sponsors/ad-039.webp",
+      "originalSource": "assets/source/スポンサーポスター/８分の1/070 虹ヶ丘鍼灸院.png"
+    },
+    {
+      "requestedName": "English club may",
+      "bannerId": "ad-037",
+      "bannerName": "ENGLISH CLUB MAY",
+      "directoryName": "English Club May",
+      "image": "images/sponsors/ad-037.webp",
+      "originalSource": "assets/source/スポンサーポスター/８分の1/061 ENGLISH CLUB MAY.png"
+    },
+    {
+      "requestedName": "瀬戸内料理にしむら",
+      "bannerId": "ad-040",
+      "bannerName": "瀬戸内料理にしむら",
+      "directoryName": "瀬戸内料理にしむら",
+      "image": "images/sponsors/ad-040.webp",
+      "originalSource": "assets/source/スポンサーポスター/８分の1/071 瀬戸内料理にしむら.png"
+    },
+    {
+      "requestedName": "マックスバリュ末武店",
+      "bannerId": "ad-043",
+      "bannerName": "マックスバリュ 末武店",
+      "directoryName": "マックスバリュ 末武店",
+      "image": "images/sponsors/ad-043.webp",
+      "originalSource": "assets/source/スポンサーポスター/８分の1/086 マックスバリュ末武店.jpeg"
+    },
+    {
+      "requestedName": "アルク秋月",
+      "bannerId": "ad-041",
+      "bannerName": "アルク秋月店",
+      "directoryName": "アルク秋月店",
+      "image": "images/sponsors/ad-041.webp",
+      "originalSource": "assets/source/スポンサーポスター/８分の1/081 アルク秋月店.png"
+    },
+    {
+      "requestedName": "くだまつスポーツセンター",
+      "bannerId": "ad-042",
+      "bannerName": "くだまつスポーツセンター",
+      "directoryName": "くだまつスポーツセンター",
+      "image": "images/sponsors/ad-042.webp",
+      "originalSource": "assets/source/スポンサーポスター/８分の1/085 くだまつスポーツセンター.png"
+    },
+    {
+      "requestedName": "きえら",
+      "bannerId": "ad-046",
+      "bannerName": "hair make きえら",
+      "directoryName": "きえら",
+      "image": "images/sponsors/ad-046.webp",
+      "originalSource": "assets/source/スポンサーポスター/８分の1/095 きえら.png"
+    },
+    {
+      "requestedName": "手打ちうどん空くうかい",
+      "bannerId": "ad-049",
+      "bannerName": "手打ちうどん くうかい",
+      "directoryName": "手打ちうどんくうかい",
+      "image": "images/sponsors/ad-049.webp",
+      "originalSource": "assets/source/スポンサーポスター/８分の1/103 手打ちうどん くうかい.png"
+    },
+    {
+      "requestedName": "トキワ自工",
+      "bannerId": "ad-047",
+      "bannerName": "トキワ自工",
+      "directoryName": "トキワ自工",
+      "image": "images/sponsors/ad-047.webp",
+      "originalSource": "assets/source/スポンサーポスター/８分の1/096 トキワ自工.png"
+    },
+    {
+      "requestedName": "Bamboo",
+      "bannerId": "ad-051",
+      "bannerName": "Bamboo",
+      "directoryName": "Bamboo",
+      "image": "images/sponsors/ad-051.webp",
+      "originalSource": "assets/source/スポンサーポスター/８分の1/Bamboo.jpg"
+    },
+    {
+      "requestedName": "Feliceto",
+      "bannerId": "ad-055",
+      "bannerName": "Feliceto",
+      "directoryName": "エステサロンfeliceto",
+      "image": "images/sponsors/ad-055.webp",
+      "originalSource": "assets/source/スポンサーポスター/８分の1/feliceto.png"
+    },
+    {
+      "requestedName": "Patio",
+      "bannerId": "ad-052",
+      "bannerName": "PATIO’",
+      "directoryName": "PATIO'",
+      "image": "images/sponsors/ad-052.webp",
+      "originalSource": "assets/source/スポンサーポスター/８分の1/PATIO'.jpeg"
+    },
+    {
+      "requestedName": "YunagiCafe",
+      "bannerId": "ad-054",
+      "bannerName": "YUNAGI",
+      "directoryName": "YUNAGI Café",
+      "image": "images/sponsors/ad-054.webp",
+      "originalSource": "assets/source/スポンサーポスター/８分の1/YUNAGI LOGO_RGB-07.png"
+    },
+    {
+      "requestedName": "seahorse",
+      "bannerId": "ad-057",
+      "bannerName": "seahorse マリーナ＆レストラン",
+      "directoryName": "Restaurant seahorse",
+      "image": "images/sponsors/ad-057.webp",
+      "originalSource": "assets/source/スポンサーポスター/８分の1/seahorseマリーナ＆レストラン.png"
+    },
+    {
+      "requestedName": "たむら耳鼻咽喉科",
+      "bannerId": "ad-060",
+      "bannerName": "たむら耳鼻咽喉科",
+      "directoryName": "たむら耳鼻咽喉科",
+      "image": "images/sponsors/ad-060.webp",
+      "originalSource": "assets/source/スポンサーポスター/８分の1/たむら耳鼻咽喉　改.png"
+    },
+    {
+      "requestedName": "thekku",
+      "bannerId": "ad-058",
+      "bannerName": "thekku",
+      "directoryName": "美容室 thekku",
+      "image": "images/sponsors/ad-058.webp",
+      "originalSource": "assets/source/スポンサーポスター/８分の1/thekku.jpg"
+    },
+    {
+      "requestedName": "としみつ歯科医院",
+      "bannerId": "ad-061",
+      "bannerName": "としみつ歯科医院",
+      "directoryName": "としみつ歯科医院",
+      "image": "images/sponsors/ad-061.webp",
+      "originalSource": "assets/source/スポンサーポスター/８分の1/としみつ歯科医院.jpg"
+    },
+    {
+      "requestedName": "あい歯科クリニック",
+      "bannerId": "ad-059",
+      "bannerName": "あい歯科クリニック",
+      "directoryName": "あい歯科クリニック",
+      "image": "images/sponsors/ad-059.webp",
+      "originalSource": "assets/source/スポンサーポスター/８分の1/あい歯科クリニック.png"
+    },
+    {
+      "requestedName": "とりでん周南店",
+      "bannerId": "ad-062",
+      "bannerName": "とりでん周南店",
+      "directoryName": "とりでん周南店",
+      "image": "images/sponsors/ad-062.webp",
+      "originalSource": "assets/source/スポンサーポスター/８分の1/とりでん周南店.png"
+    },
+    {
+      "requestedName": "みほり峠",
+      "bannerId": "ad-063",
+      "bannerName": "みほり峠 徳山店",
+      "directoryName": "みほり峠 徳山店",
+      "image": "images/sponsors/ad-063.webp",
+      "originalSource": "assets/source/スポンサーポスター/８分の1/みほり峠　徳山店.jpg"
+    },
+    {
+      "requestedName": "株式会社カインドオール",
+      "bannerId": "ad-065",
+      "bannerName": "株式会社カインドオール",
+      "directoryName": "株式会社カインドオール",
+      "image": "images/sponsors/ad-065.webp",
+      "originalSource": "assets/source/スポンサーポスター/８分の1/カインドオール.png"
+    },
+    {
+      "requestedName": "TherapyLab",
+      "bannerId": "ad-067",
+      "bannerName": "Therapy Lab",
+      "directoryName": "セラピーラボ",
+      "image": "images/sponsors/ad-067.webp",
+      "originalSource": "assets/source/スポンサーポスター/８分の1/セラピーラボ.jpg"
+    },
+    {
+      "requestedName": "サクラ食堂",
+      "bannerId": "ad-066",
+      "bannerName": "サクラ食堂",
+      "directoryName": "サクラ食堂",
+      "image": "images/sponsors/ad-066.webp",
+      "originalSource": "assets/source/スポンサーポスター/８分の1/サクラ食堂.jpg"
+    },
+    {
+      "requestedName": "バーディバーディゴルフスクール",
+      "bannerId": "ad-068",
+      "bannerName": "バーディバーディゴルフスクール",
+      "directoryName": "バーディバーディゴルフスクール",
+      "image": "images/sponsors/ad-068.webp",
+      "originalSource": "assets/source/スポンサーポスター/８分の1/バーディバーディゴルフスクール.png"
+    },
+    {
+      "requestedName": "フジ新南陽店",
+      "bannerId": "ad-069",
+      "bannerName": "フジ新南陽店",
+      "directoryName": "フジ新南陽店",
+      "image": "images/sponsors/ad-069.webp",
+      "originalSource": "assets/source/スポンサーポスター/８分の1/フジ新南陽店　改.png"
+    },
+    {
+      "requestedName": "メディカルフィットネスWINS",
+      "bannerId": "ad-070",
+      "bannerName": "メディカルフィットネスWINS",
+      "directoryName": "医療法人メディカルフィットネスWINS",
+      "image": "images/sponsors/ad-070.webp",
+      "originalSource": "assets/source/スポンサーポスター/８分の1/メディカルフィットネスウィンズ　改.jpeg"
+    },
+    {
+      "requestedName": "中華そば 紅蘭",
+      "bannerId": "ad-074",
+      "bannerName": "中華そば 紅蘭",
+      "directoryName": "中華そば紅蘭",
+      "image": "images/sponsors/ad-074.webp",
+      "originalSource": "assets/source/スポンサーポスター/８分の1/中華そば　紅蘭.png"
+    },
+    {
+      "requestedName": "京いち家",
+      "bannerId": "ad-075",
+      "bannerName": "京いち家",
+      "directoryName": "京いち屋",
+      "image": "images/sponsors/ad-075.webp",
+      "originalSource": "assets/source/スポンサーポスター/８分の1/京いち家.png"
+    },
+    {
+      "requestedName": "京瀧",
+      "bannerId": "ad-076",
+      "bannerName": "株式会社京瀧",
+      "directoryName": "株式会社京瀧",
+      "image": "images/sponsors/ad-076.webp",
+      "originalSource": "assets/source/スポンサーポスター/８分の1/京瀧.png"
+    },
+    {
+      "requestedName": "平岡医院",
+      "bannerId": "ad-083",
+      "bannerName": "平岡医院",
+      "directoryName": "平岡医院",
+      "image": "images/sponsors/ad-083.webp",
+      "originalSource": "assets/source/スポンサーポスター/８分の1/平岡医院.png"
+    },
+    {
+      "requestedName": "山田石油株式会社",
+      "bannerId": "ad-081",
+      "bannerName": "山田石油株式会社",
+      "directoryName": "山田石油株式会社",
+      "image": "images/sponsors/ad-081.webp",
+      "originalSource": "assets/source/スポンサーポスター/８分の1/山田石油株式会社.jpg"
+    },
+    {
+      "requestedName": "廣華楼",
+      "bannerId": "ad-084",
+      "bannerName": "廣華楼",
+      "directoryName": "廣華楼",
+      "image": "images/sponsors/ad-084.webp",
+      "originalSource": "assets/source/スポンサーポスター/８分の1/廣華楼.jpg"
+    },
+    {
+      "requestedName": "第一ドライ",
+      "bannerId": "ad-087",
+      "bannerName": "第一ドライ 城ケ丘店",
+      "directoryName": "有限会社第一ドライセンター 城ケ丘店",
+      "image": "images/sponsors/ad-087.webp",
+      "originalSource": "assets/source/スポンサーポスター/８分の1/第一ドライセンター城ケ丘店.png"
+    },
+    {
+      "requestedName": "桜木クリニック",
+      "bannerId": "ad-086",
+      "bannerName": "桜木クリニック",
+      "directoryName": "桜木クリニック",
+      "image": "images/sponsors/ad-086.webp",
+      "originalSource": "assets/source/スポンサーポスター/８分の1/桜木クリニック.png"
+    },
+    {
+      "requestedName": "居酒屋 酒仙洞",
+      "bannerId": "ad-090",
+      "bannerName": "居酒屋 酒仙洞",
+      "directoryName": "酒仙洞",
+      "image": "images/sponsors/ad-090.webp",
+      "originalSource": "assets/source/スポンサーポスター/８分の1/𦩒𣂼护.jpeg"
+    }
+  ]
+}

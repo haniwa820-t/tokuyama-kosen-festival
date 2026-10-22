@@ -56,13 +56,13 @@
     "organization": "IE2",
     "title": "ボウリング",
     "category": "experience",
-    "venue": "教室・管理棟（当日の案内をご確認ください）",
+    "venue": "教室・管理棟3階",
     "poster": "posters/booth-06.webp",
     "thumbnail": "posters/thumbnails/booth-06.webp",
     "source": "assets/source/模擬店ポスター/IE2.pdf",
-    "venueSource": "pamphlet:p4-7",
+    "venueSource": "user:2026-10-23",
     "status": "planned",
-    "note": "会場は当日の案内をご確認ください。"
+    "note": "ポスターの会場表記から変更しています。"
   },
   {
     "id": "booth-07",

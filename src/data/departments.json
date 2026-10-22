@@ -28,8 +28,9 @@
     "title": "CAすぎるよ展 ＆ CA作品展",
     "description": "CAの視点を集めた展示と作品展。鉄筋の結束・加工体験、イライラ棒なども予定しています。",
     "venue": "専門棟2階 共同研究室",
-    "days": "11月1日（日）限定開催",
+    "days": "展示：10月31日（土）・11月1日（日）／体験：11月1日（日）のみ",
     "sourceNumber": 5,
-    "source": "assets/source/模擬店ポスター/CA学科企画.pdf"
+    "source": "assets/source/模擬店ポスター/CA学科企画.pdf",
+    "daysSource": "user:2026-10-23"
   }
 ]

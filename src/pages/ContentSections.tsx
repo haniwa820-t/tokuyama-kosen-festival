@@ -1,6 +1,7 @@
 import campusMaps from '../data/campus-maps.json'
 import festival from '../data/festival.json'
 import busTimetable from '../data/bus-timetable.json'
+import bloodDonation from '../data/blood-donation.json'
 import departments from '../data/departments.json'
 import sponsors from '../data/sponsors.json'
 import { assetUrl } from '../lib/catalog'
@@ -224,7 +225,7 @@ export function BoothsSection() {
         クラス、部活、研究室。それぞれの企画を、ポスターから探してみてください。
       </p>
       <BoothCatalog />
-      <p className="note">IE2の会場は当日の案内をご確認ください。</p>
+      <p className="note">IE2の会場は教室・管理棟3階です。</p>
     </section>
   )
 }
@@ -276,6 +277,19 @@ export function RelatedEventsSection() {
               <br />
               教室・管理棟前で開催予定
             </p>
+          </article>
+          <article id="blood-donation">
+            <img
+              src={assetUrl(bloodDonation.image)}
+              alt="パンフレットの献血案内に掲載されたイラスト"
+              loading="lazy"
+              width={bloodDonation.imageWidth}
+              height={bloodDonation.imageHeight}
+            />
+            <p className="eyebrow">10月31日（土）</p>
+            <h3>献血</h3>
+            <p>受付時間：9:30〜11:45／13:00〜15:30</p>
+            <p className="small">会場：{bloodDonation.venue}</p>
           </article>
         </div>
       </div>
@@ -409,6 +423,7 @@ export function AccessSection() {
               </div>
             ))}
           </dl>
+          <p className="note">{busTimetable.afterPartyReturn.description}</p>
         </section>
       </div>
     </section>

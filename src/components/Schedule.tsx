@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { sectionUrl } from '../lib/pages'
 import schedule from '../data/schedule.json'
+import bloodDonation from '../data/blood-donation.json'
 export default function Schedule() {
   const [day, setDay] = useState(0)
   return (
@@ -58,7 +59,11 @@ export default function Schedule() {
                 高専祭茶会 <span>10:00〜15:00</span>
               </li>
               <li>
+                土木建築工学科企画 <span>展示</span>
+              </li>
+              <li>
                 献血 <span>9:30〜11:45 / 13:00〜15:30</span>
+                <span>会場：{bloodDonation.venue}</span>
               </li>
             </ul>
           ) : (
@@ -70,7 +75,7 @@ export default function Schedule() {
                 なつかしの機械展示 <span>10:00〜15:00</span>
               </li>
               <li>
-                土木建築工学科企画 <span>9:45〜15:00</span>
+                土木建築工学科企画 <span>展示・体験</span>
               </li>
             </ul>
           )}

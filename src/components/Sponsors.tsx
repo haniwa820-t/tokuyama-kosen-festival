@@ -9,9 +9,11 @@ export default function Sponsors({ compact = false }: { compact?: boolean }) {
       <div className="section-title">
         <h2>スポンサー</h2>
       </div>
-      <p className="section-lead">
-        高専祭にご協賛いただいた企業・団体をご紹介します。
-      </p>
+      {compact && (
+        <p className="section-lead">
+          高専祭にご協賛いただいた企業・団体をご紹介します。
+        </p>
+      )}
       <div id="sponsor-banners">
         {tiers.map((tier) => (
           <div

@@ -2,6 +2,7 @@ import { fireEvent, render, screen, within } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import App from './App'
+import sponsorExclusions from './data/sponsor-exclusions.json'
 
 beforeEach(() =>
   vi
@@ -188,8 +189,15 @@ describe('ページの階層', () => {
       '東ソー株式会社 南陽事業所のロゴマーク',
     )
     expect(document.querySelectorAll('#sponsor-banners a')).toHaveLength(5)
+    expect(document.querySelectorAll('#sponsor-banners img')).toHaveLength(39)
+    for (const entry of sponsorExclusions.entries) {
+      expect(document.body.textContent).not.toContain(entry.directoryName)
+      expect(document.querySelector(`img[src$="${entry.image}"]`)).toBeNull()
+    }
+    expect(document.querySelectorAll('.sponsors li')).toHaveLength(52)
+
     expect(document.querySelectorAll('#sponsor-banners article')).toHaveLength(
-      82,
+      34,
     )
     expect(
       screen.queryByText(/りんかい日産建設|RN建設/),
@@ -267,5 +275,50 @@ describe('ホームへの導線とメインロゴ', () => {
         screen.getByRole('link', { name: '徳山高専 高専祭 ホームへ戻る' }),
       ).getByRole('img'),
     ).toHaveAttribute('src', '/tokuyama-kosen-festival/images/echo-logo.webp')
+  })
+})
+
+describe('2026年10月23日の掲載情報訂正', () => {
+  it('日程タイトル直下だけ後夜祭の説明を外し、日程内の案内は維持する', () => {
+    render(<App pageId="schedule" />)
+    expect(document.querySelector('.page-heading p')).toHaveTextContent(
+      'ステージ企画と日ごとのプログラム。',
+    )
+    expect(document.querySelector('.page-heading p')).not.toHaveTextContent(
+      '後夜祭',
+    )
+    expect(document.querySelector('#schedule')).toHaveTextContent(
+      '後夜祭は一般の方も参加できます',
+    )
+    expect(document.querySelector('.all-day')).toHaveTextContent('総務課前')
+  })
+  it('CAの展示は両日、体験だけ日曜日とし、未提供の時刻を付けない', () => {
+    render(<App pageId="events" />)
+    const ca = screen
+      .getByRole('heading', { name: 'CAすぎるよ展 ＆ CA作品展' })
+      .closest('article')!
+    expect(ca).toHaveTextContent(
+      '展示：10月31日（土）・11月1日（日）／体験：11月1日（日）のみ',
+    )
+    expect(ca.textContent).not.toMatch(/\d{1,2}:\d{2}|不明|限定開催/)
+    const blood = document.getElementById('blood-donation')!
+    expect(blood).toHaveTextContent('10月31日（土）')
+    expect(blood).toHaveTextContent('9:30〜11:45／13:00〜15:30')
+    expect(blood).toHaveTextContent('総務課前')
+    expect(blood).not.toHaveTextContent('正面玄関前')
+  })
+  it('IE2の会場を教室・管理棟3階として検索できる', async () => {
+    const user = userEvent.setup()
+    render(<App pageId="booths" />)
+    await user.type(screen.getByRole('searchbox'), 'IE2')
+    const booth = screen.getByRole('button', {
+      name: /IE2.*ボウリング.*詳細を見る/,
+    })
+    expect(booth).toHaveTextContent('教室・管理棟3階')
+    await user.click(booth)
+    expect(screen.getByRole('dialog')).toHaveTextContent('教室・管理棟3階')
+    expect(screen.getByRole('dialog')).not.toHaveTextContent(
+      '当日の案内をご確認',
+    )
   })
 })

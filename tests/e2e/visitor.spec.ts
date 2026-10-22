@@ -127,7 +127,7 @@ test('大口だけ公式リンクを持ち、広告は大きい区分から並�
     'https://www.tkworks.jp/',
     'https://www.shunan-ds.com/',
   ])
-  await expect(page.locator('#sponsor-banners article')).toHaveCount(82)
+  await expect(page.locator('#sponsor-banners article')).toHaveCount(34)
   await expect(page.getByText(/りんかい日産建設|RN建設/)).toHaveCount(0)
   await expect(page.getByAltText(/りんかい日産建設|RN建設/)).toHaveCount(0)
   await page.locator('#sponsor-banners').scrollIntoViewIfNeeded()

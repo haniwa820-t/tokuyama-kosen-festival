@@ -38,7 +38,7 @@
 
 フォントはGoogle Fontsの公式配布から取得し、サイトのTS・TSX・JSONの使用文字とASCIIを含むWOFF2に変換して自サイトから配信する。検索結果、詳細表示、空の検索結果などの動的な文言も含める。端末への外部フォント配信サービスの接続は不要。元フォントが含まない文字にはフォールバックを使う。
 
-- 公開用フォント：`src/assets/fonts/noto-sans-jp.woff2`、203,776バイト。
+- 公開用フォント：`src/assets/fonts/noto-sans-jp.woff2`、205,548バイト（2026-10-23の情報訂正で必要な文字を追加。既存文字の字形・幅は維持）。
 - 出典URL・元ファイルと出力のSHA-256・収録文字：`src/assets/fonts/manifest.json`。
 - ライセンス：`public/fonts/noto-sans-jp-OFL.txt`。SIL Open Font License 1.1を同梱する。
 - 再生成：fonttoolsとBrotliのあるPython環境で`python scripts/prepare-site-font.py <公式配布TTFのパス>`を実行する。公式配布元はmanifestに記録する。新しい文字を追加した場合は収録文字を検証し、必要に応じて再生成する。

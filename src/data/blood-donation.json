@@ -1,0 +1,32 @@
+{
+  "date": "2026-10-31",
+  "reception": [
+    {
+      "start": "09:30",
+      "end": "11:45"
+    },
+    {
+      "start": "13:00",
+      "end": "15:30"
+    }
+  ],
+  "venue": "総務課前",
+  "scheduleSource": "pamphlet:p8,p10",
+  "venueSource": "user:2026-10-23",
+  "originalVenue": "正面玄関前",
+  "venueCorrection": "The latest user instruction takes precedence over the printed venue.",
+  "image": "images/blood-donation-illustration.webp",
+  "imageWidth": 640,
+  "imageHeight": 584,
+  "imageSource": "assets/source/pamphlet/高専祭パンフレット.2026.10.21.pdf",
+  "imageSourcePage": 8,
+  "imageRegion": {
+    "left": 790,
+    "top": 590,
+    "width": 330,
+    "height": 301,
+    "renderWidth": 1300
+  },
+  "imagePermissionSource": "user:2026-10-23",
+  "imageSha256": "3cb9d43c6e1d4ceb41e1c7823235494ab161f01dc7fe06fde4396e5403ec0f54"
+}

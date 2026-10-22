@@ -36,7 +36,10 @@ for (const b of booths) {
   await access(b.source)
   await access(`public/${b.poster}`)
   await access(`public/${b.thumbnail}`)
-  assert(b.venueSource.startsWith('pamphlet:'))
+  assert(
+    b.venueSource.startsWith('pamphlet:') ||
+      b.venueSource === 'user:2026-10-23',
+  )
 }
 const schedule = await json('src/data/schedule.json')
 for (const e of schedule) {
@@ -67,7 +70,7 @@ const expectedUrls = [
   'https://www.tkworks.jp/',
   'https://www.shunan-ds.com/',
 ]
-assert.equal(banners.length, 87)
+assert.equal(banners.length, 39)
 assert.equal(new Set(banners.map((b) => b.id)).size, banners.length)
 assert.deepEqual(
   banners.filter((b) => b.tier === 'major').map((b) => b.url),
@@ -118,5 +121,32 @@ for (const map of maps) {
   assert.equal(image.height, map.height)
 }
 console.log(
-  '87 supplied sponsor images, five approved links, size order and nine supplied maps verified.',
+  '39 supplied sponsor images, five approved links, size order and nine supplied maps verified.',
+)
+
+const exclusions = await json('src/data/sponsor-exclusions.json')
+const sponsorDirectory = await json('src/data/sponsors.json')
+assert.equal(exclusions.entries.length, 48)
+assert.equal(sponsorDirectory.names.length, 52)
+for (const e of exclusions.entries) {
+  assert(
+    !banners.some((b) => b.id === e.bannerId),
+    `Removed sponsor returned: ${e.requestedName}`,
+  )
+  assert(!sponsorDirectory.names.includes(e.directoryName))
+  await assert.rejects(access(`public/${e.image}`), { code: 'ENOENT' })
+  await access(e.originalSource)
+}
+const donation = await json('src/data/blood-donation.json')
+assert.equal(donation.venue, '総務課前')
+assert.equal(donation.venueSource, 'user:2026-10-23')
+assert.equal(donation.imageSourcePage, 8)
+assert.equal(
+  createHash('sha256')
+    .update(await readFile(`public/${donation.image}`))
+    .digest('hex'),
+  donation.imageSha256,
+)
+console.log(
+  '48 requested sponsors and their public images removed; originals retained; blood-donation source verified.',
 )
