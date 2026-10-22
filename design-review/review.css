@@ -1,0 +1,138 @@
+:root {
+  font-family: 'Hiragino Sans', 'Yu Gothic', Meiryo, sans-serif;
+  color: #153a60;
+  background: #f3f2ee;
+  line-height: 1.7;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+}
+.review-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  align-items: end;
+  padding: 28px 32px;
+  border-bottom: 1px solid #bcc5c9;
+}
+.review-header h1 {
+  font-size: 26px;
+  margin: 0;
+}
+.review-header p {
+  font-size: 14px;
+  margin: 0;
+}
+.review-kicker {
+  font-weight: 700;
+}
+.review-controls {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding: 20px 32px;
+  align-items: end;
+  background: #fffdf8;
+  border-bottom: 1px solid #bcc5c9;
+}
+label {
+  display: grid;
+  gap: 5px;
+  font-size: 13px;
+  font-weight: 700;
+}
+select,
+button {
+  font: inherit;
+  font-size: 14px;
+  min-height: 44px;
+  border: 1px solid #687e8b;
+  border-radius: 3px;
+  color: #153a60;
+  background: #fff;
+  padding: 8px 14px;
+}
+button {
+  cursor: pointer;
+}
+:focus-visible {
+  outline: 3px solid #a73e77;
+  outline-offset: 3px;
+}
+.review-note {
+  margin: 16px 32px;
+  font-size: 13px;
+}
+.review-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  padding: 8px 32px 32px;
+}
+.review-grid.single {
+  grid-template-columns: 1fr;
+}
+.review-option {
+  min-width: 0;
+}
+.review-option h2 {
+  margin: 0;
+  font-size: 21px;
+}
+.review-option p {
+  margin: 5px 0 12px;
+  font-size: 13px;
+  min-height: 22px;
+}
+.swatches {
+  display: flex;
+  gap: 8px;
+  margin: 8px 0;
+}
+.swatches i {
+  display: block;
+  width: 28px;
+  height: 28px;
+  background: var(--swatch);
+  border: 1px solid #adb9c2;
+}
+.actual {
+  display: inline-block;
+  min-height: 44px;
+  padding-block: 8px;
+  font-size: 13px;
+  color: #153a60;
+}
+.preview-window {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #899ba5;
+  background: #fff;
+}
+iframe {
+  display: block;
+  border: 0;
+  transform-origin: top left;
+  background: #fff;
+}
+.review-footer {
+  padding: 0 32px 24px;
+  font-size: 13px;
+}
+[hidden] {
+  display: none !important;
+}
+@media (max-width: 860px) {
+  .review-grid {
+    grid-template-columns: 1fr;
+  }
+  .review-header {
+    display: block;
+  }
+  .review-header > p {
+    margin-top: 12px;
+  }
+}

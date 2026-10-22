@@ -54,11 +54,19 @@ test('開いたナビゲーションがフェードインする', async ({ page 
 test('検索・保存・おまかせ・ポスター詳細を使える', async ({ page }) => {
   await page.goto('./events/booths/')
   await page.getByRole('searchbox').fill('ワッフル')
-  await page
-    .getByRole('button', { name: /ワッフル.*行きたい企画に保存/ })
-    .click()
+  await expect(page.locator('.catalog-meta')).toContainText('1件の企画')
+  const save = page.getByRole('button', {
+    name: /ワッフル.*行きたい企画に保存/,
+  })
+  await save.click()
+  await expect(
+    page.locator('.favorite-button[aria-pressed="true"]'),
+  ).toHaveCount(1)
+  const savedFilter = page.getByRole('button', { name: /保存した企画だけ/ })
+  await expect(savedFilter).toContainText('(1)')
   await page.reload()
-  await page.getByRole('button', { name: /保存した企画だけ/ }).click()
+  await expect(savedFilter).toContainText('(1)')
+  await savedFilter.click()
   await expect(page.getByRole('button', { name: /詳細を見る/ })).toHaveCount(1)
   await page.getByRole('button', { name: 'おまかせで1企画選ぶ' }).click()
   const dialog = page.getByRole('dialog')
@@ -132,11 +140,20 @@ test('大口だけ公式リンクを持ち、広告は大きい区分から並�
         ),
       )
       .toBe(true)
-    const ratio = await img.evaluate((node: HTMLImageElement) => ({
-      shown: node.width / node.height,
-      original: node.naturalWidth / node.naturalHeight,
-    }))
-    expect(ratio.shown).toBeCloseTo(ratio.original, 1)
+    const display = await img.evaluate((node: HTMLImageElement) => {
+      const style = getComputedStyle(node)
+      const frame = node.getBoundingClientRect()
+      const card = node.closest('.sponsor-card')!.getBoundingClientRect()
+      return {
+        fit: style.objectFit,
+        position: style.objectPosition,
+        withinCard: frame.left >= card.left && frame.right <= card.right,
+      }
+    })
+    // Fixed-height major frames contain the complete original artwork.
+    expect(display.fit).toBe('contain')
+    expect(display.position).toBe('50% 50%')
+    expect(display.withinCard).toBe(true)
   }
 })
 test('提供された地図9枚を拡大でき、星マークの意味が分かる', async ({
@@ -278,4 +295,26 @@ test('検索文字列をHTMLとして扱わず、未承認のスクリプトをC
   expect(
     await page.locator('html').getAttribute('data-unapproved-script'),
   ).toBeNull()
+})
+
+test('D案のスポンサー4段階が各画面幅で区別できる', async ({ page }) => {
+  await page.goto('./sponsors/')
+  for (const width of [320, 360, 768, 1280]) {
+    await page.setViewportSize({ width, height: 900 })
+    const sizes = await page
+      .locator('[data-sponsor-tier]')
+      .evaluateAll((groups) =>
+        groups.map(
+          (group) =>
+            group.querySelector('.sponsor-card')!.getBoundingClientRect().width,
+        ),
+      )
+    for (let i = 1; i < sizes.length; i++)
+      expect(sizes[i - 1]).toBeGreaterThan(sizes[i])
+    expect(
+      await page.evaluate(
+        () => document.documentElement.scrollWidth <= innerWidth,
+      ),
+    ).toBe(true)
+  }
 })

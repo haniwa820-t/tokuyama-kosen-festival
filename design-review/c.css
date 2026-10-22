@@ -1,0 +1,4 @@
+/* C deliberately retains the existing palette for comparison. */
+.sponsor-grid--major .sponsor-card > span {
+  color: var(--color-text);
+}

@@ -1,0 +1,329 @@
+/* Revised proposals: retain the original composition, vivid colors and radii. */
+@font-face {
+  font-family: 'Review Noto';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('./fonts/noto-variable.woff2') format('woff2');
+}
+:root {
+  --font-body: 'Review Noto', 'Hiragino Sans', 'Yu Gothic', Meiryo, sans-serif;
+  --radius-control: 12px;
+  --radius-panel: 20px;
+  --shadow-print: 5px 8px 14px #1932471a;
+}
+.menu-toggle {
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+.hero-inner {
+  min-height: 0;
+  padding-block: 40px 48px;
+  gap: 56px;
+}
+.hero-year {
+  margin-bottom: 16px;
+  font-size: 12px;
+}
+.hero-copy h1 {
+  font-size: 20px;
+  letter-spacing: 0.03em;
+}
+.echo-word {
+  font-size: clamp(110px, 12.3vw, 164px);
+  margin-block: 10px 16px;
+}
+.hero-tagline {
+  font-size: 27px;
+  margin-bottom: 24px;
+  letter-spacing: 0.025em;
+}
+.hero-dates {
+  margin-bottom: 20px;
+}
+.hero-date {
+  gap: 20px;
+  padding-block: 10px;
+}
+.hero-date strong {
+  font-size: 46px;
+  min-width: 144px;
+}
+.hero-venue {
+  margin-bottom: 20px;
+}
+.hero-poster {
+  width: min(440px, 96%);
+  padding: 12px;
+  border-radius: 16px;
+}
+.hero-poster figcaption {
+  font-size: 12px;
+}
+.hero-copy > .button {
+  min-height: 52px;
+  font-weight: 700;
+  padding-inline: 28px;
+}
+.hero-poster-note {
+  font-size: 14px;
+}
+.countdown-digits strong {
+  font-size: 46px;
+}
+.countdown {
+  padding-block: 26px;
+}
+.quick-links {
+  gap: 16px;
+}
+.quick-links a {
+  border-radius: 20px;
+  border: 1px solid var(--color-border);
+}
+.quick-links b {
+  border-radius: 50%;
+}
+.home-programs .guide-grid {
+  grid-template-columns: 1.25fr 1fr 1fr;
+  gap: 20px;
+}
+.guide-card {
+  border-radius: 20px;
+  border: 1px solid var(--color-border);
+  background: var(--color-paper);
+}
+.home-programs .guide-card:first-child {
+  background: var(--color-surface-blue);
+  border-color: var(--color-action);
+}
+.guide-card h3 {
+  font-size: 21px;
+}
+.sponsor-section {
+  padding-block: 48px 64px;
+}
+#sponsor-banners {
+  margin-top: 32px;
+}
+.sponsor-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  column-count: auto;
+  gap: 16px;
+  align-items: start;
+}
+.sponsor-grid--major {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px;
+}
+.sponsor-grid--full {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+.sponsor-grid--quarter {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+}
+.sponsor-group + .sponsor-group {
+  margin-top: 64px;
+  padding-top: 32px;
+  border-top: 1px solid var(--color-border);
+}
+.sponsor-card {
+  min-width: 0;
+  margin: 0;
+  padding: 12px;
+  border-radius: 20px;
+  background: #ffffff;
+  border: 1px solid var(--color-border);
+}
+.sponsor-card img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  background: #ffffff;
+}
+.sponsor-grid--major .sponsor-card {
+  padding: 20px;
+  border: 2px solid var(--color-action);
+}
+.sponsor-grid--major .sponsor-card img {
+  height: 340px;
+}
+.sponsor-card > span {
+  padding: 12px 0 0;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.7;
+}
+.sponsor-grid--major .sponsor-card > span {
+  padding-top: 16px;
+  font-size: 16px;
+  font-weight: 700;
+}
+.sponsor-grid--major .sponsor-card b {
+  color: var(--color-action);
+}
+.sponsor-grid--full .sponsor-card {
+  padding: 16px;
+}
+.sponsor-grid--full .sponsor-card > span {
+  font-size: 15px;
+}
+@media (max-width: 1100px) and (min-width: 761px) {
+  .hero-inner {
+    gap: 36px;
+    width: calc(100% - 64px);
+  }
+  .hero-copy h1 {
+    font-size: 18px;
+  }
+  .hero-tagline {
+    font-size: 24px;
+  }
+  .hero-date {
+    gap: 12px;
+  }
+  .hero-date strong {
+    min-width: 120px;
+    font-size: 40px;
+  }
+  .hero-date time {
+    font-size: 15px;
+  }
+  .sponsor-grid--major .sponsor-card {
+    padding: 16px;
+  }
+  .sponsor-grid--major .sponsor-card img {
+    height: 290px;
+  }
+  .sponsor-grid--eighth {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    width: 86%;
+    margin-inline: auto;
+  }
+  .sponsor-grid--quarter {
+    gap: 16px;
+  }
+}
+@media (max-width: 760px) {
+  .hero-inner {
+    grid-template-columns: 1fr;
+    width: calc(100% - 40px);
+    padding-block: 28px 40px;
+    gap: 36px;
+  }
+  .hero-year {
+    margin-bottom: 16px;
+    font-size: 11px;
+  }
+  .hero-copy h1 {
+    font-size: 18px;
+    letter-spacing: 0;
+  }
+  .echo-word {
+    font-size: clamp(106px, 34vw, 145px);
+    margin-block: 10px 16px;
+  }
+  .hero-tagline {
+    font-size: 23px;
+    letter-spacing: 0;
+    margin-bottom: 22px;
+  }
+  .hero-date {
+    gap: 12px;
+    padding-block: 10px;
+  }
+  .hero-date strong {
+    min-width: 122px;
+    font-size: 40px;
+  }
+  .hero-date time {
+    font-size: 15px;
+  }
+  .hero-venue {
+    margin-bottom: 18px;
+  }
+  .hero-poster {
+    width: min(330px, 90%);
+    padding: 10px;
+  }
+  .hero-poster-note {
+    font-size: 13px;
+  }
+  .countdown-digits strong {
+    font-size: 35px;
+  }
+  .countdown-digits span {
+    font-size: 12px;
+  }
+  .countdown-digits {
+    gap: 8px;
+  }
+  .countdown-digits > div {
+    gap: 4px;
+  }
+  .quick-links {
+    gap: 12px;
+  }
+  .home-programs .guide-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .sponsor-grid,
+  .sponsor-grid--major,
+  .sponsor-grid--full,
+  .sponsor-grid--quarter,
+  .sponsor-grid--eighth {
+    grid-template-columns: minmax(0, 1fr);
+    margin-inline: auto;
+  }
+  .sponsor-grid--major {
+    width: 100%;
+    gap: 28px;
+  }
+  .sponsor-grid--full {
+    width: 94%;
+    gap: 24px;
+  }
+  .sponsor-grid--quarter {
+    width: 87%;
+    gap: 20px;
+  }
+  .sponsor-grid--eighth {
+    width: 80%;
+    gap: 16px;
+  }
+  .sponsor-grid--major .sponsor-card {
+    padding: 16px;
+  }
+  .sponsor-grid--major .sponsor-card img {
+    height: auto;
+  }
+  .sponsor-group + .sponsor-group {
+    margin-top: 40px;
+    padding-top: 24px;
+  }
+}
+@media (max-width: 360px) {
+  .brand-logo {
+    width: 64px;
+  }
+  .hero-date {
+    gap: 10px;
+  }
+  .hero-date strong {
+    min-width: 115px;
+    font-size: 38px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}

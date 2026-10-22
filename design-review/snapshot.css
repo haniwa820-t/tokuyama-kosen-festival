@@ -1,0 +1,12 @@
+/* A stable comparison fixture, shared by all three versions. */
+*,
+*::before,
+*::after {
+  animation: none !important;
+  transition: none !important;
+  scroll-behavior: auto !important;
+}
+[data-motion] {
+  opacity: 1 !important;
+  transform: none !important;
+}

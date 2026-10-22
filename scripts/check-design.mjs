@@ -1,4 +1,5 @@
-import { readFile } from 'node:fs/promises'
+import { readFile, readdir, access } from 'node:fs/promises'
+import { createHash } from 'node:crypto'
 import assert from 'node:assert/strict'
 const css = await readFile('src/styles/tokens.css', 'utf8')
 const colors = Object.fromEntries(
@@ -60,4 +61,38 @@ for (const [foreground, background, minimum] of pairs) {
 }
 console.log(
   `${pairs.length} semantic color combinations meet the design requirements.`,
+)
+
+// The local subset must also cover dynamic labels and initially filtered booths.
+const fontManifest = JSON.parse(
+  await readFile('src/assets/fonts/manifest.json', 'utf8'),
+)
+const fontBytes = await readFile('src/assets/fonts/noto-sans-jp.woff2')
+assert.equal(
+  createHash('sha256').update(fontBytes).digest('hex'),
+  fontManifest.outputSha256,
+  'Font output changed without regenerating its source manifest',
+)
+const available = new Set([
+  ...fontManifest.codepoints,
+  ...fontManifest.unsupportedCodepoints,
+])
+async function checkFontCoverage(directory) {
+  for (const entry of await readdir(directory, { withFileTypes: true })) {
+    const path = `${directory}/${entry.name}`
+    if (entry.isDirectory() && path !== 'src/assets')
+      await checkFontCoverage(path)
+    else if (/\.(tsx?|json)$/.test(entry.name) && entry.isFile()) {
+      for (const c of await readFile(path, 'utf8'))
+        assert(
+          available.has(c.codePointAt(0)),
+          `Font subset needs regeneration: ${path} includes ${c}`,
+        )
+    }
+  }
+}
+await checkFontCoverage('src')
+await access('public/fonts/noto-sans-jp-OFL.txt')
+console.log(
+  'Local font checksum, source-character coverage and bundled license verified.',
 )

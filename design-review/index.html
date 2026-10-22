@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex,nofollow" />
+    <title>高専祭2026 デザイン比較</title>
+    <link rel="stylesheet" href="./review.css" />
+    <script type="module" src="./review.js"></script>
+  </head>
+  <body>
+    <header class="review-header">
+      <div>
+        <p class="review-kicker">徳山高専 高専祭2026</p>
+        <h1>デザイン比較</h1>
+      </div>
+      <p>確認用のローカル試作です。公開サイトと掲載内容は変更していません。</p>
+    </header>
+    <form class="review-controls" aria-label="比較条件">
+      <label
+        >表示範囲<select id="page">
+          <option value="home">ホーム</option>
+          <option value="sponsors">スポンサー</option>
+        </select></label
+      >
+      <label
+        >画面幅<select id="width">
+          <option value="360">360px</option>
+          <option value="768">768px</option>
+          <option value="1280" selected>1280px</option>
+          <option value="320">320px</option>
+        </select></label
+      >
+      <label id="tier-control"
+        >協賛の区分<select id="tier">
+          <option value="major">大口</option>
+          <option value="full">1ページ</option>
+          <option value="quarter">4分の1</option>
+          <option value="eighth">8分の1</option>
+        </select></label
+      >
+      <label
+        >比較する案<select id="version">
+          <option value="all">現行・C・D</option>
+          <option value="current">現行</option>
+          <option value="c">Cのみ</option>
+          <option value="d">Dのみ</option>
+        </select></label
+      >
+      <button type="button" id="top">先頭へ戻す</button>
+    </form>
+    <p class="review-note">
+      各画面内でスクロールできます。幅を縮小して並べています。下のリンクでは実寸で開けます。協賛の区分名はこの比較画面だけの表示です。比較用に動きを止め、時計を2026年10月22日10:00（日本時間）に固定しています。
+    </p>
+    <main class="review-grid">
+      <section class="review-option" data-version="current">
+        <h2>現行</h2>
+        <p>青・オレンジ／端末標準ゴシック</p>
+        <div class="swatches">
+          <i style="--swatch: #2563eb"></i><i style="--swatch: #f97316"></i
+          ><i style="--swatch: #ececf3"></i>
+        </div>
+        <a class="actual" href="./current/" target="_blank" rel="noopener"
+          >現行を実寸で開く</a
+        >
+        <div class="preview-window">
+          <iframe title="現行サイトの比較用表示" src="./current/"></iframe>
+        </div>
+      </section>
+      <section class="review-option" data-version="c">
+        <h2>C：現行を整える</h2>
+        <p>現行の青・オレンジと角丸を維持／Noto Sans JP</p>
+        <div class="swatches">
+          <i style="--swatch: #2563eb"></i><i style="--swatch: #f97316"></i
+          ><i style="--swatch: #ececf3"></i>
+        </div>
+        <a class="actual" href="./c/" target="_blank" rel="noopener"
+          >Cを実寸で開く</a
+        >
+        <div class="preview-window">
+          <iframe title="C案の比較用表示" src="./c/"></iframe>
+        </div>
+      </section>
+      <section class="review-option" data-version="d">
+        <h2>D：ポスターの青とピンク</h2>
+        <p>鮮やかな操作色と丸い枠／Noto Sans JP</p>
+        <div class="swatches">
+          <i style="--swatch: #285dc9"></i><i style="--swatch: #fca8dd"></i
+          ><i style="--swatch: #e9edfa"></i>
+        </div>
+        <a class="actual" href="./d/" target="_blank" rel="noopener"
+          >Dを実寸で開く</a
+        >
+        <div class="preview-window">
+          <iframe title="D案の比較用表示" src="./d/"></iframe>
+        </div>
+      </section>
+    </main>
+    <footer class="review-footer">
+      <p>
+        ご希望に合わせ、現行の鮮やかさと角丸を生かす方向で作り直しました。Cは現行の配色を保つ案、Dはポスターの青・ピンクに寄せる案です。神戸高専祭サイトの固有のレイアウト・装飾は使っていません。
+      </p>
+      <p>掲載情報の修正、全ページへの適用、公開は行っていません。</p>
+    </footer>
+  </body>
+</html>

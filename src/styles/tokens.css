@@ -1,34 +1,32 @@
-/* Echo: vivid actions, readable surfaces and the established pale-blue home. */
+/* Echo D: poster-derived blue/pink, navy text, rounded controls and local gothic type. */
 :root {
-  --color-text: #111827;
-  --color-text-muted: #4b5563;
-  --color-surface: #f7f8fa;
+  --color-text: #102f56;
+  --color-text-muted: #4b5d75;
+  --color-surface: #f7f8fc;
   --color-paper: #ffffff;
-  --color-surface-subtle: #eef2f7;
-  --color-surface-blue: #eaf1ff;
-  --color-surface-warm: #fff1e7;
-  --color-hero: #ececf3;
-  --color-ring: #b2c1e2;
-  --color-action: #2563eb;
-  --color-action-hover: #1d4ed8;
+  --color-surface-subtle: #edf0f8;
+  --color-surface-blue: #e6edff;
+  --color-surface-warm: #ffe9f5;
+  --color-hero: #e9edfa;
+  --color-ring: #b7c8ed;
+  --color-action: #285dc9;
+  --color-action-hover: #1947a8;
   --color-on-action: #ffffff;
-  --color-strong: #111827;
-  --color-hero-text: #0b315b;
-  --color-on-accent: #111827;
-  --color-accent-hover: #ea580c;
-  --color-accent: #f97316;
-  --color-highlight: #f97316;
-  --color-echo-dot: #f97316;
-  --color-warning-text: #9a3412;
-  --color-focus: #c2410c;
-  --color-border: #e5e7eb;
-  --color-control-border: #6b7280;
+  --color-strong: #102f56;
+  --color-hero-text: #102f56;
+  --color-on-accent: #102f56;
+  --color-accent-hover: #f295cf;
+  --color-accent: #fca8dd;
+  --color-highlight: #fca8dd;
+  --color-echo-dot: #fca8dd;
+  --color-warning-text: #853660;
+  --color-focus: #c56898;
+  --color-border: #d0d9ec;
+  --color-control-border: #68778e;
   --color-backdrop: #102d45cc;
   --color-disabled-text: #4b5563;
   --color-disabled-bg: #e5e7eb;
-  --font-body:
-    'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Yu Gothic', Meiryo,
-    sans-serif;
+  --font-body: 'Noto Sans JP', 'Hiragino Sans', 'Yu Gothic', Meiryo, sans-serif;
   --font-numerals: Arial, sans-serif;
   --weight-regular: 400;
   --weight-medium: 500;
@@ -59,5 +57,5 @@
   --motion-enter: 640ms;
   --motion-ease: cubic-bezier(0.22, 1, 0.36, 1);
   --shadow-overlay: 0 8px 32px #102d4526;
-  --shadow-print: 8px 12px 0 #19324714;
+  --shadow-print: 5px 8px 14px #1932471a;
 }

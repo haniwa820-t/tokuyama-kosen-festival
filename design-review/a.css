@@ -1,0 +1,144 @@
+@font-face {
+  font-family: 'Review Zen';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('./fonts/zen-400.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Review Zen';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('./fonts/zen-500.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Review Zen';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('./fonts/zen-700.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Review Zen';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url('./fonts/zen-900.woff2') format('woff2');
+}
+:root {
+  --font-body: 'Review Zen', 'Hiragino Sans', 'Yu Gothic', Meiryo, sans-serif;
+  --color-text: #153a60;
+  --color-text-muted: #4e6171;
+  --color-surface: #f6f2e8;
+  --color-paper: #fcfaf5;
+  --color-surface-subtle: #ecebe4;
+  --color-surface-blue: #e2eaf0;
+  --color-hero: #f6f2e8;
+  --color-ring: #cdd7df;
+  --color-action: #245e9e;
+  --color-action-hover: #153a60;
+  --color-accent: #fca8dd;
+  --color-accent-hover: #eda0ce;
+  --color-border: #bfc8ca;
+  --radius-control: 3px;
+  --radius-panel: 0px;
+}
+.hero-rings {
+  left: -690px;
+  top: 80px;
+}
+.hero-dates {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+.hero-date {
+  display: grid;
+  gap: 0;
+  padding: 13px 0 14px;
+  border-block: 1px solid var(--color-text);
+  align-content: start;
+}
+.hero-date:last-child {
+  border-bottom: 1px solid var(--color-text);
+}
+.hero-date .day-label {
+  writing-mode: horizontal-tb;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.09em;
+}
+.hero-date strong {
+  min-width: 0;
+  font-size: 48px;
+  line-height: 1.25;
+  letter-spacing: -0.04em;
+}
+.hero-date > div {
+  gap: 2px;
+}
+.hero-date b {
+  font-size: 14px;
+}
+.hero-date time {
+  font-size: 15px;
+}
+.hero-date + .hero-date {
+  border-left: 1px dashed var(--color-border);
+  padding-left: 22px;
+}
+.hero-poster-note {
+  background: var(--color-paper);
+}
+.countdown {
+  border-bottom: 4px solid var(--color-accent);
+}
+.sponsor-grid--major .sponsor-card img {
+  border-color: var(--color-text);
+}
+.sponsor-grid--full .sponsor-card img {
+  padding: 12px;
+}
+.sponsor-grid--quarter .sponsor-card img {
+  padding: 8px;
+}
+.sponsor-grid--eighth .sponsor-card img {
+  padding: 6px;
+}
+@media (max-width: 1100px) and (min-width: 761px) {
+  .hero-dates {
+    gap: 12px;
+  }
+  .hero-date strong {
+    font-size: 38px;
+  }
+  .hero-date + .hero-date {
+    padding-left: 12px;
+  }
+  .hero-date time {
+    font-size: 14px;
+  }
+}
+@media (max-width: 760px) {
+  .hero-rings {
+    left: -730px;
+    top: 120px;
+  }
+  .hero-dates {
+    gap: 14px;
+  }
+  .hero-date {
+    padding-block: 11px 12px;
+  }
+  .hero-date strong {
+    font-size: 39px;
+  }
+  .hero-date + .hero-date {
+    padding-left: 12px;
+  }
+  .hero-date time {
+    font-size: 14px;
+  }
+}
