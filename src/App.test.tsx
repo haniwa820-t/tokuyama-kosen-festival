@@ -189,7 +189,7 @@ describe('ページの階層', () => {
       '東ソー株式会社 南陽事業所のロゴマーク',
     )
     expect(document.querySelectorAll('#sponsor-banners a')).toHaveLength(5)
-    expect(document.querySelectorAll('#sponsor-banners img')).toHaveLength(39)
+    expect(document.querySelectorAll('#sponsor-banners img')).toHaveLength(44)
     for (const entry of sponsorExclusions.entries) {
       expect(document.body.textContent).not.toContain(entry.directoryName)
       expect(document.querySelector(`img[src$="${entry.image}"]`)).toBeNull()
@@ -197,13 +197,13 @@ describe('ページの階層', () => {
     expect(document.querySelectorAll('.sponsors li')).toHaveLength(52)
 
     expect(document.querySelectorAll('#sponsor-banners article')).toHaveLength(
-      34,
+      39,
     )
     expect(
-      screen.queryByText(/りんかい日産建設|RN建設/),
+      screen.queryByText(/りんかい日産建設/),
     ).not.toBeInTheDocument()
     expect(
-      screen.queryByAltText(/りんかい日産建設|RN建設/),
+      screen.queryByAltText(/りんかい日産建設/),
     ).not.toBeInTheDocument()
     expect(
       Array.from(document.querySelectorAll('[data-sponsor-tier]')).map((node) =>

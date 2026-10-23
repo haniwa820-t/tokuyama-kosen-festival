@@ -231,13 +231,6 @@
       "recordedOn": "2026-10-21"
     },
     {
-      "originalPath": "スポンサーポスター/1ページ/りんかい日産建設 1.png",
-      "path": "assets/source/スポンサーポスター/1ページ/りんかい日産建設 1.png",
-      "bytes": 2998570,
-      "sha256": "ee1c00806851d9898821c58d441f0699a39acc08b629c6be46bd04c55ff138d9",
-      "recordedOn": "2026-10-21"
-    },
-    {
       "originalPath": "スポンサーポスター/1ページ/下松自動車学校_20261007_143449.png",
       "path": "assets/source/スポンサーポスター/1ページ/下松自動車学校_20261007_143449.png",
       "bytes": 1463578,
@@ -280,13 +273,6 @@
       "recordedOn": "2026-10-21"
     },
     {
-      "originalPath": "スポンサーポスター/4分の1/nail salon fanon.pdf",
-      "path": "assets/source/スポンサーポスター/4分の1/nail salon fanon.pdf",
-      "bytes": 801165,
-      "sha256": "6e446618d60006d50a77ab55bc47c758bf18b7e7a50471da707cb900b1bc37a8",
-      "recordedOn": "2026-10-21"
-    },
-    {
       "originalPath": "スポンサーポスター/4分の1/えびす.jpg",
       "path": "assets/source/スポンサーポスター/4分の1/えびす.jpg",
       "bytes": 64768,
@@ -305,13 +291,6 @@
       "path": "assets/source/スポンサーポスター/4分の1/改-新立電機株式会社.jpg",
       "bytes": 145937,
       "sha256": "ea0d614aa75a85758a4475131c45b49c915148251d1d2359c2f709da8a5c36d7",
-      "recordedOn": "2026-10-21"
-    },
-    {
-      "originalPath": "スポンサーポスター/4分の1/津田胃腸科内科医院　改.jpeg",
-      "path": "assets/source/スポンサーポスター/4分の1/津田胃腸科内科医院　改.jpeg",
-      "bytes": 65018,
-      "sha256": "a0b935a507dcbc6a4893effc89cf58aa00342c831a905bca7e5d6cbaa45d4167",
       "recordedOn": "2026-10-21"
     },
     {
@@ -347,13 +326,6 @@
       "path": "assets/source/スポンサーポスター/８分の1/017 くだまつ健康パーク.jpeg",
       "bytes": 98670,
       "sha256": "579c09152fcd62e37f07c19be65c0851a84d60caf1dcef57788b17cb6e60472d",
-      "recordedOn": "2026-10-21"
-    },
-    {
-      "originalPath": "スポンサーポスター/８分の1/022 兼清電子.gif",
-      "path": "assets/source/スポンサーポスター/８分の1/022 兼清電子.gif",
-      "bytes": 7224,
-      "sha256": "37f76e77214e1837ecf002def07ae15d68d3ae48bf4c31cfc1748aeb21eb090f",
       "recordedOn": "2026-10-21"
     },
     {
@@ -943,6 +915,62 @@
       "bytes": 12184835,
       "sha256": "34cba7b7dd609b97d223c9647c71fee34e6495cfa1e0d3205561ceae16fc2e96",
       "recordedOn": "2026-10-21"
+    },
+    {
+      "originalPath": "スクリーンショット 2026-10-23 11.38.55.jpeg",
+      "path": "assets/source/sponsor-updates-2026-10-23/スクリーンショット 2026-10-23 11.38.55.jpeg",
+      "bytes": 22931,
+      "sha256": "af2bf18d814f916e8b0afde3bca9b027cb6a337a8ed862fbd8b175ee91abd077",
+      "recordedOn": "2026-10-23"
+    },
+    {
+      "originalPath": "スクリーンショット 2026-10-23 11.39.30.jpeg",
+      "path": "assets/source/sponsor-updates-2026-10-23/スクリーンショット 2026-10-23 11.39.30.jpeg",
+      "bytes": 55031,
+      "sha256": "ce9261ef61d9a2380b43aef26fe0fd151c21840b9676300313218ee94620123b",
+      "recordedOn": "2026-10-23"
+    },
+    {
+      "originalPath": "スクリーンショット 2026-10-23 11.39.41.jpeg",
+      "path": "assets/source/sponsor-updates-2026-10-23/スクリーンショット 2026-10-23 11.39.41.jpeg",
+      "bytes": 144005,
+      "sha256": "5ca0e9b1b2b17d74275d98426d40e58dbaafa4115932f336918af3c3c7758c92",
+      "recordedOn": "2026-10-23"
+    },
+    {
+      "originalPath": "スクリーンショット 2026-10-23 11.39.55.jpeg",
+      "path": "assets/source/sponsor-updates-2026-10-23/スクリーンショット 2026-10-23 11.39.55.jpeg",
+      "bytes": 28054,
+      "sha256": "54de7d5ddd68927a1e7902153c1a0b55778bd9f0ac075fe9962156307467704c",
+      "recordedOn": "2026-10-23"
+    },
+    {
+      "originalPath": "スクリーンショット 2026-10-23 11.40.19.jpeg",
+      "path": "assets/source/sponsor-updates-2026-10-23/スクリーンショット 2026-10-23 11.40.19.jpeg",
+      "bytes": 33825,
+      "sha256": "e6d20790560bd8bed15eca0534a6d2ca6789812e8dddf77d7afc40f5e363774d",
+      "recordedOn": "2026-10-23"
+    },
+    {
+      "originalPath": "スクリーンショット 2026-10-23 11.40.38.jpeg",
+      "path": "assets/source/sponsor-updates-2026-10-23/スクリーンショット 2026-10-23 11.40.38.jpeg",
+      "bytes": 105217,
+      "sha256": "147fc03f6090248b2eee9ea1147b7934981689d6aafe6e702e4614ed90bff3d9",
+      "recordedOn": "2026-10-23"
+    },
+    {
+      "originalPath": "スクリーンショット 2026-10-23 11.40.39.jpeg",
+      "path": "assets/source/sponsor-updates-2026-10-23/スクリーンショット 2026-10-23 11.40.39.jpeg",
+      "bytes": 46984,
+      "sha256": "cc6db3d2155a47ff6d25d04e22474f9605037d08cf974a78c7c4a5837396a65c",
+      "recordedOn": "2026-10-23"
+    },
+    {
+      "originalPath": "スクリーンショット 2026-10-23 11.40.40.jpeg",
+      "path": "assets/source/sponsor-updates-2026-10-23/スクリーンショット 2026-10-23 11.40.40.jpeg",
+      "bytes": 45626,
+      "sha256": "1d9374bdacde41b4ebc552b7e208bc686125524dcb76927f79e66bbb767f3f79",
+      "recordedOn": "2026-10-23"
     }
   ]
 }

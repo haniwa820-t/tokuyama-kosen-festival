@@ -70,7 +70,7 @@ const expectedUrls = [
   'https://www.tkworks.jp/',
   'https://www.shunan-ds.com/',
 ]
-assert.equal(banners.length, 39)
+assert.equal(banners.length, 44)
 assert.equal(new Set(banners.map((b) => b.id)).size, banners.length)
 assert.deepEqual(
   banners.filter((b) => b.tier === 'major').map((b) => b.url),
@@ -121,7 +121,7 @@ for (const map of maps) {
   assert.equal(image.height, map.height)
 }
 console.log(
-  '39 supplied sponsor images, five approved links, size order and nine supplied maps verified.',
+  '44 supplied sponsor images, five approved links, size order and nine supplied maps verified.',
 )
 
 const exclusions = await json('src/data/sponsor-exclusions.json')

@@ -114,6 +114,18 @@
     "permissionSource": "user:2026-10-21"
   },
   {
+    "id": "ad-001",
+    "name": "RN建設株式会社",
+    "image": "images/sponsors/ad-001-20261023.webp",
+    "imageStatus": "supplied",
+    "tier": "full",
+    "source": "assets/source/sponsor-updates-2026-10-23/スクリーンショット 2026-10-23 11.40.38.jpeg",
+    "width": 675,
+    "height": 369,
+    "verifiedOn": "2026-10-23",
+    "permissionSource": "user:2026-10-23"
+  },
+  {
     "id": "ad-004",
     "name": "八千代興産有限会社",
     "image": "images/sponsors/ad-004.webp",
@@ -151,16 +163,15 @@
   },
   {
     "id": "ad-008",
-    "name": "nail salon fanon",
-    "image": "images/sponsors/ad-008.webp",
+    "name": "fanon plus",
+    "image": "images/sponsors/ad-008-20261023.webp",
     "imageStatus": "supplied",
     "tier": "quarter",
-    "width": 1300,
-    "height": 798,
-    "source": "assets/source/スポンサーポスター/4分の1/nail salon fanon.pdf",
-    "sourcePage": 1,
-    "verifiedOn": "2026-10-21",
-    "permissionSource": "user:2026-10-21"
+    "width": 579,
+    "height": 327,
+    "source": "assets/source/sponsor-updates-2026-10-23/スクリーンショット 2026-10-23 11.38.55.jpeg",
+    "verifiedOn": "2026-10-23",
+    "permissionSource": "user:2026-10-23"
   },
   {
     "id": "ad-009",
@@ -202,26 +213,26 @@
   {
     "id": "ad-012",
     "name": "津田胃腸科内科医院",
-    "image": "images/sponsors/ad-012.webp",
+    "image": "images/sponsors/ad-012-20261023.webp",
     "imageStatus": "supplied",
     "tier": "quarter",
-    "width": 556,
-    "height": 418,
-    "source": "assets/source/スポンサーポスター/4分の1/津田胃腸科内科医院　改.jpeg",
-    "verifiedOn": "2026-10-21",
-    "permissionSource": "user:2026-10-21"
+    "width": 718,
+    "height": 247,
+    "source": "assets/source/sponsor-updates-2026-10-23/スクリーンショット 2026-10-23 11.40.39.jpeg",
+    "verifiedOn": "2026-10-23",
+    "permissionSource": "user:2026-10-23"
   },
   {
     "id": "ad-023",
     "name": "兼清電子",
-    "image": "images/sponsors/ad-023.webp",
+    "image": "images/sponsors/ad-023-20261023.webp",
     "imageStatus": "supplied",
     "tier": "eighth",
-    "width": 260,
-    "height": 400,
-    "source": "assets/source/スポンサーポスター/８分の1/022 兼清電子.gif",
-    "verifiedOn": "2026-10-21",
-    "permissionSource": "user:2026-10-21"
+    "width": 1026,
+    "height": 1436,
+    "source": "assets/source/sponsor-updates-2026-10-23/スクリーンショット 2026-10-23 11.39.41.jpeg",
+    "verifiedOn": "2026-10-23",
+    "permissionSource": "user:2026-10-23"
   },
   {
     "id": "ad-024",
@@ -488,5 +499,53 @@
     "source": "assets/source/スポンサーポスター/８分の1/長沼建設株式会社.png",
     "verifiedOn": "2026-10-21",
     "permissionSource": "user:2026-10-21"
+  },
+  {
+    "id": "ad-091",
+    "name": "洋林建設株式会社",
+    "image": "images/sponsors/ad-091-20261023.webp",
+    "imageStatus": "supplied",
+    "tier": "eighth",
+    "source": "assets/source/sponsor-updates-2026-10-23/スクリーンショット 2026-10-23 11.39.30.jpeg",
+    "width": 528,
+    "height": 396,
+    "verifiedOn": "2026-10-23",
+    "permissionSource": "user:2026-10-23"
+  },
+  {
+    "id": "ad-092",
+    "name": "ヘアサロンなかやま",
+    "image": "images/sponsors/ad-092-20261023.webp",
+    "imageStatus": "supplied",
+    "tier": "eighth",
+    "source": "assets/source/sponsor-updates-2026-10-23/スクリーンショット 2026-10-23 11.39.55.jpeg",
+    "width": 440,
+    "height": 323,
+    "verifiedOn": "2026-10-23",
+    "permissionSource": "user:2026-10-23"
+  },
+  {
+    "id": "ad-093",
+    "name": "中村工務店",
+    "image": "images/sponsors/ad-093-20261023.webp",
+    "imageStatus": "supplied",
+    "tier": "eighth",
+    "source": "assets/source/sponsor-updates-2026-10-23/スクリーンショット 2026-10-23 11.40.19.jpeg",
+    "width": 438,
+    "height": 336,
+    "verifiedOn": "2026-10-23",
+    "permissionSource": "user:2026-10-23"
+  },
+  {
+    "id": "ad-094",
+    "name": "澤田建設株式会社",
+    "image": "images/sponsors/ad-094-20261023.webp",
+    "imageStatus": "supplied",
+    "tier": "eighth",
+    "source": "assets/source/sponsor-updates-2026-10-23/スクリーンショット 2026-10-23 11.40.40.jpeg",
+    "width": 645,
+    "height": 263,
+    "verifiedOn": "2026-10-23",
+    "permissionSource": "user:2026-10-23"
   }
 ]
