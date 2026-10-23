@@ -66,7 +66,7 @@ Cloudflare Pagesは`main`へのpushで`npm run check`を実行し、`dist/`を�
 
 検索向けの正規URLは両方の配信先でCloudflare Pagesに統一しています。変更する場合は`src/lib/seo.ts`の`canonicalSiteUrl`を更新してください。各ページを静的HTMLで生成し、ページ固有のtitle・description、SNS共有情報、イベント・パンくずの構造化データ、robots.txtとsitemap.xmlを出力します。404ページは検索対象から除外します。
 
-検索用のタイトル・説明は`src/lib/seo.ts`の`pageMetadata`で管理し、画面上の見出し・紹介文と分離しています。Search Consoleは2026-10-23時点で未登録です。所有権確認・サイトマップ送信・URL検査の手順は[検索設定](docs/seo.md)を参照してください。
+検索用のタイトル・説明は`src/lib/seo.ts`の`pageMetadata`で管理し、画面上の見出し・紹介文と分離しています。2026-10-23にユーザー提供のSearch Console所有権確認用タグを追加しました。Google側での確認操作とインデックス状況の確認は未実施です。所有権確認・サイトマップ送信・URL検査の手順は[検索設定](docs/seo.md)を参照してください。
 
 CSPは生成HTMLに設定しています。Cloudflare Pagesでは`public/_headers`で埋め込み防止、MIMEタイプの推測防止、参照元・端末権限の制限も適用します。GitHub Pagesではこのヘッダーファイルは適用されません。
 

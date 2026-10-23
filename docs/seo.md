@@ -18,7 +18,7 @@
 
 ## Search Consoleで行うこと
 
-ユーザー回答（2026-10-23）：まだ登録していない。所有権確認とインデックス状況の確認は未実施。
+2026-10-23にユーザーから提供された所有権確認用のHTMLタグを`index.html`のheadへ追加した。静的生成でもタグを保持する。Search Console側で「確認」を押す操作、サイトマップ送信、インデックス状況の確認はユーザーによる実施待ち。所有権確認の完了はまだ確認していない。
 
 1. [Google Search Console](https://search.google.com/search-console/)に、URLプレフィックスとして`https://tokuyama-kosen-festival.pages.dev/`を追加する。
 2. 所有権確認の「HTMLタグ」を選ぶ。表示された`<meta name="google-site-verification" content="…" />`を、そのままサイト担当者へ共有する。Googleアカウントのパスワードやログインコードは共有しない。確認用タグは公開HTMLへ入る値。
