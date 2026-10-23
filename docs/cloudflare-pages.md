@@ -21,8 +21,8 @@ Cloudflare Pagesのプロジェクト名は`tokuyama-kosen-festival`、公開元
 
 `npm run check`は型・lint・テスト・素材・配色・静的生成・内部リンクを検証します。通常のCloudflareビルドでは広告PDFの変換は行わず、Gitで管理する生成済み画像を使います。
 
-`SITE_URL`は公開URLに設定済みです。独自ドメインを使う場合は同じ設定を更新し、再ビルドしてください。未設定時はCloudflareが提供する`CF_PAGES_URL`を使います。
-プレビュー環境の`SITE_URL`を未設定にすると、プレビュー自身のURLを使います。
+`SITE_URL`は配信先URLとして設定済みです。検索用のcanonical・OG URL・構造化データ・サイトマップは`src/lib/seo.ts`の`canonicalSiteUrl`に統一しており、`SITE_URL`や`CF_PAGES_URL`を変えても変更されません。独自ドメインへ移行する場合は両方の設定と旧URLからの恒久リダイレクトを更新します。
+プレビューにも本番のcanonicalを出力します。Cloudflareはプレビュー環境に標準で`X-Robots-Tag: noindex`を付けます。Search Consoleの登録先は本番URLです。所有権確認などは[検索設定](seo.md)を参照してください。
 
 ## 配信と確認
 

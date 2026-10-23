@@ -83,6 +83,10 @@ async function checkFontCoverage(directory) {
     if (entry.isDirectory() && path !== 'src/assets')
       await checkFontCoverage(path)
     else if (/\.(tsx?|json)$/.test(entry.name) && entry.isFile()) {
+      // Head metadata uses the browser/search engine's font, not our body font.
+      // Test descriptions are also never rendered as site content.
+      if (path === 'src/lib/seo.ts' || /\.test\.tsx?$/.test(entry.name))
+        continue
       for (const c of await readFile(path, 'utf8'))
         assert(
           available.has(c.codePointAt(0)),

@@ -4,6 +4,7 @@ import {
   render,
   pages,
   canonicalSiteUrl as base,
+  pageMetadata,
   structuredData,
   serializeJsonLd,
 } from '../tmp/ssr/entry-server.js'
@@ -11,11 +12,7 @@ const template = await readFile('dist/index.html', 'utf8')
 const escape = (s) =>
   s.replaceAll('&', '&amp;').replaceAll('"', '&quot;').replaceAll('<', '&lt;')
 for (const page of pages) {
-  const title =
-    page.id === 'home'
-      ? page.title
-      : `${page.title} | 徳山高専 高専祭 2026 — Echo`
-  const url = base + page.path
+  const { title, description, canonical: url } = pageMetadata(page.id)
   const jsonLd = serializeJsonLd(structuredData(page.id))
   const hash = createHash('sha256').update(jsonLd).digest('base64')
   const policy = `default-src 'self'; script-src 'self' 'sha256-${hash}'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'`
@@ -31,7 +28,7 @@ for (const page of pages) {
     )
     .replace(
       /(<meta\b[^>]*(?:name="description"|property="og:description")[^>]*content=")[^"]*/g,
-      `$1${escape(page.description)}`,
+      `$1${escape(description)}`,
     )
     .replace(/(<link\b[^>]*rel="canonical"[^>]*href=")[^"]*/, `$1${url}`)
     .replace(/(<meta\b[^>]*property="og:url"[^>]*content=")[^"]*/, `$1${url}`)

@@ -1,6 +1,10 @@
 import { readFile, access } from 'node:fs/promises'
 import { createHash } from 'node:crypto'
-import { pages, canonicalSiteUrl } from '../tmp/ssr/entry-server.js'
+import {
+  pages,
+  canonicalSiteUrl,
+  pageMetadata,
+} from '../tmp/ssr/entry-server.js'
 import assert from 'node:assert/strict'
 import { deploymentConfig } from '../src/lib/deployment.ts'
 const { base } = deploymentConfig(process.env)
@@ -9,6 +13,27 @@ const targets = new Map()
 for (const page of pages) {
   const file = page.id === 'not-found' ? '404.html' : `${page.path}index.html`
   const html = await readFile(`dist/${file}`, 'utf8')
+  const { title, description: expectedDescription } = pageMetadata(page.id)
+  const head = html.split('</head>')[0]
+  for (const pattern of [
+    /<title>/g,
+    /<meta\b[^>]*name="description"/g,
+    /<link\b[^>]*rel="canonical"/g,
+  ])
+    assert.equal(
+      (head.match(pattern) ?? []).length,
+      1,
+      `${file}: missing or duplicate metadata`,
+    )
+  assert.equal(head.match(/<title>(.*?)<\/title>/)?.[1], title)
+  assert(head.includes(`property="og:title" content="${title}"`))
+  assert.equal(
+    head.match(
+      /<meta\b[^>]*property="og:description"[^>]*content="([^"]+)"/,
+    )?.[1],
+    expectedDescription,
+    `${file}: incorrect sharing description`,
+  )
   assert.equal(
     (html.match(/<h1[ >]/g) ?? []).length,
     1,
@@ -31,7 +56,7 @@ for (const page of pages) {
   )
   assert.equal(
     description?.[1],
-    page.description,
+    expectedDescription,
     `${file}: incorrect description`,
   )
   const jsonLd = html.match(
@@ -54,6 +79,14 @@ assert(
 const sitemap = await readFile('dist/sitemap.xml', 'utf8')
 for (const page of pages.filter((item) => item.id !== 'not-found'))
   assert(sitemap.includes(`<loc>${siteUrl}${page.path}</loc>`))
+assert.deepEqual(
+  [...sitemap.matchAll(/<loc>(.*?)<\/loc>/g)].map((match) => match[1]).sort(),
+  pages
+    .filter((page) => page.id !== 'not-found')
+    .map((page) => siteUrl + page.path)
+    .sort(),
+  'Sitemap must contain exactly the published canonical URLs, without 404 or duplicates',
+)
 const headers = await readFile('dist/_headers', 'utf8')
 assert(headers.includes('X-Content-Type-Options: nosniff'))
 assert(headers.includes("frame-ancestors 'none'"))
